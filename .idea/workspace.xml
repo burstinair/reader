@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cb148ef-a60a-49f6-aa46-652d4edd5065" name="Default" comment="Initialize">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/burstreader.iml" afterPath="$PROJECT_DIR$/burstreader.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="5cb148ef-a60a-49f6-aa46-652d4edd5065" name="Default" comment="Initialize" />
     <ignored path="burstreader.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360478872245" ignored="false" />
+    <file path="/Dummy.txt" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360479665553" ignored="false" />
     <file path="/hibernate.cfg.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360395547645" ignored="false" />
     <file path="/HibernateUtil.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360475063914" ignored="false" />
     <file path="/burstreader.iml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360467860789" ignored="false" />
@@ -28,6 +24,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -62,7 +59,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -72,19 +68,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="HibernateUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/HibernateUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="20" selection-start="2318" selection-end="2318" vertical-scroll-proportion="0.4473684">
+            <state line="15" column="3" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HibernateUtil.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/HibernateUtil.java">
+      <file leaf-file-name="Reader.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/reader/Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="3" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
+            <state line="46" column="13" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.46312177">
               <folding />
             </state>
           </provider>
@@ -205,7 +201,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -353,19 +348,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
+              <option name="myItemId" value="reader" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.116027534" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="options.lastSelected" value="reference.settings.project.maven.importing" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="D:/develop/IDEAProjects/lib/xwork-core.jar!/" />
@@ -374,9 +372,11 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Downloaded.Files.Path" value="D:\Tools\rhc\burstreader\lib" />
   </component>
   <component name="RecentsManager">
@@ -405,19 +405,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -444,6 +431,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -679,11 +679,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.6" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -749,18 +749,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/SQLiteDialect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="34" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="31" selection-start="416" selection-end="416" vertical-scroll-proportion="0.42477876">
-          <folding />
-        </state>
+        <state line="18" column="31" selection-start="416" selection-end="416" vertical-scroll-proportion="0.42477876" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/ant.xml">
@@ -790,13 +781,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="401" selection-end="401" vertical-scroll-proportion="-7.5">
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/Admin.jsp">
@@ -821,8 +812,8 @@
           <OriginalElement>burstreader:burstreader:1.0</OriginalElement>
           <nodes>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.xml.soap:jboss-saaj-api_1.3_spec:jar:1.0.2.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.2_spec:jar:1.0.4.Final-redhat-1</node>
             <node x="" y="">burstreader:antlr:jar:2.7.6</node>
+            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.2_spec:jar:1.0.4.Final-redhat-1</node>
             <node x="" y="">burstreader:xword-core:jar:1.0</node>
             <node x="" y="">burstreader:slf4j-api:jar:1.5.8</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.xml.registry:jboss-jaxr-api_1.0_spec:jar:1.0.2.Final-redhat-1</node>
@@ -830,8 +821,8 @@
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.faces:jboss-jsf-api_2.1_spec:jar:2.0.2.Final-redhat-1</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/javax.jws:jsr181-api:jar:1.0-MR1-redhat-1</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_1.1_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.security.jacc:jboss-jacc-api_1.4_spec:jar:1.0.2.Final-redhat-1</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:jar:1.0.1.Final-redhat-1</node>
+            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.security.jacc:jboss-jacc-api_1.4_spec:jar:1.0.2.Final-redhat-1</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/javax.enterprise:cdi-api:jar:1.0-SP4-redhat-1</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.enterprise.deploy:jboss-jad-api_1.2_spec:jar:1.0.1.Final-redhat-1</node>
@@ -845,8 +836,8 @@
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.security.auth.message:jboss-jaspi-api_1.0_spec:jar:1.0.1.Final-redhat-1</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.2_spec:jar:1.0.1.Final-redhat-1</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.hibernate.javax.persistence:hibernate-jpa-2.0-api:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:jar:1.0.3.Final-redhat-1</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.xml.rpc:jboss-jaxrpc-api_1.1_spec:jar:1.0.1.Final-redhat-1</node>
+            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:jar:1.0.3.Final-redhat-1</node>
             <node x="" y="">burstreader:jta:jar:1.1</node>
             <node x="" y="">burstreader:struts2-core:jar:1.0</node>
             <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/javax.activation:activation:jar:1.1.1-redhat-1</node>
@@ -873,6 +864,23 @@
         <state line="13" column="18" selection-start="818" selection-end="818" vertical-scroll-proportion="-0.93495935" />
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/xerial/thirdparty/sqlitejdbc-nested/3.6.0/sqlitejdbc-nested-3.6.0.jar!/org/sqlite/SQLite.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="19" selection-start="407" selection-end="407" vertical-scroll-proportion="0.41284403" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/BookException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.051457975" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="21" selection-start="2468" selection-end="2468" vertical-scroll-proportion="-0.15789473">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/HibernateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="3" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
@@ -880,23 +888,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/xerial/thirdparty/sqlitejdbc-nested/3.6.0/sqlitejdbc-nested-3.6.0.jar!/org/sqlite/SQLite.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/reader/Reader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="19" selection-start="407" selection-end="407" vertical-scroll-proportion="0.41284403">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/BookException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.051457975">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="20" selection-start="2318" selection-end="2318" vertical-scroll-proportion="0.4473684">
+        <state line="46" column="13" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.46312177">
           <folding />
         </state>
       </provider>
@@ -911,7 +905,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.15814507" />
+                <option value="0.11210762" />
                 <option value="0.5" />
               </list>
             </option>
@@ -924,7 +918,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.15814507" />
+                <option value="0.11210762" />
               </list>
             </option>
           </splitter-proportions>
@@ -948,7 +942,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.19661017" />
+                <option value="0.11210762" />
               </list>
             </option>
           </splitter-proportions>
@@ -960,7 +954,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.19661017" />
+                <option value="0.11210762" />
               </list>
             </option>
           </splitter-proportions>
