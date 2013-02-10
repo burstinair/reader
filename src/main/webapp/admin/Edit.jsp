@@ -10,9 +10,9 @@
     <body>
         <div>
             <s:url action="../reader/Index" id="indexurl" />
-            <s:a href="%{indexurl}">[Return to Index]</s:a>
+            <s:a href="%{indexurl}">[返回首页]</s:a>
             <s:url action="Admin" id="adminurl" />
-            <s:a href="%{adminurl}">[Return to Admin]</s:a>
+            <s:a href="%{adminurl}">[返回管理]</s:a>
         </div>
         <s:form method="post" enctype="multipart/form-data">
             <s:hidden type="hidden" name="id" value="%{#request.id}" />

@@ -10,17 +10,17 @@
     <body>
         <div>
             <s:url action="../reader/Index" id="indexurl" />
-            <s:a href="%{indexurl}">[Return to Index]</s:a>
+            <s:a href="%{indexurl}">[返回首页]</s:a>
         </div>
         <div>
             <s:url action="Edit" id="editurl" />
-            <s:a href="%{editurl}">[Add New Book]</s:a>
+            <s:a href="%{editurl}">[添加新书]</s:a>
         </div>
         <table>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Edit</th>
+                <th>书名</th>
+                <th>编辑</th>
             </tr>
             <s:iterator value="books" id="cur">
                 <tr>
@@ -30,7 +30,7 @@
                         <s:url id="url" action="Edit">
                             <s:param name="id"><s:property value="#cur.id"/></s:param>
                         </s:url>
-                        <s:a href="%{url}">Edit</s:a>
+                        <s:a href="%{url}">编辑</s:a>
                     </td>
                 </tr>
             </s:iterator>
