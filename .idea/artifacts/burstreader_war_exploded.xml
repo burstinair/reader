@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="burstreader:war exploded">
+    <output-path>$PROJECT_DIR$/target/burstreader</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="burstreader/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="burstreader" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="hibernate-3.5.4" />
+          <element id="library" level="project" name="struts2.3.7+hibernate3.5.4+sqlitejdbcv0.56" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

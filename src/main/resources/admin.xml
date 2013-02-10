@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="admin" namespace="/admin" extends="struts-default">
+        <action name="Admin" class="admin.Admin">
+            <result>/admin/Admin.jsp</result>
+        </action>
+        <action name="Edit" class="admin.Edit">
+            <result>/admin/Edit.jsp</result>
+            <result name="input">/admin/Edit.jsp</result>
+        </action>
+    </package>
+</struts>
+
