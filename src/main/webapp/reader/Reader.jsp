@@ -45,7 +45,7 @@
                         <s:param name="cp" value="curPage + 1"></s:param>
                         <s:param name="wc" value="wordCount"></s:param>
                     </s:url>
-                    <s:a href="%{nextpageurl}">[下页]</s:a>
+                    [<s:a href="%{nextpageurl}">下页</s:a>]
                     <s:url action="Reader" id="lastpageurl">
                         <s:param name="id" value="#parameters.id"></s:param>
                         <s:param name="cp" value="pageCount"></s:param>
