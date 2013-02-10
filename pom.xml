@@ -70,9 +70,9 @@
             <version>3.5.4-Final</version>
         </dependency>
         <dependency>
-            <groupId>org.xerial.thirdparty</groupId>
-            <artifactId>sqlitejdbc-nested</artifactId>
-            <version>3.6.0</version>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.7.2</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
