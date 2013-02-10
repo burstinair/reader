@@ -2,60 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cb148ef-a60a-49f6-aa46-652d4edd5065" name="Default" comment="Initialize">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_commons_3_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_tree_3_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javassist_javassist_3_9_0_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_jta_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_14.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts2_core_2_3_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_xwork_xwork_core_2_3_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_19.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_annotations_3_5_4_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_commons_annotations_3_2_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_3_5_4_.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_3_5_4_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_5_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_thirdparty_sqlitejdbc_nested_3_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\.idea\libraries\struts2_3_7_hibernate3_5_4_sqlitejdbcv0_56.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\antlr-2.7.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\antlr-2.7.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\asm-commons.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\asm-tree.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\asm.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\commons-collections-3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\commons-fileupload.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\commons-io.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\commons-lang.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\dom4j-1.6.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\freemarker.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\hibernate-commons-annotations-4.0.1.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\hibernate-core-4.1.1.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\hibernate-jpa-2.0-api-1.0.0.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\hibernate-jpa-2.0-api-1.0.1.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\hibernate-testing3.5.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\hibernate3.5.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\javassist-3.15.0-GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\javassist-3.9.0.GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\javassist.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\jboss-logging-3.1.0.GA.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\jboss-transaction-api_1.1_spec-1.0.0.Final.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\jta-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\ognl.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\slf4j-api-1.5.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\struts2-core.jar" afterPath="" />
-      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\xwork-core.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/burstreader.iml" afterPath="$PROJECT_DIR$/burstreader.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/burstreader_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/burstreader_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/burstreader_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/burstreader_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="burstreader.iws" />
@@ -64,8 +10,8 @@
     <file path="/hibernate.cfg.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360395547645" ignored="false" />
     <file path="/HibernateUtil.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360475063914" ignored="false" />
     <file path="/burstreader.iml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360467860789" ignored="false" />
-    <file path="/pom.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360474059503" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360477428379" ignored="false" />
+    <file path="/pom.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360478332564" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360478344219" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +73,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="20" selection-start="417" selection-end="417" vertical-scroll-proportion="0.41411042">
+            <state line="71" column="20" selection-start="2318" selection-end="2318" vertical-scroll-proportion="0.49386504">
               <folding />
             </state>
           </provider>
@@ -192,6 +138,20 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="burstreader" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+      </PATH>
       <PATH>
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
@@ -638,7 +598,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -651,7 +611,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20644216" sideWeight="0.6" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.6" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.6" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -876,7 +836,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="20" selection-start="417" selection-end="417" vertical-scroll-proportion="0.41411042">
+        <state line="71" column="20" selection-start="2318" selection-end="2318" vertical-scroll-proportion="0.49386504">
           <folding />
         </state>
       </provider>
