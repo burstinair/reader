@@ -10,7 +10,7 @@
     <body>
     	<div>
             <s:url action="../admin/Admin" id="adminurl" />
-            <s:a href="%{adminurl}">[№ЬАн]</s:a>
+            <s:a href="%{adminurl}">[з®Ўзђ†]</s:a>
         </div>
         <ul>
             <s:iterator value="books" id="cur">

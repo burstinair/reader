@@ -5,22 +5,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><s:property value="title" default="∏√ È≤ª¥Ê‘⁄°£" /></title>
+        <title><s:property value="title" default="ËØ•‰π¶‰∏çÂ≠òÂú®„ÄÇ" /></title>
     </head>
     <body>
         <s:if test="#action == null">
-            ∏√ È≤ª¥Ê‘⁄°£
+            ËØ•‰π¶‰∏çÂ≠òÂú®„ÄÇ
         </s:if>
         <s:elseif test="notExist">
-            ∏√ È≤ª¥Ê‘⁄°£
+            ËØ•‰π¶‰∏çÂ≠òÂú®„ÄÇ
         </s:elseif>
         <s:else>
         	<s:url action="Index" id="homepage"></s:url>
-        	<s:a href="%{homepage}">[∑µªÿ ◊“≥]</s:a>
+        	<s:a href="%{homepage}">[ËøîÂõûÈ¶ñÈ°µ]</s:a>
         	<s:url action="Profile" id="profile">
         		<s:param name="id" value="#parameters.id"></s:param>
         	</s:url>
-        	<s:a href="%{profile}">[∑µªÿ È“≥]</s:a>
+        	<s:a href="%{profile}">[ËøîÂõû‰π¶È°µ]</s:a>
             <div class="content">
                 <s:property escape="false" value="content" />
             </div>
@@ -31,13 +31,13 @@
                         <s:param name="cp" value="1"></s:param>
                         <s:param name="wc" value="wordCount"></s:param>
                     </s:url>
-                    <s:a href="%{firstpageurl}">[µ⁄“ª“≥]</s:a>
+                    <s:a href="%{firstpageurl}">[Á¨¨‰∏ÄÈ°µ]</s:a>
                     <s:url action="Reader" id="prevpageurl">
                         <s:param name="id" value="#parameters.id"></s:param>
                         <s:param name="cp" value="curPage - 1"></s:param>
                         <s:param name="wc" value="wordCount"></s:param>
                     </s:url>
-                    <s:a href="%{prevpageurl}">[…œ“≥]</s:a>
+                    <s:a href="%{prevpageurl}">[‰∏äÈ°µ]</s:a>
                 </s:if>
                 <s:if test="isLastPage != true">
                     <s:url action="Reader" id="nextpageurl">
@@ -45,13 +45,13 @@
                         <s:param name="cp" value="curPage + 1"></s:param>
                         <s:param name="wc" value="wordCount"></s:param>
                     </s:url>
-                    <s:a href="%{nextpageurl}">[œ¬“≥]</s:a>
+                    <s:a href="%{nextpageurl}">[‰∏ãÈ°µ]</s:a>
                     <s:url action="Reader" id="lastpageurl">
                         <s:param name="id" value="#parameters.id"></s:param>
                         <s:param name="cp" value="pageCount"></s:param>
                         <s:param name="wc" value="wordCount"></s:param>
                     </s:url>
-                    <s:a href="%{lastpageurl}">[ƒ©“≥]</s:a>
+                    <s:a href="%{lastpageurl}">[Êú´È°µ]</s:a>
                 </s:if>
                 <br />
                 <s:url action="Reader" id="addbookmark">
@@ -60,7 +60,7 @@
                     <s:param name="wc" value="wordCount"></s:param>
                     <s:param name="action" value="'bookmark'"></s:param>
                 </s:url>
-                <s:a href="%{addbookmark}">[ÃÌº” È«©]</s:a>
+                <s:a href="%{addbookmark}">[Ê∑ªÂä†‰π¶Á≠æ]</s:a>
             </div>
         </s:else>
     </body>
