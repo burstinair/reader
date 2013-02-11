@@ -29,12 +29,23 @@ import service.Util;
 public class EditController extends ActionSupport {
 
     public HttpHeaders index() throws Exception {
+        id = 0;
         return new DefaultHttpHeaders(SUCCESS).disableCaching();
+    }
+
+    public String show() {
+        try {
+            book = BookService.getBook(id);
+        } catch (Exception ex) {
+            book = null;
+            id = 0;
+        }
+        return SUCCESS;
     }
 
     public String update() throws BookException
     {
-        boolean isAdd = id == null;
+        boolean isAdd = id == null || id == 0;
         book = null;
         boolean isSubmit = true;
         try {

@@ -12,7 +12,7 @@
             <s:a href="/">[返回首页]</s:a>
             <s:a href="/admin/admin">[返回管理]</s:a>
         </div>
-        <s:form method="post" action="%{'edit/' + #parameters.id}" enctype="multipart/form-data">
+        <s:form method="post" action="%{'edit/' + id}" enctype="multipart/form-data">
             <s:hidden name="_method" value="put" />
             <s:textfield label="Book Name" name="name" value="%{book.name}" />
             <s:file name="upload" label="Select content file(*.txt)"></s:file>
