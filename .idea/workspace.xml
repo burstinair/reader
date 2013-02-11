@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cb148ef-a60a-49f6-aa46-652d4edd5065" name="Default" comment="Initialize">
+      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\commons-collections-3.2.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\javassist-3.11.0.GA.jar" afterPath="" />
+      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\servlet-api-2.4.jar" afterPath="" />
       <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\src\main\java\reader\package.properties" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/admin/EditController.java" afterPath="$PROJECT_DIR$/src/main/java/admin/EditController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/admin.xml" afterPath="$PROJECT_DIR$/src/main/resources/admin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/index.xml" afterPath="$PROJECT_DIR$/src/main/resources/index.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="burstreader.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360567493995" ignored="false" />
+    <file path="/Dummy.txt" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360568487915" ignored="false" />
     <file path="/hibernate.cfg.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360395547645" ignored="false" />
     <file path="/HibernateUtil.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360475063914" ignored="false" />
     <file path="/burstreader.iml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360467860789" ignored="false" />
@@ -23,7 +28,7 @@
     <file path="/edit.jsp" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360567793742" ignored="false" />
     <file path="/Edit.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360492421097" ignored="false" />
     <file path="/Index.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360493259866" ignored="false" />
-    <file path="/web.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360561268801" ignored="false" />
+    <file path="/web.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360568661392" ignored="false" />
     <file path="/Admin.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360492398232" ignored="false" />
     <file path="/Profile.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360492452695" ignored="false" />
     <file path="/ReaderController.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360566985446" ignored="false" />
@@ -32,7 +37,7 @@
     <file path="/EditController.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360567849989" ignored="false" />
     <file path="/IndexController.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360564146303" ignored="false" />
     <file path="/Util.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360565266455" ignored="false" />
-    <file path="/struts.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360565309819" ignored="false" />
+    <file path="/struts.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360568854402" ignored="false" />
     <file path="/BookMarkService.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360567114231" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +53,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
@@ -84,6 +88,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -93,33 +98,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="struts.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="struts.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="9" selection-start="838" selection-end="838" vertical-scroll-proportion="-9.423077">
+            <state line="19" column="0" selection-start="837" selection-end="837" vertical-scroll-proportion="0.84070796">
               <folding />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/index.xml">
           <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
             <state />
           </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="0" selection-start="690" selection-end="690" vertical-scroll-proportion="-10.961538">
+              <folding />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Edit.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/Edit.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="19" selection-start="449" selection-end="449" vertical-scroll-proportion="-8.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/admin.xml">
+          <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="33" selection-start="576" selection-end="576" vertical-scroll-proportion="0.65">
-              <folding />
-            </state>
-          </provider>
           <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
             <state />
           </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="13" selection-start="478" selection-end="478" vertical-scroll-proportion="-2.3076923">
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Index.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/Index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="12" selection-start="79" selection-end="79" vertical-scroll-proportion="-1.25">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -144,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/java/admin/Edit.java" />
         <option value="$PROJECT_DIR$/src/main/java/reader/Profile.java" />
         <option value="$PROJECT_DIR$/src/main/java/reader/Index.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/reader/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/java/reader/ProfileController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/reader/index.jsp" />
@@ -156,6 +199,7 @@
         <option value="$PROJECT_DIR$/src/main/java/service/BookMarkService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/edit.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/admin/EditController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/struts.xml" />
       </list>
     </option>
@@ -247,6 +291,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -513,24 +559,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="burstreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="burstreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -548,12 +578,12 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Downloaded.Files.Path" value="D:\Tools\rhc\burstreader\lib" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -579,6 +609,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -607,19 +650,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -833,7 +863,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -841,7 +871,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40065682" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -854,7 +884,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20644216" sideWeight="0.6" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.6" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.6" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -925,37 +955,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/admin/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="4" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/index.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="17" selection-start="664" selection-end="664" vertical-scroll-proportion="-8.346154">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/reader/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="5" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.7684391">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/reader/ProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="19" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="5" selection-start="865" selection-end="865" vertical-scroll-proportion="0.7941681">
@@ -963,28 +962,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/Admin.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="24" selection-start="297" selection-end="297" vertical-scroll-proportion="0.4095563">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/Index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="13" selection-start="503" selection-end="503" vertical-scroll-proportion="0.83928573">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/profile.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/Profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="17" selection-start="991" selection-end="991" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/reader.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/Reader.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="33" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0">
           <folding />
@@ -1019,37 +1018,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/edit.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/admin.xml">
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="52" selection-start="482" selection-end="482" vertical-scroll-proportion="0.37567085">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/Edit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="9" selection-start="838" selection-end="838" vertical-scroll-proportion="-9.423077">
+        <state line="14" column="19" selection-start="449" selection-end="449" vertical-scroll-proportion="-8.75">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/index.xml">
       <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="690" selection-end="690" vertical-scroll-proportion="-10.961538">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="576" selection-end="576" vertical-scroll-proportion="0.65">
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
         <state />
       </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="478" selection-end="478" vertical-scroll-proportion="-2.3076923">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="22" selection-start="512" selection-end="512" vertical-scroll-proportion="-3.1748466">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="12" selection-start="79" selection-end="79" vertical-scroll-proportion="-1.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="837" selection-end="837" vertical-scroll-proportion="0.84070796">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

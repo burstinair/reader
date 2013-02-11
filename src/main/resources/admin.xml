@@ -7,11 +7,11 @@
 <struts>
     <package name="admin" namespace="/admin" extends="struts-default">
         <action name="admin" class="admin.AdminController">
-            <result>/admin/admin.jsp</result>
+            <result>/admin/Admin.jsp</result>
         </action>
         <action name="edit" class="admin.EditController">
-            <result>/admin/edit.jsp</result>
-            <result name="input">/admin/edit.jsp</result>
+            <result>/admin/Edit.jsp</result>
+            <result name="input">/admin/Edit.jsp</result>
         </action>
     </package>
 </struts>

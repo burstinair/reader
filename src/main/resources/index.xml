@@ -7,13 +7,13 @@
 <struts>
     <package name="reader" namespace="/reader" extends="struts-default">
         <action name="index" class="reader.IndexController">
-            <result>/reader/index.jsp</result>
+            <result>/reader/Index.jsp</result>
         </action>
         <action name="reader" class="reader.ReaderController">
-            <result>/reader/reader.jsp</result>
+            <result>/reader/Reader.jsp</result>
         </action>
         <action name="profile" class="reader.ProfileController">
-            <result>/reader/profile.jsp</result>
+            <result>/reader/Profile.jsp</result>
         </action>
     </package>
 </struts>
