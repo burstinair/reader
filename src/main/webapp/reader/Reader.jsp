@@ -25,6 +25,7 @@
                 [<s:a href="%{@java.lang.String@format('/reader/reader/%d_1_%d', parsedId, wordCount)}">第一页</s:a>]
                 [<s:a href="%{@java.lang.String@format('/reader/reader/%d_%d_%d', parsedId, pageCount, wordCount)}">末页</s:a>]
                 <br />
+                [<s:property value="curPage" /> / <s:property value="pageCount" />]
                 <s:a href="%{@java.lang.String@format('/reader/reader/%d_%d_%d_abm', parsedId, curPage, wordCount)}">[添加书签]</s:a>
             </div>
             <s:a href="%{'/reader/profile/' + parsedId}">[返回书页]</s:a>
