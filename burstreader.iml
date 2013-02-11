@@ -14,9 +14,9 @@
         <configuration>
           <fileset id="s2fileset" name="Default File Set " removed="false">
             <file>file://$MODULE_DIR$/src/main/resources/struts.xml</file>
-            <file>jar://$MODULE_DIR$/lib/struts2-core.jar!/struts-default.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/index.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/admin.xml</file>
+            <file>jar://$MODULE_DIR$/lib/struts2-core-2.3.7.jar!/struts-default.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>
@@ -89,6 +89,7 @@
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-commons-annotations:3.2.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.xerial.thirdparty:sqlitejdbc-nested:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:3.5.4-" level="project" />
+    <orderEntry type="library" name="org.apache.struts:struts2-rest-plugin:2.3.7" level="project" />
   </component>
 </module>
 

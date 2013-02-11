@@ -7,18 +7,19 @@ package admin;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import model.Book;
+import org.apache.struts2.rest.DefaultHttpHeaders;
+import org.apache.struts2.rest.HttpHeaders;
 import service.BookService;
 
 /**
  *
  * @author Burst
  */
-public class Admin extends ActionSupport {
-    
-    @Override
-    public String execute() throws Exception {
+public class AdminController extends ActionSupport {
+
+    public HttpHeaders index() throws Exception {
         _books = BookService.getIndex();
-        return SUCCESS;
+        return new DefaultHttpHeaders(SUCCESS).disableCaching();
     }
     
     private ArrayList<Book> _books;

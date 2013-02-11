@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cb148ef-a60a-49f6-aa46-652d4edd5065" name="Default" comment="Initialize" />
+    <list default="true" id="5cb148ef-a60a-49f6-aa46-652d4edd5065" name="Default" comment="Initialize">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_apache_struts_struts2_rest_plugin_2_3_7.xml" />
+      <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\src\main\java\reader\package.properties" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/BookMarkService.java" afterPath="$PROJECT_DIR$/src/main/java/service/BookMarkService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/Util.java" afterPath="$PROJECT_DIR$/src/main/java/service/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/admin.xml" afterPath="$PROJECT_DIR$/src/main/resources/admin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/burstreader.iml" afterPath="$PROJECT_DIR$/burstreader.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/index.xml" afterPath="$PROJECT_DIR$/src/main/resources/index.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\Tools\rhc\burstreader\src\main\java\admin\Admin.java" afterPath="$PROJECT_DIR$/src/main/java/admin/AdminController.java" />
+      <change type="MOVED" beforePath="D:\Tools\rhc\burstreader\src\main\java\admin\Edit.java" afterPath="$PROJECT_DIR$/src/main/java/admin/EditController.java" />
+      <change type="MOVED" beforePath="D:\Tools\rhc\burstreader\src\main\java\reader\Index.java" afterPath="$PROJECT_DIR$/src/main/java/reader/IndexController.java" />
+      <change type="MOVED" beforePath="D:\Tools\rhc\burstreader\src\main\java\reader\Profile.java" afterPath="$PROJECT_DIR$/src/main/java/reader/ProfileController.java" />
+      <change type="MOVED" beforePath="D:\Tools\rhc\burstreader\src\main\java\reader\Reader.java" afterPath="$PROJECT_DIR$/src/main/java/reader/ReaderController.java" />
+      <change type="MOVED" beforePath="D:\Tools\rhc\burstreader\src\main\webapp\admin\Admin.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" />
+      <change type="MOVED" beforePath="D:\Tools\rhc\burstreader\src\main\webapp\admin\Edit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/admin/edit.jsp" />
+      <change type="MOVED" beforePath="D:\Tools\rhc\burstreader\src\main\webapp\reader\Index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/reader/index.jsp" />
+      <change type="MOVED" beforePath="D:\Tools\rhc\burstreader\src\main\webapp\reader\Profile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/reader/profile.jsp" />
+      <change type="MOVED" beforePath="D:\Tools\rhc\burstreader\src\main\webapp\reader\Reader.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/reader/reader.jsp" />
+    </list>
     <ignored path="burstreader.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360479665553" ignored="false" />
+    <file path="/Dummy.txt" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360560873299" ignored="false" />
     <file path="/hibernate.cfg.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360395547645" ignored="false" />
     <file path="/HibernateUtil.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360475063914" ignored="false" />
     <file path="/burstreader.iml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360467860789" ignored="false" />
     <file path="/pom.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360478332564" ignored="false" />
     <file path="/BookException.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360478951056" ignored="false" />
+    <file path="/index.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360488300865" ignored="false" />
+    <file path="/admin.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360486130719" ignored="false" />
+    <file path="/index.jsp" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360566488016" ignored="false" />
+    <file path="/profile.jsp" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360566615353" ignored="false" />
+    <file path="/reader.jsp" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360566901037" ignored="false" />
+    <file path="/admin.jsp" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360566569221" ignored="false" />
+    <file path="/edit.jsp" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360566524992" ignored="false" />
+    <file path="/Edit.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360492421097" ignored="false" />
+    <file path="/Index.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360493259866" ignored="false" />
+    <file path="/web.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360561268801" ignored="false" />
+    <file path="/Admin.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360492398232" ignored="false" />
+    <file path="/Profile.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360492452695" ignored="false" />
+    <file path="/ReaderController.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360566985446" ignored="false" />
+    <file path="/fragment.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360566129147" ignored="false" />
+    <file path="/ProfileController.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360566161378" ignored="false" />
+    <file path="/EditController.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360563087516" ignored="false" />
+    <file path="/IndexController.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360564146303" ignored="false" />
+    <file path="/Util.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360565266455" ignored="false" />
+    <file path="/struts.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360565309819" ignored="false" />
+    <file path="/BookMarkService.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360567114231" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +68,7 @@
   </component>
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -68,19 +112,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HibernateUtil.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/HibernateUtil.java">
+      <file leaf-file-name="profile.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/profile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="3" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
+            <state line="25" column="17" selection-start="991" selection-end="991" vertical-scroll-proportion="-8.125">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Reader.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/reader/Reader.java">
+      <file leaf-file-name="reader.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/reader.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="13" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.46312177">
+            <state line="25" column="33" selection-start="1113" selection-end="1113" vertical-scroll-proportion="-4.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfileController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/reader/ProfileController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="19" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReaderController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/reader/ReaderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="101" column="0" selection-start="2639" selection-end="2639" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/BookService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="13" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookMarkService.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/BookMarkService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="51" selection-start="535" selection-end="535" vertical-scroll-proportion="0.57894737">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Util.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/Util.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="5" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/reader/IndexController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="5" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -104,13 +202,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/burstreader.iml" />
+        <option value="$PROJECT_DIR$/src/main/java/admin/Edit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/reader/Profile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/reader/Index.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/admin/EditController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/reader/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/struts.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/service/HibernateUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/BookException.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/reader/ProfileController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/reader/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/service/Util.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin/edit.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/admin/admin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/reader/profile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/reader/reader.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/reader/ReaderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/BookMarkService.java" />
       </list>
     </option>
   </component>
@@ -201,57 +308,12 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="burstreader" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="burstreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.xerial.thirdparty:sqlitejdbc-nested:3.6.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sqlitejdbc-nested-3.6.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sqlite" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="burstreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.xerial.thirdparty:sqlitejdbc-nested:3.6.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sqlitejdbc-nested-3.6.0.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -303,6 +365,114 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -323,6 +493,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,14 +548,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burstreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.116027534" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -367,17 +590,17 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="D:/develop/IDEAProjects/lib/xwork-core.jar!/" />
-    <property name="project.structure.side.proportion" value="0.11210762" />
+    <property name="project.structure.side.proportion" value="0.20966184" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Downloaded.Files.Path" value="D:\Tools\rhc\burstreader\lib" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -403,6 +626,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -431,19 +667,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -656,8 +879,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -671,6 +894,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -682,7 +906,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -749,33 +972,33 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/Util.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/reader/package.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="31" selection-start="416" selection-end="416" vertical-scroll-proportion="0.42477876" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/ant.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/admin/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="163" selection-end="163" vertical-scroll-proportion="0.18010291" />
+        <state line="23" column="4" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/admin/EditController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="29" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/index.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/admin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="25" selection-start="92" selection-end="92" vertical-scroll-proportion="-1.25">
+        <state line="16" column="17" selection-start="664" selection-end="664" vertical-scroll-proportion="-8.346154">
           <folding />
         </state>
       </provider>
@@ -785,112 +1008,84 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="401" selection-end="401" vertical-scroll-proportion="-7.5">
+        <state line="13" column="32" selection-start="679" selection-end="679" vertical-scroll-proportion="-4.8461537">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/Admin.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/reader/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="15" selection-start="570" selection-end="570" vertical-scroll-proportion="-9.666667" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/Profile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="16" selection-start="522" selection-end="522" vertical-scroll-proportion="-4.5" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/burstreader.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="44" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.8130081" />
-      </provider>
-    </entry>
-    <entry file="uml://MAVEN/burstreader:burstreader:1.0">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MAVEN</ID>
-          <OriginalElement>burstreader:burstreader:1.0</OriginalElement>
-          <nodes>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.xml.soap:jboss-saaj-api_1.3_spec:jar:1.0.2.Final-redhat-1</node>
-            <node x="" y="">burstreader:antlr:jar:2.7.6</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.2_spec:jar:1.0.4.Final-redhat-1</node>
-            <node x="" y="">burstreader:xword-core:jar:1.0</node>
-            <node x="" y="">burstreader:slf4j-api:jar:1.5.8</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.xml.registry:jboss-jaxr-api_1.0_spec:jar:1.0.2.Final-redhat-1</node>
-            <node x="" y="">burstreader:ognl:jar:1.0</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.faces:jboss-jsf-api_2.1_spec:jar:2.0.2.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/javax.jws:jsr181-api:jar:1.0-MR1-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_1.1_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.security.jacc:jboss-jacc-api_1.4_spec:jar:1.0.2.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/javax.enterprise:cdi-api:jar:1.0-SP4-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.enterprise.deploy:jboss-jad-api_1.2_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/javax.inject:javax.inject:jar:1-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/javax.validation:validation-api:jar:1.0.0.GA-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.resource:jboss-connector-api_1.6_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.management.j2ee:jboss-j2eemgmt-api_1.1_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">burstreader:burstreader:1.0</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec:jar:1.0.2.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.xml.ws:jboss-jaxws-api_2.2_spec:jar:2.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.security.auth.message:jboss-jaspi-api_1.0_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.2_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.hibernate.javax.persistence:hibernate-jpa-2.0-api:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.xml.rpc:jboss-jaxrpc-api_1.1_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.servlet.jstl:jboss-jstl-api_1.2_spec:jar:1.0.3.Final-redhat-1</node>
-            <node x="" y="">burstreader:jta:jar:1.1</node>
-            <node x="" y="">burstreader:struts2-core:jar:1.0</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/javax.activation:activation:jar:1.1.1-redhat-1</node>
-            <node x="" y="">burstreader:asm-commons:jar:1.0</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/javax.mail:mail:jar:1.4.4-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.annotation:jboss-annotations-api_1.1_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.jms:jboss-jms-api_1.1_spec:jar:1.0.1.Final-redhat-1</node>
-            <node x="" y="">org.jboss.spec:jboss-javaee-6.0:pom:3.0.0.Final-redhat-1/org.jboss.spec.javax.el:jboss-el-api_2.2_spec:jar:1.0.1.Final-redhat-1</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.2581818181818182" x="285.0" y="418.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>All</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="18" selection-start="818" selection-end="818" vertical-scroll-proportion="-0.93495935" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/xerial/thirdparty/sqlitejdbc-nested/3.6.0/sqlitejdbc-nested-3.6.0.jar!/org/sqlite/SQLite.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="19" selection-start="407" selection-end="407" vertical-scroll-proportion="0.41284403" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/BookException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.051457975" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="21" selection-start="2468" selection-end="2468" vertical-scroll-proportion="-0.15789473">
+        <state line="46" column="5" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/HibernateUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/reader/ProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="3" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
+        <state line="49" column="19" selection-start="1229" selection-end="1229" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/reader/Reader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="13" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.46312177">
+        <state line="31" column="5" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="17" selection-start="795" selection-end="795" vertical-scroll-proportion="0.8107143">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="24" selection-start="297" selection-end="297" vertical-scroll-proportion="0.4095563">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="503" selection-end="503" vertical-scroll-proportion="0.83928573">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="17" selection-start="991" selection-end="991" vertical-scroll-proportion="-8.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/reader.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="33" selection-start="1113" selection-end="1113" vertical-scroll-proportion="-4.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/reader/ReaderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="0" selection-start="2639" selection-end="2639" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/BookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/BookMarkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="51" selection-start="535" selection-end="535" vertical-scroll-proportion="0.57894737">
           <folding />
         </state>
       </provider>
@@ -914,11 +1109,11 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Web (burstreader)|Web</last-edited>
+          <last-edited>Struts 2 (burstreader)|Struts 2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.11210762" />
+                <option value="0.20966184" />
               </list>
             </option>
           </splitter-proportions>
@@ -950,11 +1145,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>burstreader</last-edited>
+          <last-edited>Struts 2|Web|burstreader</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.11210762" />
+                <option value="0.20966184" />
               </list>
             </option>
           </splitter-proportions>
@@ -974,11 +1169,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.1.Final-redhat-1</last-edited>
+          <last-edited>org.apache.struts:struts2-rest-plugin:2.3.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.11210762" />
+                <option value="0.20966184" />
               </list>
             </option>
           </splitter-proportions>

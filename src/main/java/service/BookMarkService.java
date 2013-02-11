@@ -21,7 +21,7 @@ public class BookMarkService {
     {
         Session session = HibernateUtil.getSessionFactory().openSession();
         ArrayList<BookMark> _bookmarks = new ArrayList<BookMark>();
-        for (Object o : session.createQuery("from BookMark where book_id=" + Id + " order by is_auto_save, add_date").list()) {
+        for (Object o : session.createQuery("from BookMark where book_id=" + Id + " order by is_auto_save, add_date desc").list()) {
             _bookmarks.add((BookMark)o);
         }
         session.close();

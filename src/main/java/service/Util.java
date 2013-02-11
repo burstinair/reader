@@ -8,6 +8,8 @@ package service;
  * To change this template use File | Settings | File Templates.
  */
 
+import org.apache.struts2.ServletActionContext;
+
 import java.io.*;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;

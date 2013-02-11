@@ -6,14 +6,14 @@
 
 <struts>
     <package name="reader" namespace="/reader" extends="struts-default">
-        <action name="Index" class="reader.Index">
-            <result>/reader/Index.jsp</result>
+        <action name="index" class="reader.IndexController">
+            <result>/reader/index.jsp</result>
         </action>
-        <action name="Reader" class="reader.Reader">
-            <result>/reader/Reader.jsp</result>
+        <action name="reader" class="reader.ReaderController">
+            <result>/reader/reader.jsp</result>
         </action>
-        <action name="Profile" class="reader.Profile">
-            <result>/reader/Profile.jsp</result>
+        <action name="profile" class="reader.ProfileController">
+            <result>/reader/profile.jsp</result>
         </action>
     </package>
 </struts>

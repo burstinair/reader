@@ -8,6 +8,9 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Date;
 import java.util.Map;
+
+import org.apache.struts2.rest.DefaultHttpHeaders;
+import org.apache.struts2.rest.HttpHeaders;
 import service.BookException;
 import model.BookMark;
 import service.BookMarkService;
@@ -17,45 +20,26 @@ import service.BookService;
  *
  * @author Burst
  */
-public class Reader extends ActionSupport {
-    
-    @Override
-    public String execute() throws Exception {
-        
-        ActionContext context = ActionContext.getContext();
-        Map<String, Object> params = context.getParameters();
+public class ReaderController extends ActionSupport {
+
+    public HttpHeaders index() throws Exception {
+        _not_exist = true;
+        return new DefaultHttpHeaders(SUCCESS).disableCaching();
+    }
+
+    public String show() throws Exception {
         
         try {
         
             _not_exist = false;
-            
-            int id;
-            try { 
-                id = Integer.parseInt(((String[])params.get("id"))[0]);
-            } catch (Exception ex) {
-                throw new BookException();
-            }
-            try {
-                cur_page = Integer.parseInt(((String[])params.get("cp"))[0]);
-            } catch(Exception ex) {
-                cur_page = 1;
-            }
-            try {
-                word_count = Integer.parseInt(((String[])params.get("wc"))[0]);
-            } catch(Exception ex) {
-                word_count = Integer.parseInt(this.getText("word_count"));
-            }
+
+            int id = parseId();
 
             page_count = BookService.getPageCount(id, word_count);
-            try {
-                _isfirstpage = cur_page == 1;
-                _islastpage = cur_page == page_count;
-                _title = BookService.getName(id);
-                _content = BookService.getContent(id, cur_page, word_count);
-            } catch(BookException ex) {
-                _isfirstpage = _islastpage = true;
-                _title = _content = "This book does not exist.";
-            }
+            _isfirstpage = cur_page == 1;
+            _islastpage = cur_page == page_count;
+            _title = BookService.getName(id);
+            _content = BookService.getContent(id, cur_page, word_count);
 
             BookMark bookmark = new BookMark();
             bookmark.setBookId(id);
@@ -65,20 +49,64 @@ public class Reader extends ActionSupport {
             bookmark.setIsAutoSave("true");
 
             BookMarkService.addAutoSaveBookMark(bookmark);
-            String[] actions = (String[])params.get("action");
-            if (actions != null && actions.length > 0) {
-	            if (actions[0].equals("bookmark")) {
-                    bookmark.setIsAutoSave("ufalse");
-	                BookMarkService.addBookMark(bookmark);
-	            }
+            if (add_bookmark) {
+                bookmark.setIsAutoSave("ufalse");
+                BookMarkService.addBookMark(bookmark);
             }
         
         } catch (BookException ex) {
             _not_exist = true;
-            _title = "This book does not exist.";
         }
         
         return SUCCESS;
+    }
+
+    private boolean add_bookmark;
+    private Integer _parsed_id;
+    public Integer getParsedId()
+    {
+        return _parsed_id;
+    }
+
+    private int parseId() throws BookException
+    {
+        if(_id == null) {
+            throw new BookException();
+        }
+
+        String[] params = _id.split("_");
+
+        try {
+            _parsed_id = Integer.parseInt(params[0]);
+        } catch (Exception ex) {
+            throw new BookException();
+        }
+
+        try {
+            cur_page = Integer.parseInt(params[1]);
+        } catch (Exception ex) {
+            cur_page = 1;
+        }
+
+        try {
+            word_count = Integer.parseInt(params[2]);
+        } catch (Exception ex) {
+            word_count = Integer.parseInt(this.getText("word_count"));
+        }
+
+        try {
+            add_bookmark = params[3].equals("abm");
+        } catch (Exception ex) {
+            add_bookmark = false;
+        }
+
+        return _parsed_id;
+    }
+
+    private String _id;
+    public void setId(String value)
+    {
+        _id = value;
     }
     
     private boolean _not_exist;

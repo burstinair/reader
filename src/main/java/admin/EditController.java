@@ -14,33 +14,33 @@ import model.Book;
 import java.io.File;
 import java.io.FileInputStream;
 import java.nio.CharBuffer;
+
+import org.apache.struts2.rest.HttpHeaders;
+import org.apache.struts2.rest.DefaultHttpHeaders;
+import service.BookException;
 import service.BookService;
 import service.Util;
+
 
 /**
  *
  * @author Burst
  */
-public class Edit extends ActionSupport {
-    
-    @Override
-    public String execute() throws Exception {
-        ActionContext context = ActionContext.getContext();
-        Map<String, Object> params = context.getParameters();
-        
-        int id = 0;
-        boolean isAdd = false;
-        try {
-            id = Integer.parseInt(((String[])params.get("id"))[0]);
-        } catch (Exception ex) {
-            isAdd = true;
-        }
+public class EditController extends ActionSupport {
+
+    public HttpHeaders index() throws Exception {
+        return new DefaultHttpHeaders(SUCCESS).disableCaching();
+    }
+
+    public String update() throws BookException
+    {
+        boolean isAdd = id == null;
         book = null;
         boolean isSubmit = true;
         try {
             book = new Book();
             book.setId(id);
-            book.setName(((String[]) params.get("name"))[0]);
+            book.setName(name);
             book.setContent(Util.readAllText(upload, Charset.forName("GBK")));
         } catch (Exception ex) {
             isSubmit = false;
@@ -60,7 +60,7 @@ public class Edit extends ActionSupport {
         return SUCCESS;
     }
 
-    /*private Integer id;
+    private Integer id;
     public Integer getId()
     {
         return id;
@@ -78,7 +78,7 @@ public class Edit extends ActionSupport {
     public void setName(String value)
     {
         name = value;
-    }*/
+    }
 
     private File upload;
     public File getUpload()

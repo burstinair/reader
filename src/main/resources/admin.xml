@@ -6,12 +6,12 @@
 
 <struts>
     <package name="admin" namespace="/admin" extends="struts-default">
-        <action name="Admin" class="admin.Admin">
-            <result>/admin/Admin.jsp</result>
+        <action name="admin" class="admin.AdminController">
+            <result>/admin/admin.jsp</result>
         </action>
-        <action name="Edit" class="admin.Edit">
-            <result>/admin/Edit.jsp</result>
-            <result name="input">/admin/Edit.jsp</result>
+        <action name="edit" class="admin.EditController">
+            <result>/admin/edit.jsp</result>
+            <result name="input">/admin/edit.jsp</result>
         </action>
     </package>
 </struts>
