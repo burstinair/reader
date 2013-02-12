@@ -28,7 +28,7 @@ public class BookMarkService {
         return _bookmarks;
     }
     
-    public static void addAutoSaveBookMark(BookMark bookmark)
+    public static synchronized void addAutoSaveBookMark(BookMark bookmark)
     {
         Session session = null;
         Transaction trans = null;
@@ -55,7 +55,7 @@ public class BookMarkService {
         }
     }
     
-    public static void addBookMark(BookMark bookmark)
+    public static synchronized void addBookMark(BookMark bookmark)
     {
         Session session = null;
         Transaction trans = null;
