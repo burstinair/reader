@@ -6,10 +6,12 @@
       <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\javassist-3.11.0.GA.jar" afterPath="" />
       <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\lib\servlet-api-2.4.jar" afterPath="" />
       <change type="DELETED" beforePath="D:\Tools\rhc\burstreader\src\main\java\reader\package.properties" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/BookMarkService.java" afterPath="$PROJECT_DIR$/src/main/java/service/BookMarkService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/reader/Reader.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/reader/Reader.jsp" />
     </list>
     <ignored path="burstreader.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360568487915" ignored="false" />
+    <file path="/Dummy.txt" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360673590564" ignored="false" />
     <file path="/hibernate.cfg.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360395547645" ignored="false" />
     <file path="/HibernateUtil.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360475063914" ignored="false" />
     <file path="/burstreader.iml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360467860789" ignored="false" />
@@ -34,7 +36,8 @@
     <file path="/IndexController.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360564146303" ignored="false" />
     <file path="/Util.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360565266455" ignored="false" />
     <file path="/struts.xml" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360568854402" ignored="false" />
-    <file path="/BookMarkService.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360567114231" ignored="false" />
+    <file path="/BookMarkService.java" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360673783972" ignored="false" />
+    <file path="/Reader.jsp" changelist="5cb148ef-a60a-49f6-aa46-652d4edd5065" time="1360673888505" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +52,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -84,7 +87,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -103,13 +106,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/index.xml">
-          <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="55" selection-start="459" selection-end="459" vertical-scroll-proportion="0.52715653">
+            <state line="20" column="0" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReaderController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/reader/ReaderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="171" column="30" selection-start="4032" selection-end="4032" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookMarkService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/BookMarkService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="24" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reader.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/Reader.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="16" selection-start="405" selection-end="405" vertical-scroll-proportion="-8.125">
               <folding />
             </state>
           </provider>
@@ -118,7 +145,7 @@
       <file leaf-file-name="Edit.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/Edit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="19" selection-start="449" selection-end="449" vertical-scroll-proportion="-8.75">
+            <state line="14" column="19" selection-start="449" selection-end="449" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -126,30 +153,30 @@
       </file>
       <file leaf-file-name="admin.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/admin.xml">
-          <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="web.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="0" selection-start="833" selection-end="833" vertical-scroll-proportion="0.70143884">
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
             <state />
           </provider>
           <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="478" selection-end="478" vertical-scroll-proportion="-5.769231">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
             <state />
           </provider>
         </entry>
@@ -157,7 +184,7 @@
       <file leaf-file-name="index.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="36" selection-start="103" selection-end="103" vertical-scroll-proportion="-1.25">
+            <state line="2" column="36" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -181,7 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/reader/Profile.java" />
         <option value="$PROJECT_DIR$/src/main/java/reader/Index.java" />
         <option value="$PROJECT_DIR$/src/main/java/reader/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/java/reader/ProfileController.java" />
@@ -191,12 +217,13 @@
         <option value="$PROJECT_DIR$/src/main/webapp/reader/profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/reader/reader.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/reader/ReaderController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/BookMarkService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin/edit.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/admin/EditController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/struts.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/Index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/service/BookMarkService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/reader/Reader.jsp" />
       </list>
     </option>
   </component>
@@ -287,7 +314,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -557,6 +583,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -574,12 +601,12 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="Downloaded.Files.Path" value="D:\Tools\rhc\burstreader\lib" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="Downloaded.Files.Path" value="D:\Tools\rhc\burstreader\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -605,19 +632,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -646,6 +660,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -979,30 +1006,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/Reader.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="33" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/reader/ReaderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="0" selection-start="2639" selection-end="2639" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/BookService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="13" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/BookMarkService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="24" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1015,18 +1021,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/admin.xml">
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin/Edit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="449" selection-end="449" vertical-scroll-proportion="-8.75">
+        <state line="14" column="19" selection-start="449" selection-end="449" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1039,46 +1045,67 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="837" selection-end="837" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="36" selection-start="103" selection-end="103" vertical-scroll-proportion="-1.25">
+        <state line="2" column="36" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/index.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/reader/ReaderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="171" column="30" selection-start="4032" selection-end="4032" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/BookMarkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="24" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/reader/Reader.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="16" selection-start="405" selection-end="405" vertical-scroll-proportion="-8.125">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="833" selection-end="833" vertical-scroll-proportion="0.70143884">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
         <state />
       </provider>
       <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="478" selection-end="478" vertical-scroll-proportion="-5.769231">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/index.xml">
-      <provider editor-type-id="com.intellij.struts2.graph.fileEditor.Struts2GraphFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="55" selection-start="459" selection-end="459" vertical-scroll-proportion="0.52715653">
-          <folding />
-        </state>
       </provider>
     </entry>
   </component>

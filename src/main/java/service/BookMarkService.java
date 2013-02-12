@@ -30,25 +30,51 @@ public class BookMarkService {
     
     public static void addAutoSaveBookMark(BookMark bookmark)
     {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction trans = session.beginTransaction();
-        List list = session.createQuery("from BookMark where book_id=" + bookmark.getBookId() + " and is_auto_save='true'").list();
-        if (!list.isEmpty()) {
-            bookmark.setId(((BookMark) list.get(0)).getId());
+        Session session = null;
+        Transaction trans = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            trans = session.beginTransaction();
+            List list = session.createQuery("from BookMark where book_id=" + bookmark.getBookId() + " and is_auto_save='true'").list();
+            if (!list.isEmpty()) {
+                bookmark.setId(((BookMark) list.get(0)).getId());
+            }
+            session.merge(bookmark);
+            trans.commit();
+        } catch (Exception ex) {
+            try {
+                trans.rollback();
+            } catch (Exception ex2) {
+            }
+        } finally {
+            try {
+                session.flush();
+                session.close();
+            } catch (Exception ex) {
+            }
         }
-        session.merge(bookmark);
-        trans.commit();
-        session.flush();
-        session.close();
     }
     
     public static void addBookMark(BookMark bookmark)
     {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction trans = session.beginTransaction();
-        session.save(bookmark);
-        trans.commit();
-        session.flush();
-        session.close();
+        Session session = null;
+        Transaction trans = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            trans = session.beginTransaction();
+            session.save(bookmark);
+            trans.commit();
+        } catch (Exception ex) {
+            try {
+                trans.rollback();
+            } catch (Exception ex2) {
+            }
+        } finally {
+            try {
+                session.flush();
+                session.close();
+            } catch (Exception ex) {
+            }
+        }
     }
 }
