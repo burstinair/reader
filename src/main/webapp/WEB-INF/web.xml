@@ -5,17 +5,51 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
            version="2.5">
 
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+        	classpath*:config/spring/*.xml
+        </param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>urlrewrite</filter-name>
+		<filter-class>burst.reader.web.route.URLRewriteFilter</filter-class>
+	</filter>
+    <filter-mapping>
+        <filter-name>urlrewrite</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    	<init-param>
+    		<param-name>config</param-name>
+    		<param-value>struts-default.xml,struts-plugin.xml,config/struts/struts.xml</param-value>
+    	</init-param>
     </filter>
     <filter-mapping>
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
-        <dispatcher>INCLUDE</dispatcher>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+    
+    <servlet>
+        <servlet-name>JspSupportServlet</servlet-name>
+        <servlet-class>
+            org.apache.struts2.views.JspSupportServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
