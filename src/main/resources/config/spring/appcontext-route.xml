@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	
+	<bean id="urlRewriteRules" class="java.util.HashMap">  
+		<constructor-arg>
+	    	<map>
+				<entry key="^/([0-9]*)$">
+					<value><![CDATA[/reader/index?currentPage=$1]]></value>
+				</entry>
+				<entry key="^/profile/([0-9]+)$">
+					<value><![CDATA[/reader/profile?id=$1]]></value>
+				</entry>
+				<entry key="^/reader/([0-9]+)/([0-9]+)/([0-9]+)$">
+					<value><![CDATA[/reader/reader?id=$1&pageSize=$2&currentPage=$3]]></value>
+				</entry>
+				<entry key="^/reader/([0-9]+)$">
+					<value><![CDATA[/reader/reader?id=$1]]></value>
+				</entry>
+				<entry key="^/reader/([0-9]+)/([0-9]+)$">
+					<value><![CDATA[/reader/reader?id=$1&currentPage=$2]]></value>
+				</entry>
+				<entry key="^/reader/gotoPage/([0-9]+)/([0-9]+)$">
+					<value><![CDATA[/reader/reader?id=$1&pageSize=$2&redirect=true]]></value>
+				</entry>
+				<entry key="^/admin$">
+					<value><![CDATA[/admin/admin]]></value>
+				</entry>
+				<entry key="^/admin/([0-9]*)$">
+					<value><![CDATA[/admin/admin?currentPage=$1]]></value>
+				</entry>
+				<entry key="^/admin/edit/([0-9]+)$">
+					<value><![CDATA[/admin/edit?id=$1]]></value>
+				</entry>
+				<!--
+				<entry key="^/admin/execute_sql$">
+					<value><![CDATA[/admin/executeSQL]]></value>
+				</entry>
+				-->
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>
