@@ -14,7 +14,7 @@
             <ul>
                 <#list bookMarks?if_exists as mark>
                     <li>
-                        <a href="/reader/${mark.bookId}/${mark.page}/${mark.wordCount}">
+                        <a href="/reader/${mark.bookId}/${mark.wordCount}/${mark.page}">
                             [第 ${mark.page} 页 | 每页字数 ${mark.wordCount}]
                         </a>
                     </li>

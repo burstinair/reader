@@ -12,7 +12,7 @@ public class ReaderActionModel extends PageModelImpl {
     
     private int unboxedId;
     
-    private boolean redirect;
+    private String redirect;
     
     private String title;
 
@@ -37,36 +37,12 @@ public class ReaderActionModel extends PageModelImpl {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	public String getTitle()
-    {
-        return title;
-    }
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-		this.unboxedId = id;
-	}
-
-    public int getUnboxedId() {
-		return unboxedId;
-	}
-
-	public void setUnboxedId(int unboxedId) {
-		this.unboxedId = unboxedId;
-		this.id = unboxedId;
-	}
-
-	public String getContent()
-    {
+	
+	public String getContent() {
+		if(content == null) {
+			return "";
+		}
+		
     	StringBuilder res = new StringBuilder();
     	for (int i = 0, l = content.length(); i < l; ++i) {
     		char c = content.charAt(i);
@@ -91,15 +67,36 @@ public class ReaderActionModel extends PageModelImpl {
     			res.append(c);
     		}
     	}
-        return res.toString();
-        //return content;
+    	return res.toString();
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getTitle()
+    {
+        return title;
     }
 
-	public void setRedirect(boolean redirect) {
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+		this.unboxedId = id;
+	}
+
+    public int getUnboxedId() {
+		return unboxedId;
+	}
+
+	public void setIsRedirect(String redirect) {
 		this.redirect = redirect;
 	}
 
-	public boolean isRedirect() {
+	public String getIsRedirect() {
 		return redirect;
 	}
 }

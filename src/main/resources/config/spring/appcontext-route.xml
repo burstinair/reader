@@ -12,24 +12,29 @@
 	<bean id="urlRewriteRules" class="java.util.HashMap">  
 		<constructor-arg>
 	    	<map>
-				<entry key="^/([0-9]*)$">
-					<value><![CDATA[/reader/index?currentPage=$1]]></value>
-				</entry>
-				<entry key="^/profile/([0-9]+)$">
-					<value><![CDATA[/reader/profile?id=$1]]></value>
-				</entry>
 				<entry key="^/reader/([0-9]+)/([0-9]+)/([0-9]+)$">
 					<value><![CDATA[/reader/reader?id=$1&pageSize=$2&currentPage=$3]]></value>
 				</entry>
 				<entry key="^/reader/([0-9]+)$">
 					<value><![CDATA[/reader/reader?id=$1]]></value>
 				</entry>
+				<entry key="^/reader/([0-9]+)/([0-9]+)/([0-9]+)/(.+)$">
+					<value><![CDATA[/reader/reader?id=$1&pageSize=$2&currentPage=$3&bookmarkAction=$4]]></value>
+				</entry>
+				<entry key="^/reader/gotoPage/([0-9]+)/([0-9]+).*$">
+					<value><![CDATA[/reader/reader?id=$1&pageSize=$2&redirect=true]]></value>
+				</entry>
 				<entry key="^/reader/([0-9]+)/([0-9]+)$">
 					<value><![CDATA[/reader/reader?id=$1&currentPage=$2]]></value>
 				</entry>
-				<entry key="^/reader/gotoPage/([0-9]+)/([0-9]+)$">
-					<value><![CDATA[/reader/reader?id=$1&pageSize=$2&redirect=true]]></value>
+				
+				<entry key="^/([0-9]*)$">
+					<value><![CDATA[/reader/index?currentPage=$1]]></value>
 				</entry>
+				<entry key="^/profile/([0-9]+)$">
+					<value><![CDATA[/reader/profile?id=$1]]></value>
+				</entry>
+				
 				<entry key="^/admin$">
 					<value><![CDATA[/admin/admin]]></value>
 				</entry>

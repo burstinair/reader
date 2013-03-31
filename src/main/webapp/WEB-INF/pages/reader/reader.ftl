@@ -11,18 +11,15 @@
 			该书不存在。
         <#else>
             <div class="content">
-            	${title}
-                ${content}
+				${content}
             </div>
             <div class="navi">
             	<#assign pagerPrefix="/reader/${id}/${pageSize}">
             	<#include "/WEB-INF/pages/pager.ftl">
-                <br />
             	<form action="/reader/gotoPage/${id}/${pageSize}" method="GET">
             		<input name="currentPage" value="${currentPage}" />
             		<input type="submit" value="GO" />
             	</form>
-                <br />
                 <a href="${pagerPrefix}/${currentPage}/single">[设为标签]</a>
                 <a href="${pagerPrefix}/${currentPage}/normal">[添加书签]</a>
             </div>

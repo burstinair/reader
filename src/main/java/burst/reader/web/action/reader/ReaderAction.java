@@ -24,7 +24,7 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
 	public String execute() throws Exception {
         try {
         
-        	if(model.isRedirect()) {
+        	if("true".equals(model.getIsRedirect())) {
         		return "redirect";
         	}
         	
@@ -33,9 +33,9 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
         	}
         	
         	model.setNotExist(false);
-        	        	
-        	BookDAO.getPagedContent(model.getUnboxedId(), model);
+        	
             model.setTitle(BookDAO.getName(model.getUnboxedId()));
+        	model.setContent(BookDAO.getPagedContent(model.getUnboxedId(), model));
 
             BookMarkDTO bookmark = new BookMarkDTO();
             bookmark.setBookId(model.getId());
