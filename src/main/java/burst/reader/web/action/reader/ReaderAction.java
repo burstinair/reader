@@ -42,7 +42,6 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
             bookmark.setAddDate(new Date());
             bookmark.setPage(model.getCurrentPage());
             bookmark.setWordCount(model.getPageSize());
-            bookmark.setIsAutoSave("true");
 
             BookMarkDAO.addAutoSaveBookMark(bookmark);
             if ("normal".equals(model.getBookmarkAction())) {

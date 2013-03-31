@@ -15,7 +15,13 @@
                 <#list bookMarks?if_exists as mark>
                     <li>
                         <a href="/reader/${mark.bookId}/${mark.wordCount}/${mark.page}">
-                            [第 ${mark.page} 页 | 每页字数 ${mark.wordCount}]
+                            [第 ${mark.page} 页 | 每页字数 ${mark.wordCount}
+                            <#if mark.isAutoSave == "true">
+                            	| 自动保存
+                            <#elseif mark.isAutoSave == "single">
+                            	| 标签
+                            </#if>
+                            ]
                         </a>
                     </li>
                 </#list>

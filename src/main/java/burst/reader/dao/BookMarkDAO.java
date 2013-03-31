@@ -42,6 +42,8 @@ public class BookMarkDAO {
 	
 	private void addSpecialBookMark(BookMarkDTO bookmark, String special)
 	{
+		bookmark.setId(0);
+		bookmark.setIsAutoSave(special);
         Session session = null;
         Transaction trans = null;
         try {
@@ -74,7 +76,7 @@ public class BookMarkDAO {
 
 	public synchronized void addSingleBookMark(BookMarkDTO bookmark)
 	{
-		addSpecialBookMark(bookmark, "single");
+		addSpecialBookMark(bookmark, "tsingle");
 	}
     
     public synchronized void addBookMark(BookMarkDTO bookmark)
