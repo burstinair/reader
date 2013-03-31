@@ -18,7 +18,7 @@
                             [第 ${mark.page} 页 | 每页字数 ${mark.wordCount}
                             <#if mark.isAutoSave == "true">
                             	| 自动保存
-                            <#elseif mark.isAutoSave == "single">
+                            <#elseif mark.isAutoSave == "tsingle">
                             	| 标签
                             </#if>
                             ]
