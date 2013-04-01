@@ -26,17 +26,17 @@ import burst.web.model.PageModel;
 public class BookDAO {
 	
 	public SessionFactory getSessionFactory() {
-		return SessionFactory;
+		return this.sessionFactory;
 	}
 	public void setSessionFactory(SessionFactory sessionFactory) {
-		SessionFactory = sessionFactory;
+		this.sessionFactory = sessionFactory;
 	}
 
-	private SessionFactory SessionFactory;
+	private SessionFactory sessionFactory;
     
     public ArrayList<BookDTO> getIndex(PageModel model)
     {
-        Session session = SessionFactory.openSession();
+        Session session = sessionFactory.openSession();
         ArrayList<BookDTO> index = new ArrayList<BookDTO>();
         Query q = session.createQuery("select id, name from BookDTO order by id desc");
         q.setFirstResult((model.getCurrentPage() - 1) * model.getPageSize());
@@ -66,7 +66,7 @@ public class BookDAO {
     }
     public void update(BookDTO book) throws BookException
     {
-        Session session = SessionFactory.openSession();
+        Session session = sessionFactory.openSession();
         Transaction trans = session.beginTransaction();
         session.merge(book);
         trans.commit();
@@ -84,7 +84,7 @@ public class BookDAO {
             return _cache.get(Id);
         }
         
-        Session session = SessionFactory.openSession();
+        Session session = sessionFactory.openSession();
         List<BookDTO> list = session.createQuery("from BookDTO where id=" + Id).list();
         session.close();
         if (list.isEmpty()) {
@@ -122,7 +122,7 @@ public class BookDAO {
     
     public void addBook(BookDTO book)
     {
-        Session session = SessionFactory.openSession();
+        Session session = sessionFactory.openSession();
         Transaction trans = session.beginTransaction();
         session.save(book);
         trans.commit();
@@ -132,7 +132,7 @@ public class BookDAO {
     
     public void deleteBook(int Id)
     {
-        Session session = SessionFactory.openSession();
+        Session session = sessionFactory.openSession();
         Transaction trans = session.beginTransaction();
         BookDTO book = new BookDTO();
         book.setId(Id);

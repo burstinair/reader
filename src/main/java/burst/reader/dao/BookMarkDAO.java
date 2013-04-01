@@ -19,19 +19,19 @@ import burst.reader.dto.BookMarkDTO;
  */
 public class BookMarkDAO {
 	
-	private SessionFactory SessionFactory;
+	private SessionFactory sessionFactory;
     
     public SessionFactory getSessionFactory() {
-		return SessionFactory;
+		return this.sessionFactory;
 	}
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
-		SessionFactory = sessionFactory;
+		this.sessionFactory = sessionFactory;
 	}
 
 	public ArrayList<BookMarkDTO> getBookMarks(int Id)
     {
-        Session session = SessionFactory.openSession();
+        Session session = sessionFactory.openSession();
         ArrayList<BookMarkDTO> _bookmarks = new ArrayList<BookMarkDTO>();
         for (Object o : session.createQuery("from BookMarkDTO where book_id=" + Id + " order by is_auto_save, add_date desc").list()) {
             _bookmarks.add((BookMarkDTO)o);
@@ -47,7 +47,7 @@ public class BookMarkDAO {
         Session session = null;
         Transaction trans = null;
         try {
-            session = SessionFactory.openSession();
+            session = sessionFactory.openSession();
             trans = session.beginTransaction();
             List list = session.createQuery(String.format("from BookMarkDTO where book_id=%d and is_auto_save='%s'", bookmark.getBookId(), special)).list();
             if (!list.isEmpty()) {
@@ -84,7 +84,7 @@ public class BookMarkDAO {
         Session session = null;
         Transaction trans = null;
         try {
-            session = SessionFactory.openSession();
+            session = sessionFactory.openSession();
             trans = session.beginTransaction();
             session.save(bookmark);
             trans.commit();

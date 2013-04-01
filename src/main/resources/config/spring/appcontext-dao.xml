@@ -9,13 +9,50 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-	<bean id="SessionFactory" class="burst.reader.dao.SessionFactoryFactoryBean"></bean>
-
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="jdbcUrl" value="jdbc:sqlite:${OPENSHIFT_DATA_DIR}/data.db" />
+		<property name="driverClass" value="org.sqlite.JDBC" />
+		<property name="minPoolSize" value="1" />
+		<property name="maxPoolSize" value="5" />
+		<property name="initialPoolSize" value="1" />
+		<property name="maxIdleTime" value="1800" />
+		<property name="idleConnectionTestPeriod" value="60" />
+		<property name="acquireRetryAttempts" value="3" />
+		<property name="acquireRetryDelay" value="300" />
+		<property name="maxStatements" value="0"/>
+		<property name="maxStatementsPerConnection" value="100"/>
+		<property name="numHelperThreads" value="6"/>
+		<property name="maxAdministrativeTaskTime" value="5"/>
+		<property name="preferredTestQuery" value="SELECT 1"/>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"> 
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="annotatedClasses">
+			<list>
+                <value>burst.reader.dto.BookDTO</value>
+                <value>burst.reader.dto.BookMarkDTO</value>
+            </list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">burst.reader.dao.SQLiteDialect</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!--
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<tx:annotation-driven transaction-manager="txManager" />
+	-->
+	 
 	<bean id="bookDAO" class="burst.reader.dao.BookDAO">
-		<property name="SessionFactory" ref="SessionFactory"></property>
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
 	<bean id="bookMarkDAO" class="burst.reader.dao.BookMarkDAO">
-		<property name="SessionFactory" ref="SessionFactory"></property>
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 </beans>
