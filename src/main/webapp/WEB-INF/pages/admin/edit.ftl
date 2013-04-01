@@ -13,9 +13,9 @@
         </div>
         <@s.form method="post" action="/admin/editSubmit" enctype="multipart/form-data">
             <@s.hidden name="id" value="%{book.id}" />
-            <@s.textfield label="Book Name" name="name" value="%{book.name}" />
-            <@s.file name="upload" label="Select content file(*.txt)"></@s.file>
-            <@s.submit label="Submit" />
+            <@s.textfield label="书名" name="name" value="%{book.name}" />
+            <@s.file name="upload" label="选择文件(*.txt)"></@s.file>
+            <@s.submit label="提交" />
         </@s.form>
     </body>
 </html>

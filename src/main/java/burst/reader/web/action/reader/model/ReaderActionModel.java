@@ -12,7 +12,7 @@ public class ReaderActionModel extends PageModelImpl {
     
     private int unboxedId;
     
-    private String redirect;
+    private Boolean redirect;
     
     private String title;
 
@@ -92,11 +92,11 @@ public class ReaderActionModel extends PageModelImpl {
 		return unboxedId;
 	}
 
-	public void setIsRedirect(String redirect) {
+	public void setRedirect(Boolean redirect) {
 		this.redirect = redirect;
 	}
 
-	public String getIsRedirect() {
+	public Boolean isRedirect() {
 		return redirect;
 	}
 }

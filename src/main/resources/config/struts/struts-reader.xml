@@ -11,6 +11,7 @@
         </action>
         <action name="reader" class="burst.reader.web.action.reader.ReaderAction">
             <result type="freemarker">/WEB-INF/pages/reader/reader.ftl</result>
+            <result name="input" type="redirect">/reader/${id}/${pageSize}/${currentPage}</result>
             <result name="redirect" type="redirect">/reader/${id}/${pageSize}/${currentPage}</result>
         </action>
         <action name="profile" class="burst.reader.web.action.reader.ProfileAction">

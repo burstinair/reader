@@ -28,17 +28,17 @@ public class URLRewriteFilter implements Filter {
 	
 	private String getRewritedURL(Matcher m, String pattern, HttpServletRequest hsRequest) {
 		String res = pattern;
-		String queryString = hsRequest.getQueryString();
+		//String queryString = hsRequest.getQueryString();
 		for (int i = 1, l = m.groupCount(); i <= l; ++i) {
 			res = res.replaceAll("\\$" + i, m.group(i));
 		}
-		if(queryString != null && !"".equals(queryString)) {
+		/*if(queryString != null && !"".equals(queryString)) {
 			if(res.indexOf("?") != -1) {
 				res = res + "&" + queryString;
 			} else {
 				res = res + "?" + queryString;
 			}
-		}
+		}*/
 		return hsRequest.getContextPath() + res;
 	}
 	

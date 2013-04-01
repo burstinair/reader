@@ -103,19 +103,19 @@ public class BookDAO {
     	int cur_page = model.getCurrentPage();
     	int word_count = model.getPageSize();
         int start_pos = (cur_page - 1) * word_count, end_pos = start_pos + word_count;
-        String content = getBook(Id).getContent();
-        if (content.length() < start_pos) {
-            return "";
-        }
-        if (content.length() < end_pos) {
-            end_pos = content.length();
-        }
         int total = getBook(Id).getContent().length();
         if(total % word_count == 0) {
             model.setPageCount(total / word_count);
         }
         else {
             model.setPageCount(total / word_count + 1);
+        }
+        String content = getBook(Id).getContent();
+        if (content.length() < start_pos) {
+            return "";
+        }
+        if (content.length() < end_pos) {
+            end_pos = content.length();
         }
         return content.substring(start_pos, end_pos);
     }

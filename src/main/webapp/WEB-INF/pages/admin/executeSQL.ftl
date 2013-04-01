@@ -6,11 +6,24 @@
 	</head>
 	<body>
 		<form method="POST">
-			input sql:
+			SQL:
 			<br />
-			<@s.textfield />
-			<@s.submit />
-			<@s.submit />
+			<input name="queryString" />
+			<input type="submit" name="nonQuery" value="执行SQL" />
+			<input type="submit" name="query" value="执行SQL并返回结果" />
 		</form>
-	</body
+		
+		<#if resultRows??>
+			<table class="result">
+				<#list resultRows?if_exists as row>
+					<tr>
+						<#list row as column>
+							<td>${column}</td>
+						</#list>
+					</tr>
+				</#list>
+			</table>
+		</#if>
+		
+	</body>
 </html>

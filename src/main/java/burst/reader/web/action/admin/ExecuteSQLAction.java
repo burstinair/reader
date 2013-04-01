@@ -19,6 +19,12 @@ public class ExecuteSQLAction extends BaseAction implements ModelDriven<ExecuteS
 	
 	public String execute() {
         
+		if(model.getQuery() != null) {
+			
+		} else {
+			
+		}
+		
         return SUCCESS;
     }
 

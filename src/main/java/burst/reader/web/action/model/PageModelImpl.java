@@ -45,11 +45,11 @@ public class PageModelImpl implements PageModel {
 	}
 	
 	public boolean isFirstPage() {
-		return this.currentPage == 1;
+		return this.currentPage <= 1;
 	}
 	
 	public boolean isLastPage() {
-		return this.currentPage == this.pageCount;
+		return this.currentPage >= this.pageCount;
 	}
 	
 }

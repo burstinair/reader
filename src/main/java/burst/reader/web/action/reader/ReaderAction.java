@@ -24,7 +24,7 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
 	public String execute() throws Exception {
         try {
         
-        	if("true".equals(model.getIsRedirect())) {
+        	if(model.isRedirect() != null && model.isRedirect()) {
         		return "redirect";
         	}
         	
