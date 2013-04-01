@@ -6,7 +6,6 @@ package burst.reader.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
@@ -17,6 +16,7 @@ import org.hibernate.criterion.Projections;
 
 import burst.reader.BookException;
 import burst.reader.dto.BookDTO;
+import burst.reader.util.MaxCountLimitedMap;
 import burst.web.model.PageModel;
 
 /**
@@ -58,7 +58,7 @@ public class BookDAO {
         return index;
     }
     
-    private ConcurrentHashMap<Integer, BookDTO> _cache = new ConcurrentHashMap<Integer, BookDTO>();
+    private MaxCountLimitedMap<Integer, BookDTO> _cache = new MaxCountLimitedMap<Integer, BookDTO>(10);
     
     public void update(int Id)
     {

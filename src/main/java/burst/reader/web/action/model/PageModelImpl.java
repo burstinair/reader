@@ -17,21 +17,33 @@ public class PageModelImpl implements PageModel {
 	}
 	public void setCurrentPage(Integer currentPage) {
 		this.currentPage = currentPage;
-		this.unboxedCurrentPage = currentPage;
+		if(currentPage == null) {
+			this.unboxedCurrentPage = 0;
+		} else {
+			this.unboxedCurrentPage = currentPage;
+		}
 	}
 	public Integer getPageSize() {
 		return pageSize;
 	}
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
-		this.unboxedPageSize = pageSize;
+		if(pageSize == null) {
+			this.unboxedPageSize = 0;
+		} else {
+			this.unboxedPageSize = pageSize;
+		}
 	}
 	public Integer getPageCount() {
 		return pageCount;
 	}
 	public void setPageCount(Integer pageCount) {
 		this.pageCount = pageCount;
-		this.unboxedPageCount = pageCount;
+		if(pageCount == null) {
+			this.unboxedPageCount = 0;
+		} else {
+			this.unboxedPageCount = pageCount;
+		}
 	}
 	
 	public int getUnboxedCurrentPage() {

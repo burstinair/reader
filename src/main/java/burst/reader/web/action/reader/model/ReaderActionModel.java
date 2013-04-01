@@ -85,7 +85,11 @@ public class ReaderActionModel extends PageModelImpl {
 
 	public void setId(Integer id) {
 		this.id = id;
-		this.unboxedId = id;
+		if(id == null) {
+			this.unboxedId = 0;
+		} else {
+			this.unboxedId = id;
+		}
 	}
 
     public int getUnboxedId() {

@@ -14,7 +14,11 @@ public class EditActionModel {
     public void setId(Integer value)
     {
         id = value;
-        unboxedId = value;
+        if(value == null) {
+        	unboxedId = 0;
+        } else {
+        	unboxedId = value;
+        }
     }
     
     private int unboxedId;

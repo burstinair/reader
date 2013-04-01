@@ -10,7 +10,11 @@ public class ProfileActionModel {
     public void setId(Integer value)
     {
         id = value;
-        unboxedId = value;
+        if(value == null) {
+        	this.unboxedId = 0;
+        } else {
+	        unboxedId = value;
+	    }
     }
     public Integer getId()
     {
