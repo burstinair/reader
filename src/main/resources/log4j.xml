@@ -10,14 +10,14 @@
 	</appender>
 
 	<appender name="appAppender" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="logs/app.log" />
+		<param name="File" value="${OPENSHIFT_DATA_DIR}logs/app.log" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="[burst-reader]%d %-5p [%c] %m%n" />
 		</layout>
 	</appender>
 	
 	<appender name="ibatisAppender" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="logs/ibatis.log" />
+		<param name="File" value="${OPENSHIFT_DATA_DIR}logs/ibatis.log" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="[burst-reader]%d %-5p [%c] %m%n" />
 		</layout>
