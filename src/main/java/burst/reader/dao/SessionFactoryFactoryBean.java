@@ -27,6 +27,7 @@ public class SessionFactoryFactoryBean implements FactoryBean<SessionFactory> {
             } else if (!data_dir.endsWith("/") && !data_dir.endsWith("\\")) {
                 data_dir += '/';
             }
+            System.setProperty("OPENSHIFT_DATA_DIR", data_dir);
             sessionFactory = new AnnotationConfiguration()
                     .setProperty("hibernate.dialect", "burst.reader.dao.SQLiteDialect")
                     .setProperty("hibernate.connection.driver_class", "org.sqlite.JDBC")
