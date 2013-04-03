@@ -1,6 +1,7 @@
 package burst.reader.web.action.reader.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import burst.reader.dto.BookMarkDTO;
 
@@ -32,17 +33,17 @@ public class ProfileActionModel {
         return bookName;
     }
     
-    private ArrayList<BookMarkDTO> bookmarks;
-    public ArrayList<BookMarkDTO> getBookMarks()
+    private List<BookMarkDTO> bookmarks;
+    public List<BookMarkDTO> getBookMarks()
     {
         return bookmarks;
     }
     
-    public ArrayList<BookMarkDTO> getBookmarks() {
+    public List<BookMarkDTO> getBookmarks() {
 		return bookmarks;
 	}
-	public void setBookmarks(ArrayList<BookMarkDTO> bookmarks) {
-		this.bookmarks = bookmarks;
+	public void setBookmarks(List<BookMarkDTO> list) {
+		this.bookmarks = list;
 	}
 	public void setBookName(String bookName) {
 		this.bookName = bookName;

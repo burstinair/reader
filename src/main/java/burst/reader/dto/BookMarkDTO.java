@@ -7,28 +7,14 @@ package burst.reader.dto;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 /**
  *
  * @author Burst
  */
-@Entity
-@Table(name = "book_mark")
 public class BookMarkDTO implements Serializable {
     
 	private static final long serialVersionUID = -5663823481587712387L;
 	
-	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Integer id;
     public Integer getId()
     {
@@ -39,7 +25,6 @@ public class BookMarkDTO implements Serializable {
         id = value;
     }
     
-    @Column(name = "book_id")
     private Integer book_id;
     public Integer getBookId()
     {
@@ -50,7 +35,6 @@ public class BookMarkDTO implements Serializable {
         book_id = value;
     }
     
-    @Column(name = "page")
     private Integer page;
     public Integer getPage()
     {
@@ -61,7 +45,6 @@ public class BookMarkDTO implements Serializable {
         page = value;
     }
     
-    @Column(name = "word_count")
     private Integer word_count;
     public Integer getWordCount()
     {
@@ -72,8 +55,6 @@ public class BookMarkDTO implements Serializable {
         word_count = value;
     }
     
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "add_date")
     private Date add_date;
     public Date getAddDate()
     {
@@ -84,14 +65,13 @@ public class BookMarkDTO implements Serializable {
         add_date = value;
     }
     
-    @Column(name = "is_auto_save")
-    private String is_auto_save;
-    public String getIsAutoSave()
+    private String special;
+    public String getSpecial()
     {
-        return is_auto_save;
+        return this.special;
     }
-    public void setIsAutoSave(String value)
+    public void setSpecial(String special)
     {
-        is_auto_save = value;
+    	this.special = special;
     }
 }

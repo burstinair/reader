@@ -26,33 +26,23 @@
 		<property name="preferredTestQuery" value="SELECT 1"/>
 	</bean>
 	
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"> 
-		<property name="dataSource" ref="dataSource"></property>
-		<property name="annotatedClasses">
-			<list>
-                <value>burst.reader.dto.BookDTO</value>
-                <value>burst.reader.dto.BookMarkDTO</value>
-            </list>
-		</property>
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">burst.reader.dao.SQLiteDialect</prop>
-			</props>
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean"> 
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation">
+			<value>classpath:config/sqlmap/sqlmap-config.xml</value>
 		</property>
 	</bean>
-	
-	<!--
-	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory"></property>
+		
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	<tx:annotation-driven transaction-manager="txManager" />
-	-->
-	 
-	<bean id="bookDAO" class="burst.reader.dao.BookDAO">
-		<property name="sessionFactory" ref="sessionFactory"></property>
+	
+	<bean id="bookService" class="burst.reader.service.BookService">
+		<property name="sqlMapClient" ref="sqlMapClient"></property>
 	</bean>
 	
-	<bean id="bookMarkDAO" class="burst.reader.dao.BookMarkDAO">
-		<property name="sessionFactory" ref="sessionFactory"></property>
+	<bean id="bookMarkService" class="burst.reader.service.BookMarkService">
+		<property name="sqlMapClient" ref="sqlMapClient"></property>
 	</bean>
 </beans>

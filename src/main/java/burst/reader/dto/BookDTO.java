@@ -6,26 +6,14 @@ package burst.reader.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 /**
  *
  * @author Burst
  */
-@Entity
-@Table(name = "book")
 public class BookDTO implements Serializable {
     
 	private static final long serialVersionUID = 7760145660891108552L;
 	
-	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Integer id;
     public Integer getId()
     {
@@ -36,7 +24,6 @@ public class BookDTO implements Serializable {
         id = value;
     }
     
-    @Column(name = "name")
     private String name;
     public String getName()
     {
@@ -47,7 +34,14 @@ public class BookDTO implements Serializable {
         name = value;
     }
     
-    @Column(name = "content")
+    private Boolean visible;
+	public void setVisible(Boolean visible) {
+		this.visible = visible;
+	}
+	public Boolean getVisible() {
+		return visible;
+	}
+    
     private String content;
     public String getContent()
     {

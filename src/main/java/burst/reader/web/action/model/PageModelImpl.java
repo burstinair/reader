@@ -1,6 +1,6 @@
 package burst.reader.web.action.model;
 
-import burst.web.model.PageModel;
+import burst.commons.model.PageModel;
 
 public class PageModelImpl implements PageModel {
 	

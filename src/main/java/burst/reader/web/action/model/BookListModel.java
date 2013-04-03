@@ -1,17 +1,17 @@
 package burst.reader.web.action.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import burst.reader.dto.BookDTO;
 
 public class BookListModel extends PageModelImpl {
 
-    private ArrayList<BookDTO> books;
+    private List<BookDTO> books;
     
-    public void setBooks(ArrayList<BookDTO> books) {
+    public void setBooks(List<BookDTO> books) {
 		this.books = books;
 	}
-	public ArrayList<BookDTO> getBooks()
+	public List<BookDTO> getBooks()
     {
         return books;
     }

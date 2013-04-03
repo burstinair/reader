@@ -1,4 +1,4 @@
-package burst.web.model;
+package burst.commons.model;
 
 public interface PageModel {
 
@@ -9,8 +9,4 @@ public interface PageModel {
 	void setCurrentPage(Integer currentPage);
 	void setPageSize(Integer pageSize);
 	void setPageCount(Integer pageCount);
-
-	int getUnboxedCurrentPage();
-	int getUnboxedPageSize();
-	int getUnboxedPageCount();
 }

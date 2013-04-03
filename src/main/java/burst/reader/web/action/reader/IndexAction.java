@@ -36,7 +36,7 @@ public class IndexAction extends BaseAction implements ModelDriven<IndexActionMo
 			model.setCurrentPage(1);
 		}
 		
-        model.setBooks(BookDAO.getIndex(model));
+        model.setBooks(bookService.getIndex(model));
         return SUCCESS;
     }
 

@@ -34,8 +34,8 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
         	
         	model.setNotExist(false);
         	
-            model.setTitle(BookDAO.getName(model.getUnboxedId()));
-        	model.setContent(BookDAO.getPagedContent(model.getUnboxedId(), model));
+            model.setTitle(bookService.getName(model.getUnboxedId()));
+        	model.setContent(bookService.getPagedContent(model.getUnboxedId(), model));
 
             BookMarkDTO bookmark = new BookMarkDTO();
             bookmark.setBookId(model.getId());
@@ -43,12 +43,12 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
             bookmark.setPage(model.getCurrentPage());
             bookmark.setWordCount(model.getPageSize());
 
-            BookMarkDAO.addAutoSaveBookMark(bookmark);
+            bookMarkService.addAutoSaveBookMark(bookmark);
             if ("normal".equals(model.getBookmarkAction())) {
-                bookmark.setIsAutoSave("ufalse");
-                BookMarkDAO.addBookMark(bookmark);
+                bookmark.setSpecial("ufalse");
+                bookMarkService.addBookMark(bookmark);
             } else if("single".equals(model.getBookmarkAction())) {
-                BookMarkDAO.addSingleBookMark(bookmark);
+                bookMarkService.addSingleBookMark(bookmark);
             }
         
         } catch (BookException ex) {

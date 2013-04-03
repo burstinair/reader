@@ -23,7 +23,7 @@ public class AdminAction extends BaseAction implements ModelDriven<AdminActionMo
 			model.setCurrentPage(1);
 		}
 		
-        model.setBooks(BookDAO.getIndex(model));
+        model.setBooks(bookService.getIndex(model));
         return SUCCESS;
     }
 

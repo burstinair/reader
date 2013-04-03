@@ -5,6 +5,7 @@
 package burst.reader.web.action.admin;
 
 import java.nio.charset.Charset;
+import java.sql.SQLException;
 
 import burst.reader.BookException;
 import burst.reader.dto.BookDTO;
@@ -25,7 +26,7 @@ public class EditAction extends BaseAction implements ModelDriven<EditActionMode
 	
 	public String execute() throws Exception {
         try {
-            model.setBook(BookDAO.getBook(model.getUnboxedId()));
+            model.setBook(bookService.getBook(model.getUnboxedId()));
         } catch (Exception ex) {
             model.setBook(null);
             model.setId(0);
@@ -33,7 +34,7 @@ public class EditAction extends BaseAction implements ModelDriven<EditActionMode
         return SUCCESS;
     }
 
-    public String submit() throws BookException
+    public String submit() throws BookException, SQLException
     {
         boolean isAdd = model.getId() == null || model.getUnboxedId() == 0;
         boolean isSubmit = true;
@@ -50,13 +51,13 @@ public class EditAction extends BaseAction implements ModelDriven<EditActionMode
         }
         if (isSubmit) {
             if (isAdd) {
-                BookDAO.addBook(book);
+                bookService.addBook(book);
             } else {
-                BookDAO.update(book);
+                bookService.update(book);
             }
         } else {
             if (!isAdd) {
-                model.setBook(BookDAO.getBook(model.getUnboxedId()));
+                model.setBook(bookService.getBook(model.getUnboxedId()));
             }
         }
         return "redirect";

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="BookMarkDao">
+
+	<typeAlias alias="BookMarkDTO" type="burst.reader.dto.BookMarkDTO" />
+
+	<select id="queryByBookId" parameterClass="BookMarkDTO" resultClass="BookMarkDTO">
+		select * from book_mark
+			where book_id = #bookId# order by special, add_date desc
+	</select>
+	
+	<select id="loadByBookIdAndSpecial" parameterClass="BookMarkDTO" resultClass="BookMarkDTO">
+		select * from book_mark where book_id = #bookId# and special = #special#
+	</select>
+	
+	<insert id="add" parameterClass="BookMarkDTO">
+		insert into book_mark values(
+			null, #bookId#, #page#, #wordCount#, #addDate#, #special#
+		)
+	</insert>
+	
+	<update id="update" parameterClass="BookMarkDTO">
+		update book_mark
+			set
+				book_id = #bookId#,
+				page = #page#,
+				word_count = #wordCount#,
+				add_date = #addDate#,
+				special = #special#
+			where
+				id = #id#
+	</update>
+	
+	<delete id="deleteByBookId" parameterClass="BookMarkDTO">
+		delete from book_mark where book_id = #bookId#
+	</delete>
+
+</sqlMap>

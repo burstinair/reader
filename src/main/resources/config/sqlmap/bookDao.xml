@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="bookDao">
+
+	<typeAlias alias="BookDTO" type="burst.reader.dto.BookDTO" />
+
+	<select id="page" parameterClass="burst.commons.model.PageModel" resultClass="BookDTO">
+		select id, name from book
+			order by id desc
+			limit
+				(#currentPage# - 1) * #pageSize#,
+				#currentPage# * #pageSize#
+	</select>
+
+	<select id="count" resultClass="java.lang.Integer">
+		select count(*) from book
+	</select>
+
+	<select id="load" parameterClass="BookDTO" resultClass="BookDTO">
+		select * from book where id = #id#
+	</select>
+
+	<update id="update" parameterClass="BookDTO">
+		update book
+			set
+				name = #name#,
+				visible = #visible#,
+				content = #content#
+			where
+				id = #id#
+	</update>
+
+	<insert id="add" parameterClass="BookDTO">
+		insert into book values(
+			null, #name#, #visible#, #content#
+		)
+	</insert>
+	
+	<delete id="delete" parameterClass="BookDTO">
+		delete from book where id = #id#
+	</delete>
+
+</sqlMap>
