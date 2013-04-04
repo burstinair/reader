@@ -24,7 +24,9 @@
                     [<a href="/author/${bookset.key}">${bookset.key}</a>]
                     <ul>
                         <#list bookset.value as book>
-                            <a href="/profile/${book.id}">${book.name}</a>
+                            <li>
+                                <a href="/profile/${book.id}">${book.name}</a>
+                            </li>
                         </#list>
                     </ul>
                 </li>

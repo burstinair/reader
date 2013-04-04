@@ -33,11 +33,12 @@ public class ExtendedRedirectResult extends StrutsResultSupport {
         HttpServletResponse response = ServletActionContext.getResponse();
 
         if(request.getHeader("User-Agent").toLowerCase().indexOf("untrusted/1.0") != -1) {
-            response.sendRedirect(finalLocation);
+            response.setContentType("text/vnd.wap.wml");
             PrintWriter writer = response.getWriter();
-            writer.print("<html><head>");
-            writer.print("<meta http-equiv=\"refresh\" content=\"0; url=" + finalLocation + "\">");
-            writer.print("</head></html>");
+            writer.print("<?xml version=\"1.0\"?><!DOCTYPE wml PUBLIC \"-//WAPFORUM//DTD WML 1.1//EN\" \"http://www.wapforum.org/DTD/wml_1.1.xml\">");
+            writer.print("<wml><head>");
+            writer.print("<meta http-equiv=\"Content-Type\" content=\"text/vnd.wap.wml;charset=UTF-8\"/>");
+            writer.print("</head><card id=\"main\" title=\"redirecting...\" onenterforward=\"" + finalLocation + "\"><p>redirecting...</p></card></wml>");
             writer.close();
         } else {
             if (SC_FOUND == statusCode) {
