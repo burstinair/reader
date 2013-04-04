@@ -22,13 +22,10 @@
             <#list books?if_exists.entrySet() as bookset>
                 <li>
                     [<a href="/author/${bookset.key}">${bookset.key}</a>]
-                    <ul>
-                        <#list bookset.value as book>
-                            <li>
-                                <a href="/profile/${book.id}">${book.name}</a>
-                            </li>
-                        </#list>
-                    </ul>
+                    <#list bookset.value as book>
+                        <br />
+                        <a href="/profile/${book.id}">${book.name}</a>
+                    </#list>
                 </li>
             </#list>
         </ul>
