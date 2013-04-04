@@ -22,8 +22,14 @@
 package burst.reader.web.action.reader;
 
 import burst.reader.dto.BookMarkDTO;
+import burst.reader.dto.BookDTO;
 import burst.reader.web.action.BaseAction;
 import burst.reader.web.action.reader.model.IndexActionModel;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
 
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -48,11 +54,22 @@ public class IndexAction extends BaseAction implements ModelDriven<IndexActionMo
 			model.setCurrentPage(1);
 		}
 
+        List<BookDTO> books = null;
+
         if(model.getAuthor() != null && !"".equals(model.getAuthor())) {
-            model.setBooks(bookService.getVisibleByAuthorIndex(model, model.getAuthor()));
+            books = bookService.getVisibleByAuthorIndex(model, model.getAuthor());
         } else {
-            model.setBooks(bookService.getVisibleIndex(model));
+            books = bookService.getVisibleIndex(model);
         }
+
+        Map<String, List<BookDTO>> res_books = new HashMap<String, List<BookDTO>>();
+        for(BookDTO book : books) {
+            if(!res_books.containsKey(book.getAuthor())) {
+                res_books.put(book.getAuthor(), new ArrayList<BookDTO>());
+            }
+            res_books.get(book.getAuthor()).add(book);
+        }
+        model.setBooks(res_books);
 
         return SUCCESS;
     }

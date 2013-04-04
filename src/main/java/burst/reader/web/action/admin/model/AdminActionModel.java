@@ -1,8 +1,21 @@
 package burst.reader.web.action.admin.model;
 
-import burst.reader.web.action.model.BookListModel;
+import burst.reader.dto.BookDTO;
+import burst.reader.web.action.model.PageModelImpl;
 
-public class AdminActionModel extends BookListModel {
+import java.util.List;
+
+public class AdminActionModel extends PageModelImpl {
+
+    private List<BookDTO> books;
+
+    public void setBooks(List<BookDTO> books) {
+        this.books = books;
+    }
+    public List<BookDTO> getBooks()
+    {
+        return books;
+    }
 
     private String action;
 

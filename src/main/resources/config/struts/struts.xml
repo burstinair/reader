@@ -15,8 +15,15 @@
 	<constant name="struts.objectFactory.spring.autoWire" value="type" />
     
     <include file="config/struts/struts-*.xml" />
-	
+
+    <package name="reader-default" extends="struts-default">
+        <result-types>
+            <result-type name="forward" class="burst.web.ForwardResult"></result-type>
+            <result-type name="extendedRedirect" class="burst.reader.web.ExtendedRedirectResult"></result-type>
+        </result-types>
+    </package>
+
     <!-- Configuration for the default package. -->
-    <package name="default" extends="struts-default">
+    <package name="default" extends="reader-default">
     </package>
 </struts>

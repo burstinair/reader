@@ -1,9 +1,22 @@
 package burst.reader.web.action.reader.model;
 
 import burst.reader.dto.BookMarkDTO;
-import burst.reader.web.action.model.BookListModel;
+import burst.reader.web.action.model.PageModelImpl;
+import java.util.Map;
+import java.util.List;
+import burst.reader.dto.BookDTO;
 
-public class IndexActionModel extends BookListModel {
+public class IndexActionModel extends PageModelImpl {
+
+    private Map<String, List<BookDTO>> books;
+
+    public Map<String, List<BookDTO>> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Map<String, List<BookDTO>> books) {
+        this.books = books;
+    }
 
     public String getAuthor() {
         return author;
