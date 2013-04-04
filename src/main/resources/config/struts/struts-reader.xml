@@ -8,7 +8,12 @@
     <package name="reader" namespace="/reader" extends="reader-default">
         <action name="index" class="burst.reader.web.action.reader.IndexAction">
             <result type="freemarker">/WEB-INF/pages/reader/index.ftl</result>
-            <result name="recent" type="extendedRedirect">/reader/${recentBookMark.bookId}/${recentBookMark.wordCount}/${recentBookMark.page}</result>
+        </action>
+        <action name="recent" class="burst.reader.web.action.reader.IndexAction" method="recent">
+            <result type="extendedRedirect">/reader/${recentBookMark.bookId}/${recentBookMark.wordCount}/${recentBookMark.page}</result>
+        </action>
+        <action name="author" class="burst.reader.web.action.reader.AuthorAction">
+            <result type="freemarker">/WEB-INF/pages/reader/author.ftl</result>
         </action>
         <action name="reader" class="burst.reader.web.action.reader.ReaderAction">
             <result type="freemarker">/WEB-INF/pages/reader/reader.ftl</result>

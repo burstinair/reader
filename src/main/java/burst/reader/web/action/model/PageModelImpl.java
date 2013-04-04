@@ -63,5 +63,4 @@ public class PageModelImpl implements PageModel {
 	public boolean isLastPage() {
 		return this.currentPage >= this.pageCount;
 	}
-	
 }

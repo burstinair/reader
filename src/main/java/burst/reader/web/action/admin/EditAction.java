@@ -46,6 +46,7 @@ public class EditAction extends BaseAction implements ModelDriven<EditActionMode
             book.setId(model.getId());
             book.setName(model.getName());
             book.setAuthor(model.getAuthor());
+            book.setVisible("visible");
             book.setContent(WebUtil.readAllText(model.getUpload(), Charset.forName("GBK")));
             model.setBook(book);
         } catch (Exception ex) {

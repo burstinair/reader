@@ -37,6 +37,11 @@ public class IndexAction extends BaseAction implements ModelDriven<IndexActionMo
 	
 	private static final long serialVersionUID = -7060433070277387333L;
 
+    public String recent() throws Exception {
+        model.setRecentBookMark(bookMarkService.loadRecent());
+        return SUCCESS;
+    }
+
 	public String execute() throws Exception {
 
         BookMarkDTO recent = bookMarkService.loadRecent();
@@ -46,21 +51,13 @@ public class IndexAction extends BaseAction implements ModelDriven<IndexActionMo
             model.setRecentBookName(bookService.getName(recent.getBookId()));
         }
 
-        if("recent".equals(model.getAction())) {
-            return "recent";
-        }
-
 		if(model.getCurrentPage() == null) {
 			model.setCurrentPage(1);
 		}
 
         List<BookDTO> books = null;
 
-        if(model.getAuthor() != null && !"".equals(model.getAuthor())) {
-            books = bookService.getVisibleByAuthorIndex(model, model.getAuthor());
-        } else {
-            books = bookService.getVisibleIndex(model);
-        }
+        books = bookService.getVisibleIndex(model);
 
         Map<String, List<BookDTO>> res_books = new HashMap<String, List<BookDTO>>();
         for(BookDTO book : books) {

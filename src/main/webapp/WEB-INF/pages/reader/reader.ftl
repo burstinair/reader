@@ -15,7 +15,7 @@
             </div>
             <div>
             	<#assign pagerPrefix="/reader/${id}/${pageSize}">
-            	<#include "/WEB-INF/pages/pager.ftl">
+                <#include "/WEB-INF/pages/pager.ftl">
             	<form action="/reader/gotoPage/${id}/${pageSize}" method="GET">
             		<input name="currentPage" value="${currentPage}" />
             		<input type="submit" value="GO" />

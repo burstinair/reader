@@ -126,6 +126,7 @@ public class BookService {
     public void addBook(BookDTO book) throws SQLException
     {
         sqlMapClient.insert("BookDao.add", book);
+        book.setId((Integer)sqlMapClient.queryForObject("BookDao.lastInsertId"));
     }
     
     @Transactional

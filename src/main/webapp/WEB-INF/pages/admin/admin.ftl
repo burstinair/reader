@@ -44,7 +44,7 @@
             <tr>
             	<td colspan="6">
 		        	<#assign pagerPrefix="/admin">
-		        	<#include "/WEB-INF/pages/pager.ftl">
+		            <#include "/WEB-INF/pages/pager.ftl">
             	</td>
             </tr>
         </table>

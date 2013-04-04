@@ -25,6 +25,12 @@
     <select id="loadRecent" resultMap="bookMark">
 		select * from book_mark order by add_date desc limit 0, 1
 	</select>
+
+    <select id="loadRecentByAuthor" resultMap="bookMark" parameterClass="java.lang.String">
+		select * from book_mark where book_id in (
+		    select id from book where author = #author#
+		) order by add_date desc limit 0, 1
+	</select>
 	
 	<insert id="add" parameterClass="BookMarkDTO">
 		insert into book_mark values(

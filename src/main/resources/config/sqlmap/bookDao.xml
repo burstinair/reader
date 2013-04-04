@@ -46,7 +46,7 @@
 		select count(*) from book where visible = 'visible'
 	</select>
 
-    <select id="pageVisibleByAuthor" parameterClass="burst.reader.web.action.reader.model.IndexActionModel" resultMap="indexBook">
+    <select id="pageVisibleByAuthor" parameterClass="burst.reader.web.action.reader.model.AuthorActionModel" resultMap="indexBook">
 		select id, name, author, add_date, visible from book
 		    where visible = 'visible' and author = #author#
 			order by add_date desc, id desc
@@ -88,6 +88,10 @@
 			null, #name#, #author#, #addDate#, #visible#, #content#
 		)
 	</insert>
+
+    <select id="lastInsertId" resultClass="java.lang.Integer">
+        select last_insert_rowid() from book limit 0, 1
+    </select>
 	
 	<delete id="delete" parameterClass="BookDTO">
 		delete from book where id = #id#

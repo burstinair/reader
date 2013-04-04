@@ -11,11 +11,11 @@
         </action>
         <action name="edit" class="burst.reader.web.action.admin.EditAction">
             <result type="freemarker">/WEB-INF/pages/admin/edit.ftl</result>
-            <result type="freemarker" name="input">/WEB-INF/pages/admin/edit.ftl</result>
+            <result name="input" type="freemarker">/WEB-INF/pages/admin/edit.ftl</result>
         </action>
         <action name="editSubmit" class="burst.reader.web.action.admin.EditAction" method="submit">
-            <result type="extendedRedirect" name="redirect">/admin/edit/${book.id}</result>
-            <result type="extendedRedirect" name="input">/admin/edit/${book.id}</result>
+            <result name="redirect" type="extendedRedirect">/admin/edit/${book.id}</result>
+            <result name="input" type="extendedRedirect">/admin/edit/${book.id}</result>
         </action>
         <action name="executeSQL" class="burst.reader.web.action.admin.ExecuteSQLAction">
             <result type="freemarker">/WEB-INF/pages/admin/executeSQL.ftl</result>

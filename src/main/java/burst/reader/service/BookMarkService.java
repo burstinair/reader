@@ -64,4 +64,8 @@ public class BookMarkService {
     public BookMarkDTO loadRecent() throws SQLException {
         return (BookMarkDTO)sqlMapClient.queryForObject("BookMarkDao.loadRecent");
     }
+
+    public BookMarkDTO loadRecentByAuthor(String author) throws SQLException {
+        return (BookMarkDTO)sqlMapClient.queryForObject("BookMarkDao.loadRecentByAuthor", author);
+    }
 }

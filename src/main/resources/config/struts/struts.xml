@@ -13,7 +13,7 @@
     -->
     
 	<constant name="struts.objectFactory.spring.autoWire" value="type" />
-    
+
     <include file="config/struts/struts-*.xml" />
 
     <package name="reader-default" extends="struts-default">
@@ -21,9 +21,25 @@
             <result-type name="forward" class="burst.web.ForwardResult"></result-type>
             <result-type name="extendedRedirect" class="burst.reader.web.ExtendedRedirectResult"></result-type>
         </result-types>
+
+        <global-results>
+            <result name="error">/error</result>
+        </global-results>
+
+        <!--
+
+        <global-exception-mappings>
+            <exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+        </global-exception-mappings>
+
+        -->
+
     </package>
 
     <!-- Configuration for the default package. -->
     <package name="default" extends="reader-default">
+        <action name="error" class="burst.reader.web.action.ErrorAction">
+            <result type="freemarker">/WEB-INF/pages/error.ftl</result>
+        </action>
     </package>
 </struts>

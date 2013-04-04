@@ -1,22 +1,39 @@
 package burst.reader.web.action.reader.model;
 
+import burst.reader.dto.BookDTO;
 import burst.reader.dto.BookMarkDTO;
 import burst.reader.web.action.model.PageModelImpl;
-import java.util.Map;
+
 import java.util.List;
-import burst.reader.dto.BookDTO;
 
-public class IndexActionModel extends PageModelImpl {
+/**
+ * Created with IntelliJ IDEA.
+ * User: Burst
+ * Date: 13-4-5
+ * Time: 上午12:50
+ * To change this template use File | Settings | File Templates.
+ */
+public class AuthorActionModel extends PageModelImpl {
 
-    private Map<String, List<BookDTO>> books;
-
-    public Map<String, List<BookDTO>> getBooks() {
+    public List<BookDTO> getBooks() {
         return books;
     }
 
-    public void setBooks(Map<String, List<BookDTO>> books) {
+    public void setBooks(List<BookDTO> books) {
         this.books = books;
     }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    private List<BookDTO> books;
+
+    private String author;
 
     private BookMarkDTO recentBookMark;
 
