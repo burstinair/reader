@@ -15,7 +15,7 @@
     </bean>
 	<bean id="indexActionModel" class="burst.reader.web.action.reader.model.IndexActionModel" parent="pageModelBase" />
     <bean id="authorActionModel" class="burst.reader.web.action.reader.model.AuthorActionModel" parent="pageModelBase" />
-	<bean id="readerActionModel" class="burst.reader.web.action.reader.model.ReaderActionModel">
+	<bean id="readerActionModel" class="burst.reader.web.action.reader.model.ReaderActionModel" parent="pageModelBase">
         <property name="pageSize" value="${wordCountPerPage}" />
 	</bean>
 	<bean id="profileActionModel" class="burst.reader.web.action.reader.model.ProfileActionModel" scope="prototype"></bean>
