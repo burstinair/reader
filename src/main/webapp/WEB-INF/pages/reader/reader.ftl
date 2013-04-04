@@ -1,5 +1,5 @@
 <#assign s=JspTaglibs["/WEB-INF/tld/struts-tags.tld"]>
-
+<#compress>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,10 +10,10 @@
         <#if notExist>
 			该书不存在。
         <#else>
-            <div class="content">
+            <div>
 				${content}
             </div>
-            <div class="navi">
+            <div>
             	<#assign pagerPrefix="/reader/${id}/${pageSize}">
             	<#include "/WEB-INF/pages/pager.ftl">
             	<form action="/reader/gotoPage/${id}/${pageSize}" method="GET">
@@ -28,3 +28,4 @@
         <a href="/">[返回首页]</a>
     </body>
 </html>
+</#compress>

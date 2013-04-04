@@ -35,10 +35,10 @@
                     <value><![CDATA[/reader/profile?id=$1]]></value>
                 </entry>
 
-                <entry key="^/author/(.+)$">
+                <entry key="^/author/([^/]+)$">
                     <value><![CDATA[/reader/index?author=$1]]></value>
                 </entry>
-                <entry key="^/author/(.+)/([0-9]+)$">
+                <entry key="^/author/([^/]+)/([0-9]*)$">
                     <value><![CDATA[/reader/index?author=$1&currentPage=$2]]></value>
                 </entry>
 

@@ -1,5 +1,5 @@
 <#assign s=JspTaglibs["/WEB-INF/tld/struts-tags.tld"]>
-
+<#compress>
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,3 +50,4 @@
         </table>
     </body>
 </html>
+</#compress>

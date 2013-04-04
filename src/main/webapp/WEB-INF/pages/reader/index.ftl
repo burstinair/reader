@@ -1,5 +1,5 @@
 <#assign s=JspTaglibs["/WEB-INF/tld/struts-tags.tld"]>
-
+<#compress>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +9,9 @@
     <body>
     	<div>
             <a href="/admin">[管理]</a>
+            <#if author??>
+                <a href="/">[返回首页]</a>
+            </#if>
         </div>
         <ul>
             <#if !author??>
@@ -21,17 +24,25 @@
             </#if>
             <#list books?if_exists.entrySet() as bookset>
                 <li>
-                    [<a href="/author/${bookset.key}">${bookset.key}</a>]
-                    <#list bookset.value as book>
+                    <#if !author??>
+                        [<a href="/author/${bookset.key}">${bookset.key}</a>]
                         <br />
+                    </#if>
+                    <#list bookset.value as book>
                         <a href="/profile/${book.id}">${book.name}</a>
+                        <br />
                     </#list>
                 </li>
             </#list>
         </ul>
         <div>
-        	<#assign pagerPrefix="/">
+            <#if author??>
+                <#assign pagerPrefix="/author/${author}">
+            <#else>
+                <#assign pagerPrefix="">
+            </#if>
         	<#include "/WEB-INF/pages/pager.ftl">
         </div>
     </body>
 </html>
+</#compress>
