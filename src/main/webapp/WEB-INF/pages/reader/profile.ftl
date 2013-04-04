@@ -16,9 +16,9 @@
                     <li>
                         <a href="/reader/${mark.bookId}/${mark.wordCount}/${mark.page}">
                             [第 ${mark.page} 页 | 每页字数 ${mark.wordCount}
-                            <#if mark.isAutoSave == "true">
+                            <#if mark.special == "auto">
                             	| 自动保存
-                            <#elseif mark.isAutoSave == "tsingle">
+                            <#elseif mark.special == "single">
                             	| 标签
                             </#if>
                             ]

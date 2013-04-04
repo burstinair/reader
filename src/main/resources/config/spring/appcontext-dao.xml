@@ -45,4 +45,8 @@
 	<bean id="bookMarkService" class="burst.reader.service.BookMarkService">
 		<property name="sqlMapClient" ref="sqlMapClient"></property>
 	</bean>
+
+    <bean id="executeSQLService" class="burst.reader.service.ExecuteSQLService">
+        <property name="sqlMapClient" ref="sqlMapClient"></property>
+    </bean>
 </beans>

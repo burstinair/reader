@@ -11,13 +11,13 @@ public abstract class BaseAction extends ActionSupport {
 	
 	protected BookService bookService;
 	
-	public void setBookDAO(BookService bookService) {
+	public void setBookService(BookService bookService) {
 		this.bookService = bookService;
 	}
 	
 	protected BookMarkService bookMarkService;
 
-	public void setBookMarkDAO(BookMarkService bookMarkService) {
+	public void setBookMarkService(BookMarkService bookMarkService) {
 		this.bookMarkService = bookMarkService;
 	}
 	

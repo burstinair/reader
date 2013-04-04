@@ -11,8 +11,15 @@
             <a href="/admin">[管理]</a>
         </div>
         <ul>
+            <li>
+                最近阅读：
+                <a href="/reader/${recentBookMark.bookId}/${recentBookMark.wordCount}/${recentBookMark.page}">
+                    [${recentBookName} | 第 ${recentBookMark.page} 页 | 每页字数 ${recentBookMark.wordCount}]
+                </a>
+            </li>
             <#list books?if_exists as book>
                 <li>
+                    [<a href="/author/${book.author}">${book.author}</a>]
                     <a href="/profile/${book.id}">${book.name}</a>
                 </li>
             </#list>

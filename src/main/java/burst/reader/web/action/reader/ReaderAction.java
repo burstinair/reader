@@ -45,7 +45,7 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
 
             bookMarkService.addAutoSaveBookMark(bookmark);
             if ("normal".equals(model.getBookmarkAction())) {
-                bookmark.setSpecial("ufalse");
+                bookmark.setSpecial("znormal");
                 bookMarkService.addBookMark(bookmark);
             } else if("single".equals(model.getBookmarkAction())) {
                 bookMarkService.addSingleBookMark(bookmark);

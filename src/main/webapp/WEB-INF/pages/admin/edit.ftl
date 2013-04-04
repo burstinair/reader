@@ -14,6 +14,7 @@
         <@s.form method="post" action="/admin/editSubmit" enctype="multipart/form-data">
             <@s.hidden name="id" value="%{book.id}" />
             <@s.textfield label="书名" name="name" value="%{book.name}" />
+            <@s.textfield label="作者" name="author" value="%{book.author}" />
             <@s.file name="upload" label="选择文件(*.txt)"></@s.file>
             <@s.submit label="提交" />
         </@s.form>

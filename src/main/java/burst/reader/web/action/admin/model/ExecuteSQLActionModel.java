@@ -27,6 +27,16 @@ public class ExecuteSQLActionModel {
 	public void setQuery(String query) {
 		this.query = query;
 	}
+
+    public void setResultStatus(int resultStatus) {
+        this.resultStatus = resultStatus;
+    }
+
+    public int getResultStatus() {
+        return resultStatus;
+    }
+
+    private int resultStatus;
 	
 	private List<List<Object>> resultRows;
 	public List<List<Object>> getResultRows() {

@@ -5,6 +5,7 @@
 package burst.reader.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  *
@@ -33,12 +34,32 @@ public class BookDTO implements Serializable {
     {
         name = value;
     }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    private String author;
+
+    public Date getAddDate() {
+        return addDate;
+    }
+
+    public void setAddDate(Date addDate) {
+        this.addDate = addDate;
+    }
+
+    private Date addDate;
     
-    private Boolean visible;
-	public void setVisible(Boolean visible) {
+    private String visible;
+	public void setVisible(String visible) {
 		this.visible = visible;
 	}
-	public Boolean getVisible() {
+	public String getVisible() {
 		return visible;
 	}
     

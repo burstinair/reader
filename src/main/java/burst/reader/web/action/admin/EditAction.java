@@ -6,6 +6,7 @@ package burst.reader.web.action.admin;
 
 import java.nio.charset.Charset;
 import java.sql.SQLException;
+import java.util.Date;
 
 import burst.reader.BookException;
 import burst.reader.dto.BookDTO;
@@ -44,12 +45,14 @@ public class EditAction extends BaseAction implements ModelDriven<EditActionMode
             book = new BookDTO();
             book.setId(model.getId());
             book.setName(model.getName());
+            book.setAuthor(model.getAuthor());
             book.setContent(WebUtil.readAllText(model.getUpload(), Charset.forName("GBK")));
             model.setBook(book);
         } catch (Exception ex) {
             isSubmit = false;
         }
         if (isSubmit) {
+            book.setAddDate(new Date());
             if (isAdd) {
                 bookService.addBook(book);
             } else {

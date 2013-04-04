@@ -27,28 +27,37 @@
 				<entry key="^/reader/([0-9]+)/([0-9]+)$">
 					<value><![CDATA[/reader/reader?id=$1&currentPage=$2]]></value>
 				</entry>
-				
+
 				<entry key="^/([0-9]*)$">
 					<value><![CDATA[/reader/index?currentPage=$1]]></value>
 				</entry>
-				<entry key="^/profile/([0-9]+)$">
-					<value><![CDATA[/reader/profile?id=$1]]></value>
-				</entry>
+                <entry key="^/profile/([0-9]+)$">
+                    <value><![CDATA[/reader/profile?id=$1]]></value>
+                </entry>
+
+                <entry key="^/author/(.+)$">
+                    <value><![CDATA[/reader/index?author=$1]]></value>
+                </entry>
+                <entry key="^/author/(.+)/([0-9]+)$">
+                    <value><![CDATA[/reader/index?author=$1&currentPage=$2]]></value>
+                </entry>
+
+                <entry key="^/recent$">
+                    <value><![CDATA[/reader/index?action=recent]]></value>
+                </entry>
 				
 				<entry key="^/admin$">
 					<value><![CDATA[/admin/admin]]></value>
 				</entry>
-				<entry key="^/admin/([0-9]*)$">
-					<value><![CDATA[/admin/admin?currentPage=$1]]></value>
-				</entry>
+                <entry key="^/admin/([0-9]*)$">
+                    <value><![CDATA[/admin/admin?currentPage=$1]]></value>
+                </entry>
+                <entry key="^/admin/([0-9]*)/(.+)/([0-9]+)$">
+                    <value><![CDATA[/admin/admin?currentPage=$1&action=$2&bookId=$3]]></value>
+                </entry>
 				<entry key="^/admin/edit/([0-9]+)$">
 					<value><![CDATA[/admin/edit?id=$1]]></value>
 				</entry>
-				<!--
-				<entry key="^/admin/execute_sql$">
-					<value><![CDATA[/admin/executeSQL]]></value>
-				</entry>
-				-->
 			</map>
 		</constructor-arg>
 	</bean>

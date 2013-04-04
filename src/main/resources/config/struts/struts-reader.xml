@@ -8,6 +8,7 @@
     <package name="reader" namespace="/reader" extends="struts-default">
         <action name="index" class="burst.reader.web.action.reader.IndexAction">
             <result type="freemarker">/WEB-INF/pages/reader/index.ftl</result>
+            <result type="redirect" name="recent">/reader/${recentBookMark.bookId}/${recentBookMark.wordCount}/${recentBookMark.page}</result>
         </action>
         <action name="reader" class="burst.reader.web.action.reader.ReaderAction">
             <result type="freemarker">/WEB-INF/pages/reader/reader.ftl</result>

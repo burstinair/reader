@@ -21,6 +21,7 @@
 
 package burst.reader.web.action.reader;
 
+import burst.reader.dto.BookMarkDTO;
 import burst.reader.web.action.BaseAction;
 import burst.reader.web.action.reader.model.IndexActionModel;
 
@@ -31,12 +32,28 @@ public class IndexAction extends BaseAction implements ModelDriven<IndexActionMo
 	private static final long serialVersionUID = -7060433070277387333L;
 
 	public String execute() throws Exception {
-		
+
+        BookMarkDTO recent = bookMarkService.loadRecent();
+
+        if(recent != null) {
+            model.setRecentBookMark(recent);
+            model.setRecentBookName(bookService.getName(recent.getBookId()));
+        }
+
+        if("recent".equals(model.getAction())) {
+            return "recent";
+        }
+
 		if(model.getCurrentPage() == null) {
 			model.setCurrentPage(1);
 		}
-		
-        model.setBooks(bookService.getIndex(model));
+
+        if(model.getAuthor() != null && !"".equals(model.getAuthor())) {
+            model.setBooks(bookService.getVisibleByAuthorIndex(model, model.getAuthor()));
+        } else {
+            model.setBooks(bookService.getVisibleIndex(model));
+        }
+
         return SUCCESS;
     }
 

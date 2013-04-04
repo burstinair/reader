@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
-<sqlMap namespace="bookDao">
+<sqlMap namespace="BookDao">
 
 	<typeAlias alias="BookDTO" type="burst.reader.dto.BookDTO" />
 
-	<select id="page" parameterClass="burst.commons.model.PageModel" resultClass="BookDTO">
-		select id, name from book
-			order by id desc
+    <resultMap id="book" class="burst.reader.dto.BookDTO">
+        <result property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="author" column="author" />
+        <result property="addDate" column="add_date" />
+        <result property="visible" column="visible" />
+        <result property="content" column="content" />
+    </resultMap>
+
+    <resultMap id="indexBook" class="burst.reader.dto.BookDTO">
+        <result property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="author" column="author" />
+        <result property="addDate" column="add_date" />
+        <result property="visible" column="visible" />
+    </resultMap>
+
+	<select id="page" parameterClass="burst.commons.model.PageModel" resultMap="indexBook">
+		select id, name, author, add_date, visible from book
+			order by add_date desc, id desc
 			limit
 				(#currentPage# - 1) * #pageSize#,
 				#currentPage# * #pageSize#
@@ -16,14 +33,50 @@
 		select count(*) from book
 	</select>
 
-	<select id="load" parameterClass="BookDTO" resultClass="BookDTO">
+    <select id="pageVisible" parameterClass="burst.commons.model.PageModel" resultMap="indexBook">
+		select id, name, author, add_date, visible from book
+		    where visible = 'visible'
+			order by add_date desc, id desc
+			limit
+				(#currentPage# - 1) * #pageSize#,
+				#currentPage# * #pageSize#
+	</select>
+
+    <select id="countVisible" resultClass="java.lang.Integer">
+		select count(*) from book where visible = 'visible'
+	</select>
+
+    <select id="pageVisibleByAuthor" parameterClass="burst.reader.web.action.reader.model.IndexActionModel" resultMap="indexBook">
+		select id, name, author, add_date, visible from book
+		    where visible = 'visible' and author = #author#
+			order by add_date desc, id desc
+			limit
+				(#currentPage# - 1) * #pageSize#,
+				#currentPage# * #pageSize#
+	</select>
+
+    <select id="countVisibleByAuthor" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+		select count(*) from book where visible = 'visible' and author = #author#
+	</select>
+
+	<select id="load" parameterClass="java.lang.Integer" resultMap="book">
 		select * from book where id = #id#
 	</select>
+
+    <update id="setVisible" parameterClass="BookDTO">
+		update book
+			set
+				visible = #visible#
+			where
+				id = #id#
+	</update>
 
 	<update id="update" parameterClass="BookDTO">
 		update book
 			set
 				name = #name#,
+				author = #author#,
+				add_date = #addDate#,
 				visible = #visible#,
 				content = #content#
 			where
@@ -32,7 +85,7 @@
 
 	<insert id="add" parameterClass="BookDTO">
 		insert into book values(
-			null, #name#, #visible#, #content#
+			null, #name#, #author#, #addDate#, #visible#, #content#
 		)
 	</insert>
 	

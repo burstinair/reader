@@ -36,6 +36,16 @@ public class EditActionModel {
         name = value;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    private String author;
+
     public void setBook(BookDTO book) {
 		this.book = book;
 	}

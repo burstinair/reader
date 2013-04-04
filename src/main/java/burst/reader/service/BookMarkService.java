@@ -25,9 +25,9 @@ public class BookMarkService {
 		this.sqlMapClient = sqlMapClient;
 	}
 
-	public List<BookMarkDTO> getBookMarks(int Id) throws SQLException
+	public List<BookMarkDTO> getBookMarks(int bookId) throws SQLException
     {
-		return (List<BookMarkDTO>)sqlMapClient.queryForList("BookMarkDao.queryByBookId", Id);
+		return (List<BookMarkDTO>)sqlMapClient.queryForList("BookMarkDao.queryByBookId", bookId);
     }
 	
 	@Transactional
@@ -35,27 +35,33 @@ public class BookMarkService {
 	{
 		bookmark.setId(0);
 		bookmark.setSpecial(special);
-		
-        BookMarkDTO last_bookmark = (BookMarkDTO)sqlMapClient.queryForObject("BookMarkDao.loadByBookIdAndSpecial");
-        if (last_bookmark != null) {
-            bookmark.setId(last_bookmark.getId());
+
+        Integer last_id = (Integer)sqlMapClient.queryForObject("BookMarkDao.loadIdByBookIdAndSpecial", bookmark);
+        if (last_id != null) {
+            bookmark.setId(last_id);
+            sqlMapClient.update("BookMarkDao.update", bookmark);
+        } else {
+            sqlMapClient.insert("BookMarkDao.add", bookmark);
         }
-        sqlMapClient.update("BookMarkDao.update", bookmark);
 	}
     
     public synchronized void addAutoSaveBookMark(BookMarkDTO bookmark) throws SQLException
     {
-		addSpecialBookMark(bookmark, "true");
+		addSpecialBookMark(bookmark, "auto");
     }
 
 	public synchronized void addSingleBookMark(BookMarkDTO bookmark) throws SQLException
 	{
-		addSpecialBookMark(bookmark, "tsingle");
+		addSpecialBookMark(bookmark, "single");
 	}
     
 	@Transactional
     public synchronized void addBookMark(BookMarkDTO bookmark) throws SQLException
     {
         sqlMapClient.insert("BookMarkDao.add", bookmark);
+    }
+
+    public BookMarkDTO loadRecent() throws SQLException {
+        return (BookMarkDTO)sqlMapClient.queryForObject("BookMarkDao.loadRecent");
     }
 }

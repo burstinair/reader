@@ -8,7 +8,7 @@
 		<form method="POST">
 			SQL:
 			<br />
-			<input name="queryString" />
+			<input name="queryString" value="${queryString!''}" />
 			<input type="submit" name="nonQuery" value="执行SQL" />
 			<input type="submit" name="query" value="执行SQL并返回结果" />
 		</form>

@@ -28,19 +28,38 @@ public class BookService {
 		this.sqlMapClient = sqlMapClient;
 	}
 
+    private void buildPageModel(PageModel model, Integer rowCount) {
+        int pageSize = model.getPageSize();
+        if(rowCount % pageSize != 0 || rowCount == 0)
+            model.setPageCount(rowCount / pageSize + 1);
+        else
+            model.setPageCount(rowCount / pageSize);
+    }
+
     @Transactional
     public List<BookDTO> getIndex(PageModel model) throws SQLException
     {
     	List<BookDTO> res = sqlMapClient.queryForList("BookDao.page", model);
-    	int rowCount = (Integer)sqlMapClient.queryForObject("BookDao.count");
-    	int pageSize = model.getPageSize();
-        if(rowCount % pageSize != 0 || rowCount == 0)
-        	model.setPageCount(rowCount / pageSize + 1);
-        else
-        	model.setPageCount(rowCount / pageSize);
+    	buildPageModel(model, (Integer)sqlMapClient.queryForObject("BookDao.count"));
         return res;
     }
-    
+
+    @Transactional
+    public List<BookDTO> getVisibleIndex(PageModel model) throws SQLException
+    {
+        List<BookDTO> res = sqlMapClient.queryForList("BookDao.pageVisible", model);
+        buildPageModel(model, (Integer)sqlMapClient.queryForObject("BookDao.countVisible"));
+        return res;
+    }
+
+    @Transactional
+    public List<BookDTO> getVisibleByAuthorIndex(PageModel model, String author) throws SQLException
+    {
+        List<BookDTO> res = sqlMapClient.queryForList("BookDao.pageVisibleByAuthor", model);
+        buildPageModel(model, (Integer)sqlMapClient.queryForObject("BookDao.countVisibleByAuthor", author));
+        return res;
+    }
+
     private MaxCountLimitedMap<Integer, BookDTO> _cache = new MaxCountLimitedMap<Integer, BookDTO>(10);
     
     public void update(int Id)
@@ -61,7 +80,7 @@ public class BookService {
     
     @Transactional
     public BookDTO getBookFromDb(int Id) throws BookException, SQLException
-    {        
+    {
         BookDTO book = (BookDTO)sqlMapClient.queryForObject("BookDao.load", Id);
         if (book == null) {
             throw new BookException();
@@ -117,5 +136,13 @@ public class BookService {
         sqlMapClient.delete("BookDao.delete", book);
         sqlMapClient.delete("BookMarkDao.deleteByBookId", book);
         update(Id);
+    }
+
+    @Transactional
+    public void setVisible(Integer bookId, String b) throws SQLException {
+        BookDTO book = new BookDTO();
+        book.setId(bookId);
+        book.setVisible(b);
+        sqlMapClient.update("BookDao.setVisible", book);
     }
 }
