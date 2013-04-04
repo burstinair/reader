@@ -1,10 +1,10 @@
 <#assign s=JspTaglibs["/WEB-INF/tld/struts-tags.tld"]>
-<#compress>
+<@compress single_line=true>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><@s.property value="bookName" default="该书不存在。" /></title>
+        <title>${bookName!"该书不存在。"}</title>
     </head>
     <body>
         <a href="/">[返回首页]</a>
@@ -30,4 +30,4 @@
         </#if>
     </body>
 </html>
-</#compress>
+</@compress>

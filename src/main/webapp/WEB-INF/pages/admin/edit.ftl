@@ -1,10 +1,10 @@
 <#assign s=JspTaglibs["/WEB-INF/tld/struts-tags.tld"]>
-<#compress>
+<@compress single_line=true>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><@s.property default="添加新书" value="'编辑 ' + book.name" /></title>
+        <title>${("编辑" + book.name)!"添加新书"}</title>
     </head>
     <body>
         <div>
@@ -20,4 +20,4 @@
         </@s.form>
     </body>
 </html>
-</#compress>
+</@compress>

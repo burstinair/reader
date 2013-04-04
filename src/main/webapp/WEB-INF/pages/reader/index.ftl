@@ -1,9 +1,9 @@
 <#assign s=JspTaglibs["/WEB-INF/tld/struts-tags.tld"]>
-<#compress>
+<@compress single_line=true>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Reader</title>
+        <title>${author!"Reader"}</title>
     </head>
 
     <body>
@@ -45,4 +45,4 @@
         </div>
     </body>
 </html>
-</#compress>
+</@compress>
