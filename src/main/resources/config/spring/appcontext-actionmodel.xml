@@ -18,7 +18,8 @@
 	<bean id="readerActionModel" class="burst.reader.web.action.reader.model.ReaderActionModel" parent="pageModelBase">
         <property name="pageSize" value="${wordCountPerPage}" />
 	</bean>
-	<bean id="profileActionModel" class="burst.reader.web.action.reader.model.ProfileActionModel" scope="prototype"></bean>
+    <bean id="profileActionModel" class="burst.reader.web.action.reader.model.ProfileActionModel" scope="prototype"></bean>
+    <bean id="downloadActionModel" class="burst.reader.web.action.reader.model.DownloadActionModel" scope="prototype"></bean>
 	
 	<bean id="adminActionModel" class="burst.reader.web.action.admin.model.AdminActionModel" parent="pageModelBase" />
 	<bean id="editActionModel" class="burst.reader.web.action.admin.model.EditActionModel" scope="prototype">

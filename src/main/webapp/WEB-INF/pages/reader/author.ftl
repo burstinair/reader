@@ -7,9 +7,6 @@
     </head>
 
     <body>
-    	<div>
-            <a href="/">[返回首页]</a>
-        </div>
         <ul>
             <#include "/WEB-INF/pages/recent.ftl">
             <#list books?if_exists as book>
@@ -21,6 +18,7 @@
         <div>
             <#assign pagerPrefix="/author/${author}">
 		    <#include "/WEB-INF/pages/pager.ftl">
+            <a href="/">[返回首页]</a>
         </div>
     </body>
 </html>

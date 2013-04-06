@@ -45,6 +45,10 @@
                 <entry key="^/recent$">
                     <value><![CDATA[/reader/recent]]></value>
                 </entry>
+
+                <entry key="^/download/([0-9]+)$">
+                    <value><![CDATA[/reader/download?id=$1]]></value>
+                </entry>
 				
 				<entry key="^/admin$">
 					<value><![CDATA[/admin/admin]]></value>

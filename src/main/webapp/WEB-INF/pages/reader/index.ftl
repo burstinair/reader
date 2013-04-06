@@ -7,9 +7,6 @@
     </head>
 
     <body>
-    	<div>
-            <a href="/admin">[管理]</a>
-        </div>
         <ul>
             <#include "/WEB-INF/pages/recent.ftl">
             <#list books?if_exists.entrySet() as bookset>
@@ -25,6 +22,7 @@
         <div>
             <#assign pagerPrefix="">
 		    <#include "/WEB-INF/pages/pager.ftl">
+            <a href="/admin">[管理]</a>
         </div>
     </body>
 </html>

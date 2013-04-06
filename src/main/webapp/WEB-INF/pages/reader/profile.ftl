@@ -7,7 +7,6 @@
         <title>${bookName!"该书不存在。"}</title>
     </head>
     <body>
-        <a href="/">[返回首页]</a>
         <#if notExist>
 			该书不存在。
         <#else>
@@ -28,6 +27,8 @@
                 <li><a href="/reader/${id}">[从开始阅读]</a></li>
             </ul>
         </#if>
+        <a href="/">[返回首页]</a>
+        <a href="/download/${id}">[下载]</a>
     </body>
 </html>
 </@compress>

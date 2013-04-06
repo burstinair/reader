@@ -23,5 +23,13 @@
         <action name="profile" class="burst.reader.web.action.reader.ProfileAction">
             <result type="freemarker">/WEB-INF/pages/reader/profile.ftl</result>
         </action>
+        <action name="download" class="burst.reader.web.action.reader.DownloadAction">
+            <result type="stream">
+                <param name="contentType">application/text</param>
+                <param name="inputName">stream</param>
+                <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
     </package>
 </struts>
