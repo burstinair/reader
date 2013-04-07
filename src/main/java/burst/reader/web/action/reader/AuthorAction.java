@@ -1,18 +1,10 @@
 package burst.reader.web.action.reader;
 
-import burst.reader.BookException;
-import burst.reader.dto.BookDTO;
 import burst.reader.dto.BookMarkDTO;
 import burst.reader.web.action.BaseAction;
 import burst.reader.web.action.reader.model.AuthorActionModel;
-import com.opensymphony.xwork2.ModelDriven;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.client.HttpServerErrorException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.opensymphony.xwork2.ModelDriven;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,7 +15,9 @@ import java.util.Map;
  */
 public class AuthorAction extends BaseAction implements ModelDriven<AuthorActionModel> {
 
-    @Override
+	private static final long serialVersionUID = 8050607779504290668L;
+
+	@Override
     public String execute() throws Exception {
 
         BookMarkDTO recent = bookMarkService.loadRecentByAuthor(model.getAuthor());

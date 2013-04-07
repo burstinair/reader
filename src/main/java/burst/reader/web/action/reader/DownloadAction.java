@@ -1,13 +1,13 @@
 package burst.reader.web.action.reader;
 
-import burst.reader.BookException;
+import java.io.ByteArrayInputStream;
+import java.net.URLEncoder;
+
 import burst.reader.dto.BookDTO;
 import burst.reader.web.action.BaseAction;
 import burst.reader.web.action.reader.model.DownloadActionModel;
-import com.opensymphony.xwork2.ModelDriven;
 
-import java.io.ByteArrayInputStream;
-import java.net.URLEncoder;
+import com.opensymphony.xwork2.ModelDriven;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,7 +18,9 @@ import java.net.URLEncoder;
  */
 public class DownloadAction extends BaseAction implements ModelDriven<DownloadActionModel> {
 
-    @Override
+	private static final long serialVersionUID = 4093759548509465030L;
+
+	@Override
     public String execute() throws Exception {
         BookDTO book = bookService.getBook(model.getId());
         model.setStream(new ByteArrayInputStream(book.getContent().getBytes("GBK")));
