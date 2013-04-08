@@ -8,11 +8,9 @@
         <title>${title!"该书不存在。"}</title>
     </head>
     <body>
-        <a href="/">[返回首页]</a>
         <#if notExist>
 			该书不存在。
         <#else>
-            <a href="/profile/${id}">[返回书页]</a>
             <div>
 				${content}
             </div>
@@ -26,7 +24,9 @@
                 <a href="${pagerPrefix}/${currentPage}/single">[设为标签]</a>
                 <a href="${pagerPrefix}/${currentPage}/normal">[添加书签]</a>
             </div>
+            <a href="/profile/${id}">[返回书页]</a>
         </#if>
+        <a href="/">[返回首页]</a>
     </body>
 </html>
 </@compress>
