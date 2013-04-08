@@ -1,12 +1,9 @@
 package burst.reader.web.action;
 
-import burst.reader.service.BookService;
 import burst.reader.service.BookMarkService;
+import burst.reader.service.BookService;
 
 import com.opensymphony.xwork2.ActionSupport;
-import org.apache.struts2.ServletActionContext;
-
-import javax.servlet.ServletContext;
 
 public abstract class BaseAction extends ActionSupport {
 
@@ -23,5 +20,5 @@ public abstract class BaseAction extends ActionSupport {
 	public void setBookMarkService(BookMarkService bookMarkService) {
 		this.bookMarkService = bookMarkService;
 	}
-
+	
 }
