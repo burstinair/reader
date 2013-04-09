@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<decorators defaultdir="/WEB-INF/decorators">
+    <!-- Any urls that are excluded will never be decorated by Sitemesh -->
+    <excludes>
+        <pattern>/styles/*</pattern>
+        <pattern>/scripts/*</pattern>
+        <pattern>/images/*</pattern>
+    </excludes>
+    
+    <decorator name="standard" page="/WEB-INF/pages/master.ftl">
+    	<pattern>/*</pattern>
+    </decorator>
+
+</decorators>
