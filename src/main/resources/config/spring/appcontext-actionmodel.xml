@@ -9,7 +9,15 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
-    <bean id="pageModelBase" scope="prototype" abstract="true" class="burst.reader.web.action.model.PageModelImpl">
+	<bean id="modelBase" scope="prototype" abstract="true">
+		<property name="config">
+			<bean class="burst.reader.util.PropertiesFactory">
+				<property name="path" value="config/reader.properties" />
+			</bean>
+		</property>
+	</bean>
+
+    <bean id="pageModelBase" scope="prototype" abstract="true" parent="modelBase">
         <property name="currentPage" value="1" />
         <property name="pageSize" value="${indexListCount}" />
     </bean>
@@ -18,12 +26,12 @@
 	<bean id="readerActionModel" class="burst.reader.web.action.reader.model.ReaderActionModel" parent="pageModelBase">
         <property name="pageSize" value="${wordCountPerPage}" />
 	</bean>
-    <bean id="profileActionModel" class="burst.reader.web.action.reader.model.ProfileActionModel" scope="prototype"></bean>
-    <bean id="downloadActionModel" class="burst.reader.web.action.reader.model.DownloadActionModel" scope="prototype"></bean>
+    <bean id="profileActionModel" class="burst.reader.web.action.reader.model.ProfileActionModel" parent="modelBase"></bean>
+    <bean id="downloadActionModel" class="burst.reader.web.action.reader.model.DownloadActionModel" parent="modelBase"></bean>
 	
 	<bean id="adminActionModel" class="burst.reader.web.action.admin.model.AdminActionModel" parent="pageModelBase" />
-	<bean id="editActionModel" class="burst.reader.web.action.admin.model.EditActionModel" scope="prototype">
+	<bean id="editActionModel" class="burst.reader.web.action.admin.model.EditActionModel" parent="modelBase">
 		<property name="id" value="0" />
 	</bean>
-	<bean id="executeSQLActionModel" class="burst.reader.web.action.admin.model.ExecuteSQLActionModel" scope="prototype"></bean>
+	<bean id="executeSQLActionModel" class="burst.reader.web.action.admin.model.ExecuteSQLActionModel" parent="modelBase"></bean>
 </beans>

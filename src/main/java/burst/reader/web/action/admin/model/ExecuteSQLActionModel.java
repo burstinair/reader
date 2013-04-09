@@ -2,7 +2,9 @@ package burst.reader.web.action.admin.model;
 
 import java.util.List;
 
-public class ExecuteSQLActionModel {
+import burst.reader.web.action.model.BaseModel;
+
+public class ExecuteSQLActionModel extends BaseModel {
 
     private String queryString;
     public String getQueryString() {

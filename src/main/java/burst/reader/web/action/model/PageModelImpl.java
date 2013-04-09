@@ -2,7 +2,7 @@ package burst.reader.web.action.model;
 
 import burst.commons.model.PageModel;
 
-public class PageModelImpl implements PageModel {
+public class PageModelImpl extends BaseModel implements PageModel {
 	
 	private Integer currentPage;
 	private Integer pageSize;

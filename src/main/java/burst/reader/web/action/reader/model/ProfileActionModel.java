@@ -1,11 +1,11 @@
 package burst.reader.web.action.reader.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import burst.reader.dto.BookMarkDTO;
+import burst.reader.web.action.model.BaseModel;
 
-public class ProfileActionModel {
+public class ProfileActionModel extends BaseModel {
 
     private Integer id;
     public void setId(Integer value)

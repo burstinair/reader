@@ -3,8 +3,9 @@ package burst.reader.web.action.admin.model;
 import java.io.File;
 
 import burst.reader.dto.BookDTO;
+import burst.reader.web.action.model.BaseModel;
 
-public class EditActionModel {
+public class EditActionModel extends BaseModel {
 
     private Integer id;
     public Integer getId()

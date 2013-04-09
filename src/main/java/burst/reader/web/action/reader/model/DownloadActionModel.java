@@ -2,6 +2,8 @@ package burst.reader.web.action.reader.model;
 
 import java.io.InputStream;
 
+import burst.reader.web.action.model.BaseModel;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Burst
@@ -9,7 +11,7 @@ import java.io.InputStream;
  * Time: 下午7:28
  * To change this template use File | Settings | File Templates.
  */
-public class DownloadActionModel {
+public class DownloadActionModel extends BaseModel {
 
     public Integer getId() {
         return id;
