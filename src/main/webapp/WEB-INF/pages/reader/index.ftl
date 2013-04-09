@@ -5,7 +5,7 @@
 
 <body>
     <ul>
-        <#include "/WEB-INF/pages/recent.ftl">
+		<@recent recentBookMark recentBookName />
         <#list books?if_exists.entrySet() as bookset>
             <li>
                 [<a href="/author/${bookset.key}">${bookset.key}</a>]
@@ -17,8 +17,7 @@
         </#list>
     </ul>
     <div>
-        <#assign pagerPrefix="">
-	    <#include "/WEB-INF/pages/pager.ftl">
+		<@pager "" />
         <a href="/admin">[管理]</a>
     </div>
 </body>

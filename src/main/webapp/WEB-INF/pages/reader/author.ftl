@@ -5,7 +5,7 @@
 
 <body>
     <ul>
-        <#include "/WEB-INF/pages/recent.ftl">
+		<@recent recentBookMark recentBookName />
         <#list books?if_exists as book>
             <li>
                 <a href="/profile/${book.id}">${book.name}</a>
@@ -13,8 +13,7 @@
         </#list>
     </ul>
     <div>
-        <#assign pagerPrefix="/author/${author}">
-	    <#include "/WEB-INF/pages/pager.ftl">
+		<@pager "/author/${author}" />
         <a href="/">[返回首页]</a>
     </div>
 </body>

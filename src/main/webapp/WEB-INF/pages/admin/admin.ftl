@@ -39,8 +39,7 @@
         </#list>
         <tr>
         	<td colspan="6">
-	        	<#assign pagerPrefix="/admin">
-	            <#include "/WEB-INF/pages/pager.ftl">
+				<@pager "/admin" />
         	</td>
         </tr>
     </table>
