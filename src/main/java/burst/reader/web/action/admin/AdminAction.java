@@ -25,13 +25,13 @@ public class AdminAction extends BaseAction implements ModelDriven<AdminActionMo
 
         if(model.getBookId() != null) {
             if("unvisible".equals(model.getAction())) {
-                bookService.setVisible(model.getBookId(), "unvisible");
+                bookService.updateVisible(model.getBookId(), "unvisible");
             } else if("visible".equals(model.getAction())) {
-                bookService.setVisible(model.getBookId(), "visible");
+                bookService.updateVisible(model.getBookId(), "visible");
             }
         }
 
-        model.setBooks(bookService.getIndex(model));
+        model.setBooks(bookService.loadIndex(model));
 
         return SUCCESS;
     }

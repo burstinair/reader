@@ -7,17 +7,19 @@ package burst.reader.service;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.springframework.transaction.annotation.Transactional;
+import burst.reader.dto.BookMarkDTO;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
-
-import burst.reader.dto.BookMarkDTO;
 
 /**
  *
  * @author Burst
  */
 public class BookMarkService {
+
+	public static final String NORMAL = "znormal";
+	public static final String SINGLE = "single";
+	public static final String AUTO = "auto";
 	
 	private SqlMapClient sqlMapClient;
 
@@ -25,12 +27,11 @@ public class BookMarkService {
 		this.sqlMapClient = sqlMapClient;
 	}
 
-	public List<BookMarkDTO> getBookMarks(int bookId) throws SQLException
+	public List<BookMarkDTO> loadBookMarks(int bookId) throws SQLException
     {
 		return (List<BookMarkDTO>)sqlMapClient.queryForList("BookMarkDao.queryByBookId", bookId);
     }
 	
-	@Transactional
 	public void addSpecialBookMark(BookMarkDTO bookmark, String special) throws SQLException
 	{
 		bookmark.setId(0);
@@ -45,21 +46,29 @@ public class BookMarkService {
         }
 	}
     
-    public synchronized void addAutoSaveBookMark(BookMarkDTO bookmark) throws SQLException
+    public void addAutoSaveBookMark(BookMarkDTO bookmark) throws SQLException
     {
-		addSpecialBookMark(bookmark, "auto");
+		addSpecialBookMark(bookmark, AUTO);
     }
 
-	public synchronized void addSingleBookMark(BookMarkDTO bookmark) throws SQLException
+	public void addSingleBookMark(BookMarkDTO bookmark) throws SQLException
 	{
-		addSpecialBookMark(bookmark, "single");
+		addSpecialBookMark(bookmark, SINGLE);
 	}
     
-	@Transactional
-    public synchronized void addBookMark(BookMarkDTO bookmark) throws SQLException
+    public void addBookMark(BookMarkDTO bookmark) throws SQLException
     {
         sqlMapClient.insert("BookMarkDao.add", bookmark);
     }
+
+	public void addBookMarkWithAuto(BookMarkDTO bookMark) throws SQLException {
+		if(BookMarkService.SINGLE.equals(bookMark.getSpecial())) {
+			addSingleBookMark(bookMark);
+		} else if(BookMarkService.NORMAL.equals(bookMark.getSpecial())) {
+			addBookMark(bookMark);
+		}
+		addAutoSaveBookMark(bookMark);
+	}
 
     public BookMarkDTO loadRecent() throws SQLException {
         return (BookMarkDTO)sqlMapClient.queryForObject("BookMarkDao.loadRecent");

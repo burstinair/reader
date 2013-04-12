@@ -35,21 +35,4 @@
 			<value>classpath:config/sqlmap/sqlmap-config.xml</value>
 		</property>
 	</bean>
-		
-	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource"></property>
-	</bean>
-	<tx:annotation-driven transaction-manager="txManager" />
-	
-	<bean id="bookService" class="burst.reader.service.BookService">
-		<property name="sqlMapClient" ref="sqlMapClient"></property>
-	</bean>
-	
-	<bean id="bookMarkService" class="burst.reader.service.BookMarkService">
-		<property name="sqlMapClient" ref="sqlMapClient"></property>
-	</bean>
-
-    <bean id="executeSQLService" class="burst.reader.service.ExecuteSQLService">
-        <property name="sqlMapClient" ref="sqlMapClient"></property>
-    </bean>
 </beans>

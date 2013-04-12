@@ -10,6 +10,8 @@ import com.opensymphony.xwork2.ModelDriven;
 
 import burst.reader.BookException;
 import burst.reader.dto.BookMarkDTO;
+import burst.reader.service.BookMarkMonitorService;
+import burst.reader.service.BookMarkService;
 import burst.reader.web.action.BaseAction;
 import burst.reader.web.action.reader.model.ReaderActionModel;
 
@@ -34,8 +36,8 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
         	
         	model.setNotExist(false);
         	
-            model.setTitle(bookService.getName(model.getUnboxedId()));
-        	model.setContent(bookService.getPagedContent(model.getUnboxedId(), model));
+            model.setTitle(bookService.loadName(model.getUnboxedId()));
+        	model.setContent(bookService.loadPagedContent(model.getUnboxedId(), model));
 
             BookMarkDTO bookmark = new BookMarkDTO();
             bookmark.setBookId(model.getId());
@@ -43,13 +45,13 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
             bookmark.setPage(model.getCurrentPage());
             bookmark.setWordCount(model.getPageSize());
 
-            bookMarkService.addAutoSaveBookMark(bookmark);
             if ("normal".equals(model.getBookmarkAction())) {
-                bookmark.setSpecial("znormal");
-                bookMarkService.addBookMark(bookmark);
+                bookmark.setSpecial(BookMarkService.NORMAL);
             } else if("single".equals(model.getBookmarkAction())) {
-                bookMarkService.addSingleBookMark(bookmark);
+                bookmark.setSpecial(BookMarkService.SINGLE);
             }
+            
+            bookMarkMonitorService.push(bookmark);
         
         } catch (BookException ex) {
         	model.setNotExist(true);
@@ -57,6 +59,16 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
         
         return SUCCESS;
     }
+	
+	private BookMarkMonitorService bookMarkMonitorService;
+
+	public void setBookMarkMonitorService(BookMarkMonitorService bookMarkMonitorService) {
+		this.bookMarkMonitorService = bookMarkMonitorService;
+	}
+
+	public BookMarkMonitorService getBookMarkMonitorService() {
+		return bookMarkMonitorService;
+	}
 	
 	private ReaderActionModel model;
 

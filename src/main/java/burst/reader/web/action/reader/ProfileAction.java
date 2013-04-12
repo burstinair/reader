@@ -22,8 +22,8 @@ public class ProfileAction extends BaseAction implements ModelDriven<ProfileActi
         try {
             if(model.getId() == null)
                 throw new BookException();
-            model.setBookmarks(bookMarkService.getBookMarks(model.getUnboxedId()));
-            model.setBookName(bookService.getName(model.getUnboxedId()));
+            model.setBookmarks(bookMarkService.loadBookMarks(model.getUnboxedId()));
+            model.setBookName(bookService.loadName(model.getUnboxedId()));
             model.setNotExist(false);
         } catch (BookException ex) {
             model.setNotExist(true);

@@ -24,14 +24,14 @@ public class AuthorAction extends BaseAction implements ModelDriven<AuthorAction
 
         if(recent != null) {
             model.setRecentBookMark(recent);
-            model.setRecentBookName(bookService.getName(recent.getBookId()));
+            model.setRecentBookName(bookService.loadName(recent.getBookId()));
         }
 
         if(model.getCurrentPage() == null) {
             model.setCurrentPage(1);
         }
 
-        model.setBooks(bookService.getVisibleByAuthorIndex(model, model.getAuthor()));
+        model.setBooks(bookService.loadVisibleByAuthorIndex(model, model.getAuthor()));
 
         return SUCCESS;
     }

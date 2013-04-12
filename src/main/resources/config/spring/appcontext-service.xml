@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+		
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="add*" rollback-for="java.sql.SQLException" />
+			<tx:method name="delete*" rollback-for="java.sql.SQLException" />
+			<tx:method name="update*" rollback-for="java.sql.SQLException" />
+			<tx:method name="load*" rollback-for="java.sql.SQLException" />
+			<tx:method name="execute*" rollback-for="java.sql.SQLException" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<bean id="bookService" class="burst.reader.service.BookService">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	
+	<bean id="bookMarkService" class="burst.reader.service.BookMarkService">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	
+	<bean id="bookMarkMonitorService" class="burst.reader.service.BookMarkMonitorService">
+		<property name="bookMarkService" ref="bookMarkService" />
+	</bean>
+
+    <bean id="executeSQLService" class="burst.reader.service.ExecuteSQLService">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+    </bean>
+
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames" value="*Service" />
+		<property name="interceptorNames" value="txAdvice" />
+	</bean>
+</beans>

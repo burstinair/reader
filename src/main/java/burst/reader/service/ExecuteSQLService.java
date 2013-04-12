@@ -1,11 +1,10 @@
 package burst.reader.service;
 
-import com.ibatis.sqlmap.client.SqlMapClient;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+
+import com.ibatis.sqlmap.client.SqlMapClient;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,12 +21,10 @@ public class ExecuteSQLService {
         this.sqlMapClient = sqlMapClient;
     }
 
-    @Transactional
     public int executeNonQuery(String sqlString) throws SQLException {
         return sqlMapClient.update("ExecuteSQLDao.executeNonQuery", sqlString);
     }
 
-    @Transactional
     public List<Map> execute(String sqlString) throws SQLException {
         return sqlMapClient.queryForList("ExecuteSQLDao.execute", sqlString);
     }

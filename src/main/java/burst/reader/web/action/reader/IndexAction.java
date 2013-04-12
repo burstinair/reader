@@ -48,7 +48,7 @@ public class IndexAction extends BaseAction implements ModelDriven<IndexActionMo
 
         if(recent != null) {
             model.setRecentBookMark(recent);
-            model.setRecentBookName(bookService.getName(recent.getBookId()));
+            model.setRecentBookName(bookService.loadName(recent.getBookId()));
         }
 
 		if(model.getCurrentPage() == null) {
@@ -57,7 +57,7 @@ public class IndexAction extends BaseAction implements ModelDriven<IndexActionMo
 
         List<BookDTO> books = null;
 
-        books = bookService.getVisibleIndex(model);
+        books = bookService.loadVisibleIndex(model);
 
         Map<String, List<BookDTO>> res_books = new HashMap<String, List<BookDTO>>();
         for(BookDTO book : books) {

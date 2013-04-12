@@ -27,7 +27,7 @@ public class EditAction extends BaseAction implements ModelDriven<EditActionMode
 	
 	public String execute() throws Exception {
         try {
-            model.setBook(bookService.getBook(model.getUnboxedId()));
+            model.setBook(bookService.loadBook(model.getUnboxedId()));
         } catch (Exception ex) {
             model.setBook(null);
             model.setId(0);
@@ -61,7 +61,7 @@ public class EditAction extends BaseAction implements ModelDriven<EditActionMode
             }
         } else {
             if (!isAdd) {
-                model.setBook(bookService.getBook(model.getUnboxedId()));
+                model.setBook(bookService.loadBook(model.getUnboxedId()));
             }
         }
         return "redirect";

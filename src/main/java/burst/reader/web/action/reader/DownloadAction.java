@@ -22,7 +22,7 @@ public class DownloadAction extends BaseAction implements ModelDriven<DownloadAc
 
 	@Override
     public String execute() throws Exception {
-        BookDTO book = bookService.getBook(model.getId());
+        BookDTO book = bookService.loadBook(model.getId());
         model.setStream(new ByteArrayInputStream(book.getContent().getBytes("GBK")));
         model.setFileName(URLEncoder.encode(book.getName() + ".txt", "utf-8").replace("+", "%20"));
         return SUCCESS;
