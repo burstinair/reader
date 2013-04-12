@@ -22,6 +22,7 @@
           <file>file://$MODULE_DIR$/src/main/resources/config/spring/appcontext-actionmodel.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/config/spring/appcontext-core.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/config/spring/appcontext-dao.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/config/spring/appcontext-service.xml</file>
         </fileset>
       </configuration>
     </facet>

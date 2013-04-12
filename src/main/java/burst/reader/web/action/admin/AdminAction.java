@@ -19,31 +19,31 @@ public class AdminAction extends BaseAction implements ModelDriven<AdminActionMo
 
 	public String execute() throws Exception {
 		
-		if(model.getCurrentPage() == null) {
-			model.setCurrentPage(1);
+		if(adminActionModel.getCurrentPage() == null) {
+			adminActionModel.setCurrentPage(1);
 		}
 
-        if(model.getBookId() != null) {
-            if("unvisible".equals(model.getAction())) {
-                bookService.updateVisible(model.getBookId(), "unvisible");
-            } else if("visible".equals(model.getAction())) {
-                bookService.updateVisible(model.getBookId(), "visible");
+        if(adminActionModel.getBookId() != null) {
+            if("unvisible".equals(adminActionModel.getAction())) {
+                bookService.updateVisible(adminActionModel.getBookId(), "unvisible");
+            } else if("visible".equals(adminActionModel.getAction())) {
+                bookService.updateVisible(adminActionModel.getBookId(), "visible");
             }
         }
 
-        model.setBooks(bookService.loadIndex(model));
+        adminActionModel.setBooks(bookService.loadIndex(adminActionModel));
 
         return SUCCESS;
     }
 
-    private AdminActionModel model;
+    private AdminActionModel adminActionModel;
 
 	@Override
 	public AdminActionModel getModel() {
-		return model;
+		return adminActionModel;
 	}
     
-	public void setModel(AdminActionModel model) {
-		this.model = model;
+	public void setAdminActionModel(AdminActionModel adminActionModel) {
+		this.adminActionModel = adminActionModel;
 	}
 }

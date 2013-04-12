@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import burst.reader.dto.BookMarkDTO;
 
-public class BookMarkMonitorService implements Runnable, BeanFactoryAware {
+public class BookMarkMonitorService implements Runnable {
 	
 	private ConcurrentLinkedQueue<BookMarkDTO> q;
 	
@@ -20,6 +20,7 @@ public class BookMarkMonitorService implements Runnable, BeanFactoryAware {
 	
 	public BookMarkMonitorService() {
 		q = new ConcurrentLinkedQueue<BookMarkDTO>();
+        new Thread(this).start();
 	}
 	
 	private BookMarkService bookMarkService;
@@ -49,10 +50,5 @@ public class BookMarkMonitorService implements Runnable, BeanFactoryAware {
 			}
 			catch (SQLException ex) { }
 		}
-	}
-
-	@Override
-	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-		new Thread(this).run();
 	}
 }

@@ -38,7 +38,7 @@ public class IndexAction extends BaseAction implements ModelDriven<IndexActionMo
 	private static final long serialVersionUID = -7060433070277387333L;
 
     public String recent() throws Exception {
-        model.setRecentBookMark(bookMarkService.loadRecent());
+        indexActionModel.setRecentBookMark(bookMarkService.loadRecent());
         return SUCCESS;
     }
 
@@ -47,17 +47,17 @@ public class IndexAction extends BaseAction implements ModelDriven<IndexActionMo
         BookMarkDTO recent = bookMarkService.loadRecent();
 
         if(recent != null) {
-            model.setRecentBookMark(recent);
-            model.setRecentBookName(bookService.loadName(recent.getBookId()));
+            indexActionModel.setRecentBookMark(recent);
+            indexActionModel.setRecentBookName(bookService.loadName(recent.getBookId()));
         }
 
-		if(model.getCurrentPage() == null) {
-			model.setCurrentPage(1);
+		if(indexActionModel.getCurrentPage() == null) {
+            indexActionModel.setCurrentPage(1);
 		}
 
         List<BookDTO> books = null;
 
-        books = bookService.loadVisibleIndex(model);
+        books = bookService.loadVisibleIndex(indexActionModel);
 
         Map<String, List<BookDTO>> res_books = new HashMap<String, List<BookDTO>>();
         for(BookDTO book : books) {
@@ -66,20 +66,20 @@ public class IndexAction extends BaseAction implements ModelDriven<IndexActionMo
             }
             res_books.get(book.getAuthor()).add(book);
         }
-        model.setBooks(res_books);
+        indexActionModel.setBooks(res_books);
 
         return SUCCESS;
     }
 
-    private IndexActionModel model;
+    private IndexActionModel indexActionModel;
 
 	@Override
 	public IndexActionModel getModel() {
-		return model;
+		return indexActionModel;
 	}
 
-	public void setModel(IndexActionModel model) {
-		this.model = model;
+	public void setIndexActionModel(IndexActionModel indexActionModel) {
+		this.indexActionModel = indexActionModel;
 	}
 }
 

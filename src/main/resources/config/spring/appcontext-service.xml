@@ -41,8 +41,8 @@
         <property name="sqlMapClient" ref="sqlMapClient" />
     </bean>
 
-	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+	<!--bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
 		<property name="beanNames" value="*Service" />
 		<property name="interceptorNames" value="txAdvice" />
-	</bean>
+	</bean-->
 </beans>

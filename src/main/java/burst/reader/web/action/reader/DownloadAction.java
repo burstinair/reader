@@ -22,21 +22,21 @@ public class DownloadAction extends BaseAction implements ModelDriven<DownloadAc
 
 	@Override
     public String execute() throws Exception {
-        BookDTO book = bookService.loadBook(model.getId());
-        model.setStream(new ByteArrayInputStream(book.getContent().getBytes("GBK")));
-        model.setFileName(URLEncoder.encode(book.getName() + ".txt", "utf-8").replace("+", "%20"));
+        BookDTO book = bookService.loadBook(downloadActionModel.getId());
+        downloadActionModel.setStream(new ByteArrayInputStream(book.getContent().getBytes("GBK")));
+        downloadActionModel.setFileName(URLEncoder.encode(book.getName() + ".txt", "utf-8").replace("+", "%20"));
         return SUCCESS;
     }
 
     @Override
     public DownloadActionModel getModel() {
-        return model;
+        return downloadActionModel;
     }
 
-    public void setModel(DownloadActionModel model) {
-        this.model = model;
+    public void setDownloadActionModel(DownloadActionModel downloadActionModel) {
+        this.downloadActionModel = downloadActionModel;
     }
 
-    private DownloadActionModel model;
+    private DownloadActionModel downloadActionModel;
 
 }

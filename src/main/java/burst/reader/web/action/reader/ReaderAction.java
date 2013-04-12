@@ -26,35 +26,35 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
 	public String execute() throws Exception {
         try {
         
-        	if(model.isRedirect() != null && model.isRedirect()) {
+        	if(readerActionModel.isRedirect() != null && readerActionModel.isRedirect()) {
         		return "redirect";
         	}
         	
-        	if(model.getId() == null) {
+        	if(readerActionModel.getId() == null) {
         		throw new BookException();
         	}
         	
-        	model.setNotExist(false);
+        	readerActionModel.setNotExist(false);
         	
-            model.setTitle(bookService.loadName(model.getUnboxedId()));
-        	model.setContent(bookService.loadPagedContent(model.getUnboxedId(), model));
+            readerActionModel.setTitle(bookService.loadName(readerActionModel.getUnboxedId()));
+        	readerActionModel.setContent(bookService.loadPagedContent(readerActionModel.getUnboxedId(), readerActionModel));
 
             BookMarkDTO bookmark = new BookMarkDTO();
-            bookmark.setBookId(model.getId());
+            bookmark.setBookId(readerActionModel.getId());
             bookmark.setAddDate(new Date());
-            bookmark.setPage(model.getCurrentPage());
-            bookmark.setWordCount(model.getPageSize());
+            bookmark.setPage(readerActionModel.getCurrentPage());
+            bookmark.setWordCount(readerActionModel.getPageSize());
 
-            if ("normal".equals(model.getBookmarkAction())) {
+            if ("normal".equals(readerActionModel.getBookmarkAction())) {
                 bookmark.setSpecial(BookMarkService.NORMAL);
-            } else if("single".equals(model.getBookmarkAction())) {
+            } else if("single".equals(readerActionModel.getBookmarkAction())) {
                 bookmark.setSpecial(BookMarkService.SINGLE);
             }
             
             bookMarkMonitorService.push(bookmark);
         
         } catch (BookException ex) {
-        	model.setNotExist(true);
+        	readerActionModel.setNotExist(true);
         }
         
         return SUCCESS;
@@ -65,19 +65,15 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
 	public void setBookMarkMonitorService(BookMarkMonitorService bookMarkMonitorService) {
 		this.bookMarkMonitorService = bookMarkMonitorService;
 	}
-
-	public BookMarkMonitorService getBookMarkMonitorService() {
-		return bookMarkMonitorService;
-	}
 	
-	private ReaderActionModel model;
+	private ReaderActionModel readerActionModel;
 
 	@Override
 	public ReaderActionModel getModel() {
-		return model;
+		return readerActionModel;
 	}
 
-	public void setModel(ReaderActionModel model) {
-		this.model = model;
+	public void setReaderActionModel(ReaderActionModel readerActionModel) {
+		this.readerActionModel = readerActionModel;
 	}
 }

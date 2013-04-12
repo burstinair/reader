@@ -18,6 +18,8 @@ public class ReaderActionModel extends PageModelImpl {
 
 	private String content;
 
+    private String filter;
+
     public String getBookmarkAction() {
 		return bookmarkAction;
 	}
@@ -42,7 +44,13 @@ public class ReaderActionModel extends PageModelImpl {
 		if(content == null) {
 			return "";
 		}
-		
+
+        String content;
+        if(filter != null && !"".equals(filter)) {
+            content = this.content.replaceAll(filter, "");
+        } else {
+            content = this.content;
+        }
     	StringBuilder res = new StringBuilder();
     	for (int i = 0, l = content.length(); i < l; ++i) {
     		char c = content.charAt(i);
@@ -103,4 +111,12 @@ public class ReaderActionModel extends PageModelImpl {
 	public Boolean isRedirect() {
 		return redirect;
 	}
+
+    public String getFilter() {
+        return filter;
+    }
+
+    public void setFilter(String filter) {
+        this.filter = filter;
+    }
 }

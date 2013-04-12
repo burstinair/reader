@@ -30,12 +30,12 @@ public class ExecuteSQLAction extends BaseAction implements ModelDriven<ExecuteS
 
 	public String execute() throws Exception {
 
-        if(model.getQueryString() == null) {
+        if(executeSQLActionModel.getQueryString() == null) {
             return SUCCESS;
         }
 
-		if(model.getQuery() != null) {
-            List<Map> rawResult = executeSQLService.execute(model.getQueryString());
+		if(executeSQLActionModel.getQuery() != null) {
+            List<Map> rawResult = executeSQLService.execute(executeSQLActionModel.getQueryString());
             List<List<Object>> result = new ArrayList<List<Object>>();
             if(!rawResult.isEmpty()) {
                 List<Object> header = new ArrayList<Object>();
@@ -51,22 +51,22 @@ public class ExecuteSQLAction extends BaseAction implements ModelDriven<ExecuteS
                     result.add(row);
                 }
             }
-            model.setResultRows(result);
+            executeSQLActionModel.setResultRows(result);
 		} else {
-			model.setResultStatus(executeSQLService.executeNonQuery(model.getQueryString()));
+			executeSQLActionModel.setResultStatus(executeSQLService.executeNonQuery(executeSQLActionModel.getQueryString()));
 		}
 		
         return SUCCESS;
     }
 
-    private ExecuteSQLActionModel model;
+    private ExecuteSQLActionModel executeSQLActionModel;
 
     @Override
 	public ExecuteSQLActionModel getModel() {
-		return model;
+		return executeSQLActionModel;
 	}
     
-	public void setModel(ExecuteSQLActionModel model) {
-		this.model = model;
+	public void setExecuteSQLActionModel(ExecuteSQLActionModel executeSQLActionModel) {
+		this.executeSQLActionModel = executeSQLActionModel;
 	}
 }

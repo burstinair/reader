@@ -20,25 +20,25 @@ public class ProfileAction extends BaseAction implements ModelDriven<ProfileActi
 	
 	public String execute() throws Exception {
         try {
-            if(model.getId() == null)
+            if(profileActionModel.getId() == null)
                 throw new BookException();
-            model.setBookmarks(bookMarkService.loadBookMarks(model.getUnboxedId()));
-            model.setBookName(bookService.loadName(model.getUnboxedId()));
-            model.setNotExist(false);
+            profileActionModel.setBookmarks(bookMarkService.loadBookMarks(profileActionModel.getUnboxedId()));
+            profileActionModel.setBookName(bookService.loadName(profileActionModel.getUnboxedId()));
+            profileActionModel.setNotExist(false);
         } catch (BookException ex) {
-            model.setNotExist(true);
+            profileActionModel.setNotExist(true);
         }
         return SUCCESS;
     }
 
-	private ProfileActionModel model;
+	private ProfileActionModel profileActionModel;
 
 	@Override
 	public ProfileActionModel getModel() {
-		return model;
+		return profileActionModel;
 	}
 
-	public void setModel(ProfileActionModel model) {
-		this.model = model;
+	public void setProfileActionModel(ProfileActionModel profileActionModel) {
+		this.profileActionModel = profileActionModel;
 	}
 }

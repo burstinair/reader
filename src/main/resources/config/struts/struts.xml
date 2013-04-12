@@ -12,7 +12,7 @@
 		value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
     -->
     
-	<constant name="struts.objectFactory.spring.autoWire" value="type" />
+	<!--constant name="struts.objectFactory.spring.autoWire" value="type" /-->
 
     <include file="config/struts/struts-*.xml" />
 

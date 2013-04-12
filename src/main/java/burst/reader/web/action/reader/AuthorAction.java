@@ -20,30 +20,30 @@ public class AuthorAction extends BaseAction implements ModelDriven<AuthorAction
 	@Override
     public String execute() throws Exception {
 
-        BookMarkDTO recent = bookMarkService.loadRecentByAuthor(model.getAuthor());
+        BookMarkDTO recent = bookMarkService.loadRecentByAuthor(authorActionModel.getAuthor());
 
         if(recent != null) {
-            model.setRecentBookMark(recent);
-            model.setRecentBookName(bookService.loadName(recent.getBookId()));
+            authorActionModel.setRecentBookMark(recent);
+            authorActionModel.setRecentBookName(bookService.loadName(recent.getBookId()));
         }
 
-        if(model.getCurrentPage() == null) {
-            model.setCurrentPage(1);
+        if(authorActionModel.getCurrentPage() == null) {
+            authorActionModel.setCurrentPage(1);
         }
 
-        model.setBooks(bookService.loadVisibleByAuthorIndex(model, model.getAuthor()));
+        authorActionModel.setBooks(bookService.loadVisibleByAuthorIndex(authorActionModel, authorActionModel.getAuthor()));
 
         return SUCCESS;
     }
 
-    public void setModel(AuthorActionModel model) {
-        this.model = model;
+    public void setAuthorActionModel(AuthorActionModel authorActionModel) {
+        this.authorActionModel = authorActionModel;
     }
 
-    private AuthorActionModel model;
+    private AuthorActionModel authorActionModel;
 
     @Override
     public AuthorActionModel getModel() {
-        return this.model;
+        return this.authorActionModel;
     }
 }

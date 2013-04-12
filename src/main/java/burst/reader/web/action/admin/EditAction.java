@@ -27,28 +27,28 @@ public class EditAction extends BaseAction implements ModelDriven<EditActionMode
 	
 	public String execute() throws Exception {
         try {
-            model.setBook(bookService.loadBook(model.getUnboxedId()));
+            editActionModel.setBook(bookService.loadBook(editActionModel.getUnboxedId()));
         } catch (Exception ex) {
-            model.setBook(null);
-            model.setId(0);
+            editActionModel.setBook(null);
+            editActionModel.setId(0);
         }
         return SUCCESS;
     }
 
     public String submit() throws BookException, SQLException
     {
-        boolean isAdd = model.getId() == null || model.getUnboxedId() == 0;
+        boolean isAdd = editActionModel.getId() == null || editActionModel.getUnboxedId() == 0;
         boolean isSubmit = true;
         BookDTO book = null;
-        model.setBook(null);
+        editActionModel.setBook(null);
         try {
             book = new BookDTO();
-            book.setId(model.getId());
-            book.setName(model.getName());
-            book.setAuthor(model.getAuthor());
+            book.setId(editActionModel.getId());
+            book.setName(editActionModel.getName());
+            book.setAuthor(editActionModel.getAuthor());
             book.setVisible("visible");
-            book.setContent(WebUtil.readAllText(model.getUpload(), Charset.forName("GBK")));
-            model.setBook(book);
+            book.setContent(WebUtil.readAllText(editActionModel.getUpload(), Charset.forName("GBK")));
+            editActionModel.setBook(book);
         } catch (Exception ex) {
             isSubmit = false;
         }
@@ -61,20 +61,20 @@ public class EditAction extends BaseAction implements ModelDriven<EditActionMode
             }
         } else {
             if (!isAdd) {
-                model.setBook(bookService.loadBook(model.getUnboxedId()));
+                editActionModel.setBook(bookService.loadBook(editActionModel.getUnboxedId()));
             }
         }
         return "redirect";
     }
 
-    private EditActionModel model;
+    private EditActionModel editActionModel;
 
     @Override
 	public EditActionModel getModel() {
-		return model;
+		return editActionModel;
 	}
 
-	public void setModel(EditActionModel model) {
-		this.model = model;
+	public void setEditActionModel(EditActionModel editActionModel) {
+		this.editActionModel = editActionModel;
 	}
 }
