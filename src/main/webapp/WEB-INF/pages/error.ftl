@@ -1,15 +1,7 @@
-<#assign s=JspTaglibs["/WEB-INF/tld/struts-tags.tld"]>
-<@compress single_line=true>
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title></title>
-    </head>
+<head>
+    <title>${title}</title>
+</head>
 
-    <body>
-
-    </body>
-</html>
-</@compress>
+<body>
+    ${message}
+</body>

@@ -18,14 +18,14 @@ public class ErrorAction extends ActionSupport implements ModelDriven<ErrorActio
         return SUCCESS;
     }
 
-    private ErrorActionModel model;
+    private ErrorActionModel errorActionModel;
 
-    public void setModel(ErrorActionModel model) {
-        this.model = model;
+    public void setErrorActionModel(ErrorActionModel errorActionModel) {
+        this.errorActionModel = errorActionModel;
     }
 
     @Override
     public ErrorActionModel getModel() {
-        return this.model;
+        return this.errorActionModel;
     }
 }

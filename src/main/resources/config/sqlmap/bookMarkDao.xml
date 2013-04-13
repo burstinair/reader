@@ -9,8 +9,10 @@
         <result property="bookId" column="book_id" />
         <result property="page" column="page" />
         <result property="wordCount" column="word_count" />
-        <result property="addDate" column="add_date" />
         <result property="special" column="special" />
+        <result property="addDate" column="add_date" />
+        <result property="ip" column="ip" />
+        <result property="userAgent" column="user_agent" />
     </resultMap>
 
 	<select id="queryByBookId" parameterClass="java.lang.Integer" resultMap="bookMark">
@@ -34,7 +36,7 @@
 	
 	<insert id="add" parameterClass="BookMarkDTO">
 		insert into book_mark values(
-			null, #bookId#, #page#, #wordCount#, #special#, #addDate#
+			null, #bookId#, #page#, #wordCount#, #special#, #addDate#, #ip#, #userAgent#
 		)
 	</insert>
 	
@@ -45,7 +47,9 @@
 				page = #page#,
 				word_count = #wordCount#,
 				special = #special#,
-				add_date = #addDate#
+				add_date = #addDate#,
+				ip = #ip#,
+				user_agent = #userAgent#
 			where
 				id = #id#
 	</update>

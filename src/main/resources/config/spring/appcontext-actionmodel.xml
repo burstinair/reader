@@ -26,14 +26,17 @@
     <bean id="authorActionModel" class="burst.reader.web.action.reader.model.AuthorActionModel" parent="pageModelBase" />
 	<bean id="readerActionModel" class="burst.reader.web.action.reader.model.ReaderActionModel" parent="pageModelBase">
         <property name="pageSize" value="${wordCountPerPage}" />
-        <property name="filter" value="${contentFilter}" />
+        <property name="contentFilter" value="${contentFilter}" />
+        <property name="userAgentFilter" value="${userAgentFilter}" />
 	</bean>
-    <bean id="profileActionModel" class="burst.reader.web.action.reader.model.ProfileActionModel" parent="modelBase"></bean>
-    <bean id="downloadActionModel" class="burst.reader.web.action.reader.model.DownloadActionModel" parent="modelBase"></bean>
+    <bean id="profileActionModel" class="burst.reader.web.action.reader.model.ProfileActionModel" parent="modelBase" />
+    <bean id="downloadActionModel" class="burst.reader.web.action.reader.model.DownloadActionModel" parent="modelBase" />
 	
 	<bean id="adminActionModel" class="burst.reader.web.action.admin.model.AdminActionModel" parent="pageModelBase" />
 	<bean id="editActionModel" class="burst.reader.web.action.admin.model.EditActionModel" parent="modelBase">
 		<property name="id" value="0" />
 	</bean>
-	<bean id="executeSQLActionModel" class="burst.reader.web.action.admin.model.ExecuteSQLActionModel" parent="modelBase"></bean>
+	<bean id="executeSQLActionModel" class="burst.reader.web.action.admin.model.ExecuteSQLActionModel" parent="modelBase" />
+
+    <bean id="errorActionModel" class="burst.reader.web.action.model.ErrorActionModel" parent="modelBase" />
 </beans>

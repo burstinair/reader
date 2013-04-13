@@ -68,4 +68,18 @@
 			</map>
 		</constructor-arg>
 	</bean>
+
+    <bean id="userAgentFilterUrlRewriteRules" class="java.util.HashMap">
+        <constructor-arg>
+            <map>
+                <entry key="^/admin.*$">
+                    <value><![CDATA[/error?title=${userAgentFailedMessage}&message=${userAgentFailedMessage}]]></value>
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <bean id="userAgentFilterHolder" class="java.lang.String">
+        <constructor-arg type="java.lang.String" value="${userAgentFilter}" />
+    </bean>
 </beans>

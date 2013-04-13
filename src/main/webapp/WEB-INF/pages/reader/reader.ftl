@@ -1,5 +1,4 @@
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>${title!"该书不存在。"}</title>
 </head>
 <body>

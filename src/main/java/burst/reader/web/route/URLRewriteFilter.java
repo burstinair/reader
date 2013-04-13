@@ -39,6 +39,20 @@ public class URLRewriteFilter implements Filter {
 			FilterChain chain) throws IOException, ServletException {
 		
 		HttpServletRequest hsRequest = (HttpServletRequest)request;
+        String userAgent = hsRequest.getHeader("User-Agent");
+
+        if(userAgent.matches(userAgentFilter)) {
+            for(Entry<String, String> entry : userAgentFilterUrlRewriteRules) {
+
+                Pattern p = Pattern.compile(entry.getKey());
+                Matcher m = p.matcher(WebUtil.getContextURL(hsRequest));
+                if(m.matches()) {
+                    RequestDispatcher dispatcher = request.getRequestDispatcher(getRewritedURL(m, entry.getValue(), hsRequest));
+                    dispatcher.forward(request, response);
+                    return;
+                }
+            }
+        }
 		
 		for(Entry<String, String> entry : rewriteRules) {
 			Pattern p = Pattern.compile(entry.getKey());
@@ -53,6 +67,8 @@ public class URLRewriteFilter implements Filter {
 		chain.doFilter(request, response);
 	}
 
+    private String userAgentFilter;
+    private Set<Entry<String, String>> userAgentFilterUrlRewriteRules;
 	private Set<Entry<String, String>> rewriteRules;
 	
 	@SuppressWarnings("unchecked")
@@ -60,6 +76,8 @@ public class URLRewriteFilter implements Filter {
 	public void init(FilterConfig arg0) throws ServletException {
 		ApplicationContext ac = SpringLocator.getApplicationContext();
 		rewriteRules = ((Map<String, String>)ac.getBean("urlRewriteRules")).entrySet();
+        userAgentFilterUrlRewriteRules = ((Map<String, String>)ac.getBean("userAgentFilterUrlRewriteRules")).entrySet();
+        userAgentFilter = (String)ac.getBean("userAgentFilterHolder");
 	}
 	
 }

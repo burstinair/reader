@@ -14,6 +14,9 @@ import burst.reader.service.BookMarkMonitorService;
 import burst.reader.service.BookMarkService;
 import burst.reader.web.action.BaseAction;
 import burst.reader.web.action.reader.model.ReaderActionModel;
+import org.apache.struts2.ServletActionContext;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -25,6 +28,8 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
 	
 	public String execute() throws Exception {
         try {
+
+            HttpServletRequest request = ServletActionContext.getRequest();
         
         	if(readerActionModel.isRedirect() != null && readerActionModel.isRedirect()) {
         		return "redirect";
@@ -39,11 +44,20 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
             readerActionModel.setTitle(bookService.loadName(readerActionModel.getUnboxedId()));
         	readerActionModel.setContent(bookService.loadPagedContent(readerActionModel.getUnboxedId(), readerActionModel));
 
+            String userAgent = request.getHeader("User-Agent");
+            if(!"".equals(readerActionModel.getUserAgentFilter())) {
+                if(userAgent.matches(readerActionModel.getUserAgentFilter())) {
+                    return SUCCESS;
+                }
+            }
+
             BookMarkDTO bookmark = new BookMarkDTO();
             bookmark.setBookId(readerActionModel.getId());
             bookmark.setAddDate(new Date());
             bookmark.setPage(readerActionModel.getCurrentPage());
             bookmark.setWordCount(readerActionModel.getPageSize());
+            bookmark.setIp(request.getRemoteAddr());
+            bookmark.setUserAgent(userAgent);
 
             if ("normal".equals(readerActionModel.getBookmarkAction())) {
                 bookmark.setSpecial(BookMarkService.NORMAL);

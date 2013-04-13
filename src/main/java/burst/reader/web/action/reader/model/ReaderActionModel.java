@@ -18,7 +18,25 @@ public class ReaderActionModel extends PageModelImpl {
 
 	private String content;
 
-    private String filter;
+    public String getContentFilter() {
+        return contentFilter;
+    }
+
+    public void setContentFilter(String contentFilter) {
+        this.contentFilter = contentFilter;
+    }
+
+    private String contentFilter;
+
+    public String getUserAgentFilter() {
+        return userAgentFilter;
+    }
+
+    public void setUserAgentFilter(String userAgentFilter) {
+        this.userAgentFilter = userAgentFilter;
+    }
+
+    private String userAgentFilter;
 
     public String getBookmarkAction() {
 		return bookmarkAction;
@@ -46,8 +64,8 @@ public class ReaderActionModel extends PageModelImpl {
 		}
 
         String content;
-        if(filter != null && !"".equals(filter)) {
-            content = this.content.replaceAll(filter, "");
+        if(!"".equals(contentFilter)) {
+            content = this.content.replaceAll(contentFilter, "");
         } else {
             content = this.content;
         }
@@ -111,12 +129,4 @@ public class ReaderActionModel extends PageModelImpl {
 	public Boolean isRedirect() {
 		return redirect;
 	}
-
-    public String getFilter() {
-        return filter;
-    }
-
-    public void setFilter(String filter) {
-        this.filter = filter;
-    }
 }

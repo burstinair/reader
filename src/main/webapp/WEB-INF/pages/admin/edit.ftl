@@ -1,6 +1,5 @@
 <#assign s=JspTaglibs["/WEB-INF/tld/struts-tags.tld"]>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>${("编辑" + book.name)!"添加新书"}</title>
 </head>
 <body>
