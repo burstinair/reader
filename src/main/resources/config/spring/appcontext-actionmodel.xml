@@ -27,7 +27,6 @@
 	<bean id="readerActionModel" class="burst.reader.web.action.reader.model.ReaderActionModel" parent="pageModelBase">
         <property name="pageSize" value="${wordCountPerPage}" />
         <property name="contentFilter" value="${contentFilter}" />
-        <property name="userAgentFilter" value="${userAgentFilter}" />
 	</bean>
     <bean id="profileActionModel" class="burst.reader.web.action.reader.model.ProfileActionModel" parent="modelBase" />
     <bean id="downloadActionModel" class="burst.reader.web.action.reader.model.DownloadActionModel" parent="modelBase" />

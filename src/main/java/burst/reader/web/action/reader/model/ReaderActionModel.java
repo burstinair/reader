@@ -18,25 +18,7 @@ public class ReaderActionModel extends PageModelImpl {
 
 	private String content;
 
-    public String getContentFilter() {
-        return contentFilter;
-    }
-
-    public void setContentFilter(String contentFilter) {
-        this.contentFilter = contentFilter;
-    }
-
     private String contentFilter;
-
-    public String getUserAgentFilter() {
-        return userAgentFilter;
-    }
-
-    public void setUserAgentFilter(String userAgentFilter) {
-        this.userAgentFilter = userAgentFilter;
-    }
-
-    private String userAgentFilter;
 
     public String getBookmarkAction() {
 		return bookmarkAction;
@@ -59,41 +41,7 @@ public class ReaderActionModel extends PageModelImpl {
 	}
 	
 	public String getContent() {
-		if(content == null) {
-			return "";
-		}
-
-        String content;
-        if(!"".equals(contentFilter)) {
-            content = this.content.replaceAll(contentFilter, "");
-        } else {
-            content = this.content;
-        }
-    	StringBuilder res = new StringBuilder();
-    	for (int i = 0, l = content.length(); i < l; ++i) {
-    		char c = content.charAt(i);
-    		if (c == '\r') {
-    			if(i < l - 1) {
-	    			if (content.charAt(i + 1) == '\n') {
-	    				++i;
-	    			}
-    			}
-    			res.append("<br />");
-    		} else if (c == '\n') {
-    			res.append("<br />");
-    		} else if (c == ' ') {
-    			res.append("&nbsp;");
-    		} else if (c == '<') {
-    			res.append("&lt;");
-    		} else if (c == '>') {
-    			res.append("&gt;");
-    		} else if (c == '&') {
-    			res.append("&amp;");
-    		} else {
-    			res.append(c);
-    		}
-    	}
-    	return res.toString();
+        return this.content;
 	}
 
 	public void setContent(String content) {
@@ -129,4 +77,13 @@ public class ReaderActionModel extends PageModelImpl {
 	public Boolean isRedirect() {
 		return redirect;
 	}
+
+    public String getContentFilter() {
+        return contentFilter;
+    }
+
+    public void setContentFilter(String contentFilter) {
+        this.contentFilter = contentFilter;
+    }
+
 }

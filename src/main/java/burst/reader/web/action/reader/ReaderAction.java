@@ -28,8 +28,6 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
 	
 	public String execute() throws Exception {
         try {
-
-            HttpServletRequest request = ServletActionContext.getRequest();
         
         	if(readerActionModel.isRedirect() != null && readerActionModel.isRedirect()) {
         		return "redirect";
@@ -42,36 +40,75 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
         	readerActionModel.setNotExist(false);
         	
             readerActionModel.setTitle(bookService.loadName(readerActionModel.getUnboxedId()));
-        	readerActionModel.setContent(bookService.loadPagedContent(readerActionModel.getUnboxedId(), readerActionModel));
+        	readerActionModel.setContent(getFiltedContent(
+                bookService.loadPagedContent(readerActionModel.getUnboxedId(), readerActionModel),
+                readerActionModel.getContentFilter()
+            ));
 
-            String userAgent = request.getHeader("User-Agent");
-            if(!"".equals(readerActionModel.getUserAgentFilter())) {
-                if(userAgent.matches(readerActionModel.getUserAgentFilter())) {
-                    return SUCCESS;
-                }
-            }
-
-            BookMarkDTO bookmark = new BookMarkDTO();
-            bookmark.setBookId(readerActionModel.getId());
-            bookmark.setAddDate(new Date());
-            bookmark.setPage(readerActionModel.getCurrentPage());
-            bookmark.setWordCount(readerActionModel.getPageSize());
-            bookmark.setIp(request.getRemoteAddr());
-            bookmark.setUserAgent(userAgent);
-
-            if ("normal".equals(readerActionModel.getBookmarkAction())) {
-                bookmark.setSpecial(BookMarkService.NORMAL);
-            } else if("single".equals(readerActionModel.getBookmarkAction())) {
-                bookmark.setSpecial(BookMarkService.SINGLE);
-            }
-            
-            bookMarkMonitorService.push(bookmark);
+            dealBookMark();
         
         } catch (BookException ex) {
         	readerActionModel.setNotExist(true);
         }
         
         return SUCCESS;
+    }
+
+    private void dealBookMark() {
+
+        HttpServletRequest request = ServletActionContext.getRequest();
+
+        BookMarkDTO bookmark = new BookMarkDTO();
+        bookmark.setBookId(readerActionModel.getId());
+        bookmark.setAddDate(new Date());
+        bookmark.setPage(readerActionModel.getCurrentPage());
+        bookmark.setWordCount(readerActionModel.getPageSize());
+        bookmark.setIp(request.getRemoteAddr());
+        bookmark.setUserAgent(request.getHeader("User-Agent"));
+
+        if ("normal".equals(readerActionModel.getBookmarkAction())) {
+            bookmark.setSpecial(BookMarkService.NORMAL);
+        } else if("single".equals(readerActionModel.getBookmarkAction())) {
+            bookmark.setSpecial(BookMarkService.SINGLE);
+        }
+
+        bookMarkMonitorService.push(bookmark);
+    }
+
+    private String getFiltedContent(String content, String contentFilter) {
+
+        if(content == null) {
+            return "";
+        }
+
+        if(!"".equals(contentFilter)) {
+            content = content.replaceAll(contentFilter, "");
+        }
+        StringBuilder res = new StringBuilder();
+        for (int i = 0, l = content.length(); i < l; ++i) {
+            char c = content.charAt(i);
+            if (c == '\r') {
+                if(i < l - 1) {
+                    if (content.charAt(i + 1) == '\n') {
+                        ++i;
+                    }
+                }
+                res.append("<br />");
+            } else if (c == '\n') {
+                res.append("<br />");
+            } else if (c == ' ') {
+                res.append("&nbsp;");
+            } else if (c == '<') {
+                res.append("&lt;");
+            } else if (c == '>') {
+                res.append("&gt;");
+            } else if (c == '&') {
+                res.append("&amp;");
+            } else {
+                res.append(c);
+            }
+        }
+        return res.toString();
     }
 	
 	private BookMarkMonitorService bookMarkMonitorService;

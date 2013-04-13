@@ -13,8 +13,9 @@ import burst.reader.dto.BookMarkDTO;
 public class BookMarkMonitorService implements Runnable {
 	
 	private ConcurrentLinkedQueue<BookMarkDTO> q;
-	
-	public void push(BookMarkDTO bookMark) {
+    private String userAgentFilter;
+
+    public void push(BookMarkDTO bookMark) {
 		q.offer(bookMark);
 	}
 	
@@ -46,9 +47,18 @@ public class BookMarkMonitorService implements Runnable {
 				continue;
 			}
 			try {
+                if(!"".equals(userAgentFilter)) {
+                    if(bookMark.getUserAgent().matches(userAgentFilter)) {
+                        continue;
+                    }
+                }
 				bookMarkService.addBookMarkWithAuto(bookMark);
 			}
 			catch (SQLException ex) { }
 		}
 	}
+
+    public void setUserAgentFilter(String userAgentFilter) {
+        this.userAgentFilter = userAgentFilter;
+    }
 }

@@ -34,6 +34,7 @@
 	</bean>
 	
 	<bean id="bookMarkMonitorService" class="burst.reader.service.BookMarkMonitorService">
+        <property name="userAgentFilter" value="${userAgentFilter}" />
 		<property name="bookMarkService" ref="bookMarkService" />
 	</bean>
 
