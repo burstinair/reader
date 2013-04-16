@@ -4,7 +4,7 @@
 
 	<typeAlias alias="BookMarkDTO" type="burst.reader.dto.BookMarkDTO" />
     
-    <resultMap id="bookMark" class="burst.reader.dto.BookMarkDTO">
+    <resultMap id="bookMark" class="BookMarkDTO">
         <result property="id" column="id" />
         <result property="bookId" column="book_id" />
         <result property="page" column="page" />

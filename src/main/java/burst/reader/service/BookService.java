@@ -19,6 +19,8 @@ import com.ibatis.sqlmap.client.SqlMapClient;
  * @author Burst
  */
 public class BookService {
+
+    public static final int MAX_BOOK_COUNT_IN_CACHE = 10;
 	
 	private SqlMapClient sqlMapClient;
 
@@ -55,7 +57,7 @@ public class BookService {
         return res;
     }
 
-    private MaxCountLimitedMap<Integer, BookDTO> _cache = new MaxCountLimitedMap<Integer, BookDTO>(10);
+    private MaxCountLimitedMap<Integer, BookDTO> _cache = new MaxCountLimitedMap<Integer, BookDTO>(MAX_BOOK_COUNT_IN_CACHE);
         
     public void update(BookDTO book) throws BookException, SQLException
     {

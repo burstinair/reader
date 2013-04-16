@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="BookUpdateRecordDao">
+
+	<typeAlias alias="BookUpdateRecordDTO" type="burst.reader.dto.BookUpdateRecordDTO" />
+    
+    <resultMap id="bookUpdateRecord" class="BookUpdateRecordDTO">
+        <result property="id" column="id" />
+        <result property="bookId" column="book_id" />
+        <result property="version" column="version" />
+        <result property="currentSize" column="current_size" />
+        <result property="special" column="special" />
+        <result property="addDate" column="add_date" />
+        <result property="ip" column="ip" />
+        <result property="userAgent" column="user_agent" />
+    </resultMap>
+
+	<select id="queryByBookId" parameterClass="java.lang.Integer" resultMap="bookUpdateRecord">
+		select * from book_update_record
+			where book_id = #bookId# order by add_date desc
+	</select>
+	
+	<select id="loadIdByBookIdAndSpecial" parameterClass="BookUpdateRecordDTO" resultClass="java.lang.Integer">
+		select id from book_update_record where book_id = #bookId# and special = #special#
+	</select>
+
+    <select id="loadRecent" resultMap="bookUpdateRecord">
+		select * from book_update_record order by add_date desc limit 0, 1
+	</select>
+	
+	<insert id="add" parameterClass="BookUpdateRecordDTO">
+		insert into book_update_record values(
+			null, #bookId#, #version#, #currentSize#, #special#, #addDate#, #ip#, #userAgent#
+		)
+	</insert>
+	
+	<update id="update" parameterClass="BookUpdateRecordDTO">
+		update book_update_record
+			set
+				book_id = #bookId#,
+				version = #version#,
+				current_size = #currentSize#,
+				special = #special#,
+				add_date = #addDate#,
+				ip = #ip#,
+				user_agent = #userAgent#
+			where
+				id = #id#
+	</update>
+	
+	<delete id="deleteByBookId" parameterClass="BookUpdateRecordDTO">
+		delete from book_update_record where book_id = #bookId#
+	</delete>
+
+</sqlMap>

@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
-	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
-	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
-	<bean id="modelBase" scope="prototype" abstract="true">
+	<bean id="modelBase" scope="prototype" class="burst.reader.web.action.model.BaseModel" abstract="true">
 		<property name="config">
 			<util:properties location="classpath:config/reader.properties" />
 		</property>
 	</bean>
 
-    <bean id="pageModelBase" scope="prototype" abstract="true" parent="modelBase">
+    <bean id="pageModelBase" scope="prototype" class="burst.reader.web.action.model.PageModelImpl" abstract="true" parent="modelBase">
         <property name="currentPage" value="1" />
         <property name="pageSize" value="${indexListCount}" />
     </bean>
@@ -35,6 +29,7 @@
 	<bean id="editActionModel" class="burst.reader.web.action.admin.model.EditActionModel" parent="modelBase">
 		<property name="id" value="0" />
 	</bean>
+    <bean id="updateActionModel" class="burst.reader.web.action.admin.model.UpdateActionModel" parent="modelBase" />
 	<bean id="executeSQLActionModel" class="burst.reader.web.action.admin.model.ExecuteSQLActionModel" parent="modelBase" />
 
     <bean id="errorActionModel" class="burst.reader.web.action.model.ErrorActionModel" parent="modelBase" />

@@ -4,6 +4,7 @@
     <!-- Any urls that are excluded will never be decorated by Sitemesh -->
     <excludes>
         <pattern>/robots.txt</pattern>
+        <pattern>/admin/update</pattern>
         <pattern>/styles/*</pattern>
         <pattern>/scripts/*</pattern>
         <pattern>/images/*</pattern>

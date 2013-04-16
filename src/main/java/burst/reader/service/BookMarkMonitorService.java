@@ -1,7 +1,8 @@
 package burst.reader.service;
 
 import java.sql.SQLException;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
@@ -11,8 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import burst.reader.dto.BookMarkDTO;
 
 public class BookMarkMonitorService implements Runnable {
-	
-	private ConcurrentLinkedQueue<BookMarkDTO> q;
+
+    public static final int QUEUE_SIZE = 100;
+
+	private BlockingQueue<BookMarkDTO> q;
     private String userAgentFilter;
 
     public void push(BookMarkDTO bookMark) {
@@ -20,7 +23,7 @@ public class BookMarkMonitorService implements Runnable {
 	}
 	
 	public BookMarkMonitorService() {
-		q = new ConcurrentLinkedQueue<BookMarkDTO>();
+		q = new ArrayBlockingQueue<BookMarkDTO>(QUEUE_SIZE);
         new Thread(this).start();
 	}
 	
@@ -36,18 +39,18 @@ public class BookMarkMonitorService implements Runnable {
 	
 	@Override
 	public void run() {
+
+        boolean useFilter = !"".equals(userAgentFilter);
+
 		while(true) {
+            BookMarkDTO bookMark;
 			try {
-				Thread.sleep(50);
+                bookMark = q.take();
 			} catch (InterruptedException e) {
 				continue;
 			}
-			BookMarkDTO bookMark = q.poll();
-			if(bookMark == null) {
-				continue;
-			}
 			try {
-                if(!"".equals(userAgentFilter)) {
+                if(useFilter) {
                     if(bookMark.getUserAgent().matches(userAgentFilter)) {
                         continue;
                     }
