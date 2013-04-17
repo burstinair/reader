@@ -6,6 +6,7 @@ package burst.reader.web.action.admin;
 
 import burst.reader.web.action.BaseAction;
 import burst.reader.web.action.admin.model.UpdateActionModel;
+import burst.reader.web.action.admin.service.UpdateService;
 import com.opensymphony.xwork2.ModelDriven;
 
 /**
@@ -16,12 +17,14 @@ public class UpdateAction extends BaseAction implements ModelDriven<UpdateAction
 
 	private static final long serialVersionUID = 9049433841834398357L;
 
+    public void setUpdateService(UpdateService updateService) {
+        this.updateService = updateService;
+    }
+
+    private UpdateService updateService;
+
 	public String execute() throws Exception {
-
-        updateActionModel.setStatus("error");
-        updateActionModel.setMessage("not implemented yet.");
-
-        return SUCCESS;
+        return updateService.doExecute(updateActionModel);
     }
 
     private UpdateActionModel updateActionModel;

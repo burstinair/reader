@@ -5,20 +5,9 @@
 	xsi:schemaLocation="
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
-		
-	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource"></property>
-	</bean>
-	<tx:advice id="txAdvice" transaction-manager="txManager">
-		<tx:attributes>
-			<tx:method name="add*" rollback-for="java.sql.SQLException" />
-			<tx:method name="delete*" rollback-for="java.sql.SQLException" />
-			<tx:method name="update*" rollback-for="java.sql.SQLException" />
-			<tx:method name="load*" rollback-for="java.sql.SQLException" />
-			<tx:method name="execute*" rollback-for="java.sql.SQLException" />
-		</tx:attributes>
-	</tx:advice>
-	
+
+    <!-- DAO Service -->
+
 	<bean id="bookService" class="burst.reader.service.BookService">
 		<property name="sqlMapClient" ref="sqlMapClient" />
 	</bean>
@@ -35,6 +24,37 @@
     <bean id="executeSQLService" class="burst.reader.service.ExecuteSQLService">
         <property name="sqlMapClient" ref="sqlMapClient" />
     </bean>
+
+    <!-- Action Service -->
+
+    <bean id="baseActionService" class="burst.reader.web.action.service.BaseService" abstract="true">
+        <property name="bookService" ref="bookService" />
+        <property name="bookMarkService" ref="bookMarkService" />
+    </bean>
+
+    <bean id="readerService" class="burst.reader.web.action.reader.service.ReaderService" parent="baseActionService">
+        <property name="bookMarkMonitorService" ref="bookMarkMonitorService" />
+    </bean>
+
+    <bean id="editService" class="burst.reader.web.action.admin.service.EditService" parent="baseActionService" />
+
+    <bean id="updateService" class="burst.reader.web.action.admin.service.UpdateService" parent="baseActionService" />
+
+    <!-- Transaction -->
+
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <tx:method name="add*" rollback-for="java.sql.SQLException" />
+            <tx:method name="delete*" rollback-for="java.sql.SQLException" />
+            <tx:method name="update*" rollback-for="java.sql.SQLException" />
+            <tx:method name="load*" rollback-for="java.sql.SQLException" />
+            <tx:method name="execute*" rollback-for="java.sql.SQLException" />
+            <tx:method name="do*" rollback-for="java.sql.SQLException" />
+        </tx:attributes>
+    </tx:advice>
 
 	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
 		<property name="beanNames" value="*Service" />

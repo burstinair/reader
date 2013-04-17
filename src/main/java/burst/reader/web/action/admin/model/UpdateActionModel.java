@@ -9,6 +9,10 @@ public class UpdateActionModel extends BaseModel {
 
     private String contentToAppend;
 
+    private String fromVersion;
+
+    private String toVersion;
+
     private String version;
 
     private String action;
@@ -31,6 +35,22 @@ public class UpdateActionModel extends BaseModel {
 
     public void setContentToAppend(String contentToAppend) {
         this.contentToAppend = contentToAppend;
+    }
+
+    public String getToVersion() {
+        return toVersion;
+    }
+
+    public void setToVersion(String toVersion) {
+        this.toVersion = toVersion;
+    }
+
+    public String getFromVersion() {
+        return fromVersion;
+    }
+
+    public void setFromVersion(String fromVersion) {
+        this.fromVersion = fromVersion;
     }
 
     public String getVersion() {
