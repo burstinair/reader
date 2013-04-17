@@ -83,6 +83,17 @@
 				id = #id#
 	</update>
 
+    <update id="updateWithoutContent" parameterClass="BookDTO">
+		update book
+			set
+				name = #name#,
+				author = #author#,
+				add_date = #addDate#,
+				visible = #visible#
+			where
+				id = #id#
+	</update>
+
 	<insert id="add" parameterClass="BookDTO">
 		insert into book values(
 			null, #name#, #author#, #addDate#, #visible#, #content#
@@ -93,7 +104,7 @@
         select last_insert_rowid() from book limit 0, 1
     </select>
 	
-	<delete id="delete" parameterClass="BookDTO">
+	<delete id="delete" parameterClass="java.lang.Integer">
 		delete from book where id = #id#
 	</delete>
 

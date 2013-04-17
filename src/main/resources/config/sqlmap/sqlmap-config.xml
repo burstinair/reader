@@ -9,6 +9,6 @@
 		  
 	<sqlMap resource="config/sqlmap/bookDao.xml"/>
     <sqlMap resource="config/sqlmap/bookMarkDao.xml"/>
-    <sqlMap resource="config/sqlmap/bookUpdateRecord.xml"/>
+    <sqlMap resource="config/sqlmap/bookUpdateRecordDao.xml"/>
     <sqlMap resource="config/sqlmap/executeSQLDao.xml"/>
 </sqlMapConfig>

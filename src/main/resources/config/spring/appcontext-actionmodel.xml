@@ -6,10 +6,10 @@
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
+    <util:properties id="readerConfig" location="classpath:config/reader.properties" />
+
 	<bean id="modelBase" scope="prototype" class="burst.reader.web.action.model.BaseModel" abstract="true">
-		<property name="config">
-			<util:properties location="classpath:config/reader.properties" />
-		</property>
+		<property name="config" ref="readerConfig" />
 	</bean>
 
     <bean id="pageModelBase" scope="prototype" class="burst.reader.web.action.model.PageModelImpl" abstract="true" parent="modelBase">

@@ -54,7 +54,7 @@
 				id = #id#
 	</update>
 	
-	<delete id="deleteByBookId" parameterClass="BookMarkDTO">
+	<delete id="deleteByBookId" parameterClass="java.lang.Integer">
 		delete from book_mark where book_id = #bookId#
 	</delete>
 

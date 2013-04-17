@@ -11,7 +11,8 @@
         <@s.hidden name="id" value="%{book.id}" />
         <@s.textfield label="书名" name="name" value="%{book.name}" />
         <@s.textfield label="作者" name="author" value="%{book.author}" />
-        <@s.file name="upload" label="选择文件(*.txt)"></@s.file>
+        <@s.textfield label="版本" name="version" value="%{version}" />
+        <@s.file name="upload" label="选择文件(*.txt)，留空则不更新内容。"></@s.file>
         <@s.submit label="提交" />
     </@s.form>
 </body>

@@ -1,4 +1,4 @@
-package burst.reader.util;
+package burst.web.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

@@ -19,6 +19,7 @@
     <package name="reader-default" extends="struts-default">
         <result-types>
             <result-type name="forward" class="burst.web.ForwardResult"></result-type>
+            <result-type name="json" class="burst.web.JsonResult"></result-type>
             <result-type name="extendedRedirect" class="burst.reader.web.ExtendedRedirectResult"></result-type>
         </result-types>
 

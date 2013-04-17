@@ -1,4 +1,4 @@
-package burst.reader.util;
+package burst.web.util;
 
 import java.io.BufferedInputStream;
 import java.util.Properties;

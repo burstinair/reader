@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.context.ApplicationContext;
 
-import burst.reader.util.SpringLocator;
-import burst.reader.util.WebUtil;
+import burst.web.util.SpringLocator;
+import burst.web.util.WebUtil;
 
 public class URLRewriteFilter implements Filter {
 
@@ -39,7 +39,7 @@ public class URLRewriteFilter implements Filter {
 			FilterChain chain) throws IOException, ServletException {
 		
 		HttpServletRequest hsRequest = (HttpServletRequest)request;
-        String userAgent = hsRequest.getHeader("User-Agent");
+        String userAgent = hsRequest.getHeader(WebUtil.HEAD_USERAGENT);
 
         if(userAgent.matches(userAgentFilter)) {
             for(Entry<String, String> entry : userAgentFilterUrlRewriteRules) {

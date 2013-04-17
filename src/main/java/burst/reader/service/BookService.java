@@ -5,13 +5,16 @@
 package burst.reader.service;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import burst.commons.model.PageModel;
 import burst.reader.BookException;
 import burst.reader.dto.BookDTO;
-import burst.reader.util.MaxCountLimitedMap;
+import burst.reader.dto.BookUpdateRecordDTO;
+import burst.web.util.MaxCountLimitedMap;
 
+import burst.web.model.RemoteModel;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 /**
@@ -21,8 +24,14 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 public class BookService {
 
     public static final int MAX_BOOK_COUNT_IN_CACHE = 10;
-	
-	private SqlMapClient sqlMapClient;
+    public static final String SPECIAL_INIT = "init";
+    public static final String SPECIAL_DELETE = "delete";
+    public static final String SPECIAL_UPDATE = "update";
+    public static final String VERSION_INIT = "version_init";
+    public static final String VERSION_DELETE = "version_delete";
+    private static final Integer CONTENT_SIZE_NOCHANGE = -1;
+
+    private SqlMapClient sqlMapClient;
 
 	public void setSqlMapClient(SqlMapClient sqlMapClient) {
 		this.sqlMapClient = sqlMapClient;
@@ -58,11 +67,67 @@ public class BookService {
     }
 
     private MaxCountLimitedMap<Integer, BookDTO> _cache = new MaxCountLimitedMap<Integer, BookDTO>(MAX_BOOK_COUNT_IN_CACHE);
-        
+
+    public void addBookUpdateRecord(Integer bookId, Integer currentSize, String version, RemoteModel remoteModel, String special) throws SQLException {
+        BookUpdateRecordDTO record = new BookUpdateRecordDTO();
+        record.setAddDate(new Date());
+        record.setBookId(bookId);
+        record.setSpecial(special);
+        record.setIp(remoteModel.getRemoteAddr());
+        record.setUserAgent(remoteModel.getUserAgent());
+        BookUpdateRecordDTO last = null;
+        if(version == null || currentSize == CONTENT_SIZE_NOCHANGE) {
+            last = loadLastUpdateRecord(bookId);
+        }
+        if(version == null) {
+            if(last == null) {
+                record.setVersion(VERSION_INIT);
+            } else {
+                record.setVersion(last.getVersion());
+            }
+        } else {
+            record.setVersion(version);
+        }
+        if(currentSize == CONTENT_SIZE_NOCHANGE) {
+            if(last == null) {
+                record.setCurrentSize(0);
+            } else {
+                record.setCurrentSize(last.getCurrentSize());
+            }
+        } else {
+            record.setCurrentSize(currentSize);
+        }
+        sqlMapClient.insert("BookUpdateRecordDao.add", record);
+    }
+
     public void update(BookDTO book) throws BookException, SQLException
     {
-    	sqlMapClient.update("BookDao.update", book);
+        sqlMapClient.update("BookDao.update", book);
         _cache.remove(book.getId());
+    }
+
+    public void updateWithoutContent(BookDTO book) throws BookException, SQLException
+    {
+        sqlMapClient.update("BookDao.updateWithoutContent", book);
+        _cache.remove(book.getId());
+    }
+
+    public void updateAndAddRecord(BookDTO book, RemoteModel remoteModel, String version) throws BookException, SQLException {
+        addBookUpdateRecord(book.getId(), book.getContent().length(), version, remoteModel, SPECIAL_UPDATE);
+        update(book);
+    }
+
+    public void updateWithoutContentAndAddRecord(BookDTO book, RemoteModel remoteModel, String version) throws BookException, SQLException {
+        addBookUpdateRecord(book.getId(), CONTENT_SIZE_NOCHANGE, version, remoteModel, SPECIAL_UPDATE);
+        updateWithoutContent(book);
+    }
+
+    public List<BookUpdateRecordDTO> loadHistory(int Id) throws SQLException {
+        return sqlMapClient.queryForList("BookUpdateRecordDao.queryByBookId", Id);
+    }
+
+    public BookUpdateRecordDTO loadLastUpdateRecord(int Id) throws SQLException {
+        return (BookUpdateRecordDTO)sqlMapClient.queryForObject("BookUpdateRecordDao.queryLastByBookId", Id);
     }
     
     public BookDTO loadBookFromDb(int Id) throws BookException, SQLException
@@ -111,16 +176,24 @@ public class BookService {
     public void addBook(BookDTO book) throws SQLException
     {
         sqlMapClient.insert("BookDao.add", book);
-        book.setId((Integer)sqlMapClient.queryForObject("BookDao.lastInsertId"));
+        book.setId((Integer) sqlMapClient.queryForObject("BookDao.lastInsertId"));
+    }
+
+    public void addBookAndAddRecord(BookDTO book, RemoteModel remoteModel, String version) throws SQLException {
+        addBookUpdateRecord(book.getId(), book.getContent().length(), version, remoteModel, SPECIAL_INIT);
+        addBook(book);
     }
     
     public void deleteBook(int Id) throws SQLException
     {
-        BookDTO book = new BookDTO();
-        book.setId(Id);
-        sqlMapClient.delete("BookDao.delete", book);
-        sqlMapClient.delete("BookMarkDao.deleteByBookId", book);
+        sqlMapClient.delete("BookDao.delete", Id);
+        sqlMapClient.delete("BookMarkDao.deleteByBookId", Id);
         _cache.remove(Id);
+    }
+
+    public void deleteBookAndAddRecord(int Id, RemoteModel remoteModel, String version) throws SQLException {
+        addBookUpdateRecord(Id, 0, version, remoteModel, SPECIAL_DELETE);
+        deleteBook(Id);
     }
 
     public void updateVisible(Integer bookId, String b) throws SQLException {

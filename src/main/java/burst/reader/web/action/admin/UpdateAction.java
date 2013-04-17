@@ -18,6 +18,9 @@ public class UpdateAction extends BaseAction implements ModelDriven<UpdateAction
 
 	public String execute() throws Exception {
 
+        updateActionModel.setStatus("error");
+        updateActionModel.setMessage("not implemented yet.");
+
         return SUCCESS;
     }
 
@@ -28,7 +31,7 @@ public class UpdateAction extends BaseAction implements ModelDriven<UpdateAction
 		return updateActionModel;
 	}
     
-	public void setAdminActionModel(UpdateActionModel updateActionModel) {
+	public void setUpdateActionModel(UpdateActionModel updateActionModel) {
 		this.updateActionModel = updateActionModel;
 	}
 }

@@ -1,5 +1,6 @@
 package burst.reader.web;
 
+import burst.web.util.WebUtil;
 import com.opensymphony.xwork2.ActionInvocation;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.dispatcher.StrutsResultSupport;
@@ -32,7 +33,7 @@ public class ExtendedRedirectResult extends StrutsResultSupport {
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpServletResponse response = ServletActionContext.getResponse();
 
-        if(request.getHeader("User-Agent").toLowerCase().indexOf("untrusted/1.0") != -1) {
+        if(request.getHeader(WebUtil.HEAD_USERAGENT).toLowerCase().indexOf("untrusted/1.0") != -1) {
             response.setContentType("text/vnd.wap.wml");
             PrintWriter writer = response.getWriter();
             writer.print("<?xml version=\"1.0\"?><!DOCTYPE wml PUBLIC \"-//WAPFORUM//DTD WML 1.1//EN\" \"http://www.wapforum.org/DTD/wml_1.1.xml\">");

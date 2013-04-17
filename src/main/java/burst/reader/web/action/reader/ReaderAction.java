@@ -6,6 +6,8 @@ package burst.reader.web.action.reader;
 
 import java.util.Date;
 
+import burst.web.model.RemoteModel;
+import burst.web.util.WebUtil;
 import com.opensymphony.xwork2.ModelDriven;
 
 import burst.reader.BookException;
@@ -56,15 +58,15 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
 
     private void dealBookMark() {
 
-        HttpServletRequest request = ServletActionContext.getRequest();
+        RemoteModel remoteModel = WebUtil.getRemoteModel();
 
         BookMarkDTO bookmark = new BookMarkDTO();
         bookmark.setBookId(readerActionModel.getId());
         bookmark.setAddDate(new Date());
         bookmark.setPage(readerActionModel.getCurrentPage());
         bookmark.setWordCount(readerActionModel.getPageSize());
-        bookmark.setIp(request.getRemoteAddr());
-        bookmark.setUserAgent(request.getHeader("User-Agent"));
+        bookmark.setIp(remoteModel.getRemoteAddr());
+        bookmark.setUserAgent(remoteModel.getUserAgent());
 
         if ("normal".equals(readerActionModel.getBookmarkAction())) {
             bookmark.setSpecial(BookMarkService.NORMAL);
@@ -84,31 +86,8 @@ public class ReaderAction extends BaseAction implements ModelDriven<ReaderAction
         if(!"".equals(contentFilter)) {
             content = content.replaceAll(contentFilter, "");
         }
-        StringBuilder res = new StringBuilder();
-        for (int i = 0, l = content.length(); i < l; ++i) {
-            char c = content.charAt(i);
-            if (c == '\r') {
-                if(i < l - 1) {
-                    if (content.charAt(i + 1) == '\n') {
-                        ++i;
-                    }
-                }
-                res.append("<br />");
-            } else if (c == '\n') {
-                res.append("<br />");
-            } else if (c == ' ') {
-                res.append("&nbsp;");
-            } else if (c == '<') {
-                res.append("&lt;");
-            } else if (c == '>') {
-                res.append("&gt;");
-            } else if (c == '&') {
-                res.append("&amp;");
-            } else {
-                res.append(c);
-            }
-        }
-        return res.toString();
+
+        return WebUtil.EncodeCRLF(content);
     }
 	
 	private BookMarkMonitorService bookMarkMonitorService;
