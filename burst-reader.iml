@@ -104,6 +104,10 @@
     <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.5.8" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.5.8" level="project" />
+    <orderEntry type="library" name="Maven: antlr:antlr:2.7.4" level="project" />
+    <orderEntry type="library" name="Maven: cpdetector:chardet:1.0" level="project" />
+    <orderEntry type="library" name="Maven: cpdetector:jargs:1.0" level="project" />
+    <orderEntry type="library" name="Maven: cpdetector:cpdetector:1.0.10" level="project" />
   </component>
 </module>
 

@@ -4,7 +4,7 @@
 	<groupId>burst</groupId>
 	<artifactId>burst-reader</artifactId>
 	<packaging>war</packaging>
-	<version>1.2</version>
+	<version>1.3</version>
 	<name>burstreader</name>
 	<repositories>
         <repository>
@@ -130,6 +130,35 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.5.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>antlr</groupId>
+            <artifactId>antlr</artifactId>
+            <version>2.7.4</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/antlr-2.7.4.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>cpdetector</groupId>
+            <artifactId>chardet</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/chardet-1.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>cpdetector</groupId>
+            <artifactId>jargs</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/jargs-1.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>cpdetector</groupId>
+            <artifactId>cpdetector</artifactId>
+            <version>1.0.10</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/cpdetector_1.0.10.jar</systemPath>
         </dependency>
 	</dependencies>
 	<profiles>

@@ -180,8 +180,8 @@ public class BookService {
     }
 
     public void addBookAndAddRecord(BookDTO book, RemoteModel remoteModel, String version) throws SQLException {
-        addBookUpdateRecord(book.getId(), book.getContent().length(), version, remoteModel, SPECIAL_INIT);
         addBook(book);
+        addBookUpdateRecord(book.getId(), book.getContent().length(), version, remoteModel, SPECIAL_INIT);
     }
     
     public void deleteBook(int Id) throws SQLException

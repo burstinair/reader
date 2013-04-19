@@ -69,7 +69,7 @@ public class EditService extends BaseService {
                     throw new Exception();
                 }
             } else {
-                book.setContent(WebUtil.readAllText(editActionModel.getUpload(), Charset.forName("GBK")));
+                book.setContent(WebUtil.readAllText(editActionModel.getUpload()));
             }
             editActionModel.setBook(book);
         } catch (Exception ex) {

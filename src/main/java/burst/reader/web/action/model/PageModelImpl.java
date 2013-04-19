@@ -7,11 +7,21 @@ public class PageModelImpl extends BaseModel implements PageModel {
 	private Integer currentPage;
 	private Integer pageSize;
 	private Integer pageCount;
+
+    private Integer defaultSize;
+
+    private boolean showPageSizeInUrl;
 	
 	private int unboxedCurrentPage;
 	private int unboxedPageSize;
 	private int unboxedPageCount;
-	
+
+    public void setDefaultSize(Integer defaultSize) {
+        this.defaultSize = defaultSize;
+    }
+    public boolean isShowPageSizeInUrl() {
+        return showPageSizeInUrl;
+    }
 	public Integer getCurrentPage() {
 		return currentPage;
 	}
@@ -33,6 +43,7 @@ public class PageModelImpl extends BaseModel implements PageModel {
 		} else {
 			this.unboxedPageSize = pageSize;
 		}
+        showPageSizeInUrl = pageSize != defaultSize;
 	}
 	public Integer getPageCount() {
 		return pageCount;

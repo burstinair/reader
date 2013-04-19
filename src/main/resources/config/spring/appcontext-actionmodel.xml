@@ -14,11 +14,13 @@
 
     <bean id="pageModelBase" scope="prototype" class="burst.reader.web.action.model.PageModelImpl" abstract="true" parent="modelBase">
         <property name="currentPage" value="1" />
+        <property name="defaultSize" value="${indexListCount}" />
         <property name="pageSize" value="${indexListCount}" />
     </bean>
 	<bean id="indexActionModel" class="burst.reader.web.action.reader.model.IndexActionModel" parent="pageModelBase" />
     <bean id="authorActionModel" class="burst.reader.web.action.reader.model.AuthorActionModel" parent="pageModelBase" />
 	<bean id="readerActionModel" class="burst.reader.web.action.reader.model.ReaderActionModel" parent="pageModelBase">
+        <property name="defaultSize" value="${wordCountPerPage}" />
         <property name="pageSize" value="${wordCountPerPage}" />
         <property name="contentFilter" value="${contentFilter}" />
 	</bean>

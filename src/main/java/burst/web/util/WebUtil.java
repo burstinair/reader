@@ -9,14 +9,13 @@ package burst.web.util;
  */
 
 import burst.web.model.RemoteModel;
+import info.monitorenter.cpdetector.io.ASCIIDetector;
+import info.monitorenter.cpdetector.io.CodepageDetectorProxy;
+import info.monitorenter.cpdetector.io.JChardetFacade;
+import info.monitorenter.cpdetector.io.UnicodeDetector;
 import org.apache.struts2.ServletActionContext;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 
@@ -26,12 +25,24 @@ public class WebUtil {
 
     public static final String HEAD_USERAGENT = "User-Agent";
 
-    public static String readAllText(File file, Charset charset) throws IOException
+    public static final CodepageDetectorProxy cpDetector;
+    static {
+        cpDetector = CodepageDetectorProxy.getInstance();
+        //cpDetector.add(ASCIIDetector.getInstance());
+        cpDetector.add(UnicodeDetector.getInstance());
+        cpDetector.add(JChardetFacade.getInstance());
+    }
+
+    public static String readAllText(File file) throws IOException
     {
-        FileInputStream s = new FileInputStream(file);
+        final int BUFFER_SIZE = 10240;
+        final int DETECT_LENGTH = 1000;
+
+        InputStream s = new BufferedInputStream(new FileInputStream(file));
+        Charset charset = cpDetector.detectCodepage(s, DETECT_LENGTH);
         InputStreamReader r = new InputStreamReader(s, charset);
         BufferedReader br = new BufferedReader(r);
-        CharBuffer cb = CharBuffer.allocate(10240);
+        CharBuffer cb = CharBuffer.allocate(BUFFER_SIZE);
         StringBuilder res = new StringBuilder();
         while(br.read(cb) >= 0) {
             res.append(cb.flip());
