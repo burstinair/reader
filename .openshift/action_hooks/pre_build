@@ -3,3 +3,8 @@
 # available.  Otherwise it will execute while your application is stopped
 # before the build step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
+
+mvn install:install-file -Dfile=../../app-root/repo/lib/antlr-2.7.4.jar -DgroupId=cpdetector -DartifactId=antlr -Dversion=2.7.4 -Dpackaging=jar
+mvn install:install-file -Dfile=../../app-root/repo/lib/chardet-1.0.jar -DgroupId=cpdetector -DartifactId=chardet -Dversion=1.0 -Dpackaging=jar
+mvn install:install-file -Dfile=../../app-root/repo/lib/jargs-1.0.jar -DgroupId=cpdetector -DartifactId=jargs -Dversion=1.0 -Dpackaging=jar
+mvn install:install-file -Dfile=../../app-root/repo/lib/cpdetector_1.0.10.jar -DgroupId=cpdetector -DartifactId=cpdetector -Dversion=1.0.10 -Dpackaging=jar
