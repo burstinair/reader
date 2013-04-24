@@ -41,15 +41,17 @@ public class URLRewriteFilter implements Filter {
 		HttpServletRequest hsRequest = (HttpServletRequest)request;
         String userAgent = hsRequest.getHeader(WebUtil.HEAD_USERAGENT);
 
-        if(userAgent.matches(userAgentFilter)) {
-            for(Entry<String, String> entry : userAgentFilterUrlRewriteRules) {
+        if(userAgent != null) {
+            if(userAgent.matches(userAgentFilter)) {
+                for(Entry<String, String> entry : userAgentFilterUrlRewriteRules) {
 
-                Pattern p = Pattern.compile(entry.getKey());
-                Matcher m = p.matcher(WebUtil.getContextURL(hsRequest));
-                if(m.matches()) {
-                    RequestDispatcher dispatcher = request.getRequestDispatcher(getRewritedURL(m, entry.getValue(), hsRequest));
-                    dispatcher.forward(request, response);
-                    return;
+                    Pattern p = Pattern.compile(entry.getKey());
+                    Matcher m = p.matcher(WebUtil.getContextURL(hsRequest));
+                    if(m.matches()) {
+                        RequestDispatcher dispatcher = request.getRequestDispatcher(getRewritedURL(m, entry.getValue(), hsRequest));
+                        dispatcher.forward(request, response);
+                        return;
+                    }
                 }
             }
         }

@@ -51,8 +51,10 @@ public class BookMarkMonitorService implements Runnable {
 			}
 			try {
                 if(useFilter) {
-                    if(bookMark.getUserAgent().matches(userAgentFilter)) {
-                        continue;
+                    if(bookMark.getUserAgent() != null) {
+                        if(bookMark.getUserAgent().matches(userAgentFilter)) {
+                            continue;
+                        }
                     }
                 }
 				bookMarkService.addBookMarkWithAuto(bookMark);
