@@ -1403,7 +1403,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>eml</extension>
-        <mime-type>message/rfc822</mime-type>
+        <mime-type>result/rfc822</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>emma</extension>
@@ -1659,7 +1659,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>gim</extension>
-        <mime-type>application/vnd.groove-identity-message</mime-type>
+        <mime-type>application/vnd.groove-identity-result</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>gmx</extension>
@@ -1707,7 +1707,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>gtm</extension>
-        <mime-type>application/vnd.groove-tool-message</mime-type>
+        <mime-type>application/vnd.groove-tool-result</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>gtw</extension>
@@ -2295,7 +2295,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>mime</extension>
-        <mime-type>message/rfc822</mime-type>
+        <mime-type>result/rfc822</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>mj2</extension>

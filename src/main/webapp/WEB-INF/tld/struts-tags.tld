@@ -7550,7 +7550,7 @@
     <dynamic-attributes>true</dynamic-attributes>
   </tag>
   <tag>
-    <description><![CDATA[Render a I18n text message]]></description>
+    <description><![CDATA[Render a I18n text result]]></description>
     <name>text</name>
     <tag-class>org.apache.struts2.views.jsp.TextTag</tag-class>
     <body-content>JSP</body-content>

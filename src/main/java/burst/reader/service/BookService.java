@@ -6,7 +6,9 @@ package burst.reader.service;
 
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import burst.commons.model.PageModel;
 import burst.reader.BookException;
@@ -122,40 +124,51 @@ public class BookService {
         updateWithoutContent(book);
     }
 
-    public List<BookUpdateRecordDTO> loadHistory(int Id) throws SQLException {
-        return sqlMapClient.queryForList("BookUpdateRecordDao.queryByBookId", Id);
+    public List<BookUpdateRecordDTO> loadHistory(int id) throws SQLException {
+        return sqlMapClient.queryForList("BookUpdateRecordDao.queryByBookId", id);
     }
 
-    public BookUpdateRecordDTO loadLastUpdateRecord(int Id) throws SQLException {
-        return (BookUpdateRecordDTO)sqlMapClient.queryForObject("BookUpdateRecordDao.queryLastByBookId", Id);
+    public BookUpdateRecordDTO loadLastUpdateRecord(int id) throws SQLException {
+        return (BookUpdateRecordDTO)sqlMapClient.queryForObject("BookUpdateRecordDao.queryLastByBookId", id);
+    }
+
+    public BookUpdateRecordDTO loadSecondToLastUpdateRecord(int id) throws SQLException {
+        return (BookUpdateRecordDTO)sqlMapClient.queryForObject("BookUpdateRecordDao.querySecondToLastByBookId", id);
+    }
+
+    public BookUpdateRecordDTO loadVersion(int id, String version) throws SQLException {
+        Map<String, Object> param = new HashMap<String, Object>();
+        param.put("bookId", id);
+        param.put("version", version);
+        return (BookUpdateRecordDTO)sqlMapClient.queryForObject("BookUpdateRecordDao.queryByBookIdAndVersion", param);
     }
     
-    public BookDTO loadBookFromDb(int Id) throws BookException, SQLException
+    public BookDTO loadBookFromDb(int id) throws BookException, SQLException
     {
-        BookDTO book = (BookDTO)sqlMapClient.queryForObject("BookDao.load", Id);
+        BookDTO book = (BookDTO)sqlMapClient.queryForObject("BookDao.load", id);
         if (book == null) {
             throw new BookException();
         }
         _cache.put(book.getId(), book);
         return book;
     }
-    public BookDTO loadBook(int Id) throws BookException, SQLException
+    public BookDTO loadBook(int id) throws BookException, SQLException
     {
-        if(_cache.containsKey(Id)) {
-            return _cache.get(Id);
+        if(_cache.containsKey(id)) {
+            return _cache.get(id);
         }
-        return loadBookFromDb(Id);
+        return loadBookFromDb(id);
     }
-    public String loadName(int Id) throws BookException, SQLException
+    public String loadName(int id) throws BookException, SQLException
     {
-        return loadBook(Id).getName();
+        return loadBook(id).getName();
     }
-    public String loadPagedContent(int Id, PageModel model) throws BookException, SQLException
+    public String loadPagedContent(int id, PageModel model) throws BookException, SQLException
     {
     	int cur_page = model.getCurrentPage();
     	int word_count = model.getPageSize();
         int start_pos = (cur_page - 1) * word_count, end_pos = start_pos + word_count;
-        BookDTO book = loadBook(Id);
+        BookDTO book = loadBook(id);
         int total = book.getContent().length();
         if(total % word_count == 0) {
             model.setPageCount(total / word_count);
@@ -184,16 +197,16 @@ public class BookService {
         addBookUpdateRecord(book.getId(), book.getContent().length(), version, remoteModel, SPECIAL_INIT);
     }
     
-    public void deleteBook(int Id) throws SQLException
+    public void deleteBook(int id) throws SQLException
     {
-        sqlMapClient.delete("BookDao.delete", Id);
-        sqlMapClient.delete("BookMarkDao.deleteByBookId", Id);
-        _cache.remove(Id);
+        sqlMapClient.delete("BookDao.delete", id);
+        sqlMapClient.delete("BookMarkDao.deleteByBookId", id);
+        _cache.remove(id);
     }
 
-    public void deleteBookAndAddRecord(int Id, RemoteModel remoteModel, String version) throws SQLException {
-        addBookUpdateRecord(Id, 0, version, remoteModel, SPECIAL_DELETE);
-        deleteBook(Id);
+    public void deleteBookAndAddRecord(int id, RemoteModel remoteModel, String version) throws SQLException {
+        addBookUpdateRecord(id, 0, version, remoteModel, SPECIAL_DELETE);
+        deleteBook(id);
     }
 
     public void updateVisible(Integer bookId, String b) throws SQLException {

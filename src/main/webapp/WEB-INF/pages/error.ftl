@@ -3,5 +3,5 @@
 </head>
 
 <body>
-    ${message}
+    ${result}
 </body>

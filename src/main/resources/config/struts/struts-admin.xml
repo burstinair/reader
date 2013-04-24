@@ -14,9 +14,7 @@
             <result name="input" type="freemarker">/WEB-INF/pages/admin/edit.ftl</result>
         </action>
         <action name="update" class="burst.reader.web.action.admin.UpdateAction">
-            <result type="json">
-                <![CDATA[{"status":"${status}","message":"${message}"}]]>
-            </result>
+            <result type="json" />
         </action>
         <action name="editSubmit" class="burst.reader.web.action.admin.EditAction" method="submit">
             <result name="redirect" type="extendedRedirect">/admin/edit/${book.id}</result>

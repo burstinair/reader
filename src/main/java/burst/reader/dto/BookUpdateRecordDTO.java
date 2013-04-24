@@ -4,6 +4,8 @@
  */
 package burst.reader.dto;
 
+import burst.json.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,6 +18,7 @@ public class BookUpdateRecordDTO implements Serializable {
 	private static final long serialVersionUID = -5663823481587712487L;
 	
     private Integer id;
+    @JsonIgnore
     public Integer getId()
     {
         return id;
@@ -26,6 +29,7 @@ public class BookUpdateRecordDTO implements Serializable {
     }
     
     private Integer bookId;
+    @JsonIgnore
     public Integer getBookId()
     {
         return bookId;
@@ -75,6 +79,7 @@ public class BookUpdateRecordDTO implements Serializable {
     	this.special = special;
     }
 
+    @JsonIgnore
     public String getIp() {
         return ip;
     }
@@ -85,6 +90,7 @@ public class BookUpdateRecordDTO implements Serializable {
 
     private String ip;
 
+    @JsonIgnore
     public String getUserAgent() {
         return userAgent;
     }

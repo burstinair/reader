@@ -1,9 +1,12 @@
 package burst.reader.web.action.admin.model;
 
-import burst.reader.dto.BookDTO;
+import burst.commons.model.ResultModel;
 import burst.reader.web.action.model.BaseModel;
 
-public class UpdateActionModel extends BaseModel {
+import java.util.HashMap;
+import java.util.Map;
+
+public class UpdateActionModel extends BaseModel implements ResultModel {
 
     private Integer bookId;
 
@@ -19,7 +22,7 @@ public class UpdateActionModel extends BaseModel {
 
     private String status;
 
-    private String message;
+    private Map<String, Object> result = new HashMap<String, Object>();
 
     public Integer getBookId() {
         return bookId;
@@ -70,18 +73,26 @@ public class UpdateActionModel extends BaseModel {
     }
 
     public String getStatus() {
-        return status;
+        return (String)result.get("status");
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        result.put("status", status);
     }
 
     public String getMessage() {
-        return message;
+        return (String)result.get("message");
     }
 
     public void setMessage(String message) {
-        this.message = message;
+        result.put("message", message);
+    }
+
+    public Object getResult() {
+        return result;
+    }
+
+    public Map<String, Object> getResultMap() {
+        return result;
     }
 }

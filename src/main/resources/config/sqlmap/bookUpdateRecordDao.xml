@@ -24,6 +24,16 @@
 		select * from book_update_record
 			where book_id = #bookId# order by add_date desc limit 0, 1
 	</select>
+
+    <select id="querySecondToLastByBookId" parameterClass="java.lang.Integer" resultMap="bookUpdateRecord">
+		select * from book_update_record
+			where book_id = #bookId# order by add_date desc limit 1, 2
+	</select>
+
+    <select id="queryByBookIdAndVersion" parameterClass="map" resultMap="bookUpdateRecord">
+        select * from book_update_record
+            where book_id = #bookId# and version = #version# order by add_date desc limit 0, 1
+    </select>
 	
 	<insert id="add" parameterClass="BookUpdateRecordDTO">
 		insert into book_update_record values(

@@ -1,5 +1,7 @@
 package burst.web;
 
+import burst.commons.model.ResultModel;
+import burst.json.JsonUtils;
 import com.opensymphony.xwork2.ActionInvocation;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.dispatcher.StrutsResultSupport;
@@ -24,8 +26,14 @@ public class JsonResult extends StrutsResultSupport {
 
         HttpServletResponse response = ServletActionContext.getResponse();
         response.setContentType("application/json");
+        Object result = null;
+        for(Object obj : invocation.getStack().getRoot()) {
+            if(obj instanceof ResultModel) {
+                result = ((ResultModel)obj).getResult();
+            }
+        }
         PrintWriter writer = response.getWriter();
-        writer.print(finalLocation);
+        writer.print(JsonUtils.Serialize(result));
         writer.close();
     }
 }
