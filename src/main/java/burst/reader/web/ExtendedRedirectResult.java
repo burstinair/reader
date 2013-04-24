@@ -35,7 +35,9 @@ public class ExtendedRedirectResult extends StrutsResultSupport {
 
         boolean write_wml = false;
         String userAgent = request.getHeader(WebUtil.HEAD_USERAGENT);
-        if (userAgent != null) {
+        if (userAgent == null) {
+            write_wml = true;
+        } else {
             write_wml = userAgent.toLowerCase().indexOf("untrusted/1.0") != -1;
         }
         if (write_wml) {
