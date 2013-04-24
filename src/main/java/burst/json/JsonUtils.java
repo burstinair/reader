@@ -1,4 +1,4 @@
-﻿package burst.json;
+package burst.json;
 
 import burst.StringUtils;
 import burst.reflect.PropertyInfo;
