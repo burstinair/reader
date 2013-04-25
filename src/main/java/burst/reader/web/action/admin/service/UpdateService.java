@@ -32,6 +32,15 @@ public class UpdateService extends BaseService {
 
                 result.put("history", bookService.loadHistory(updateActionModel.getBookId()));
 
+            } else if("get_version".equals(updateActionModel.getAction())) {
+
+                BookUpdateRecordDTO last = bookService.loadLastUpdateRecord(updateActionModel.getBookId());
+                if(last == null) {
+                    result.put("version", "");
+                } else {
+                    result.put("version", last.getVersion());
+                }
+
             } else if("get_last_append".equals(updateActionModel.getAction())) {
 
                 BookUpdateRecordDTO last = bookService.loadLastUpdateRecord(updateActionModel.getBookId());
