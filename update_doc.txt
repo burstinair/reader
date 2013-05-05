@@ -1,0 +1,34 @@
+record
+    string version
+    int currentSize
+    date addDate
+    string special
+
+breader.tk/update
+    bookId=[int]
+    action=
+        get_history
+            [history: list of record]
+        get_version
+            [version: string(empty string if record not exists)]
+        get_last_append
+            [last: record presents last version]
+            [secondToLast: record presents second to last version]
+            [content: string]
+        get_append_between
+            fromVersion=[string]
+            toVersion=[string]
+            [from: record presents from version]
+            [to: record presents to version]
+            [content: string]
+        append
+            contentToAppend=[string]
+            version=[string]
+            [status: string "success" | "error"]
+            [message: string exists if error]
+        append_from_version
+            fromVersion=[string]
+            contentToAppend=[string]
+            version=[string]
+            [status: string "success" | "error"]
+            [message: string exists if error]

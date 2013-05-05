@@ -31,6 +31,7 @@
 	<bean id="editActionModel" class="burst.reader.web.action.admin.model.EditActionModel" parent="modelBase">
 		<property name="id" value="0" />
 	</bean>
+    <bean id="addMultActionModel" class="burst.reader.web.action.admin.model.AddMultActionModel" parent="modelBase" />
     <bean id="updateActionModel" class="burst.reader.web.action.admin.model.UpdateActionModel" parent="modelBase" />
 	<bean id="executeSQLActionModel" class="burst.reader.web.action.admin.model.ExecuteSQLActionModel" parent="modelBase" />
 

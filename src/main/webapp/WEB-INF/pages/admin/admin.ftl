@@ -8,6 +8,7 @@
     </div>
     <div>
         <a href="/admin/edit">[添加新书]</a>
+        <a href="/admin/addMult">[批量添加]</a>
     </div>
     <table>
         <tr>

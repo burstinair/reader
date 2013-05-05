@@ -96,4 +96,24 @@ public class EditActionModel extends BaseModel {
     }
 
     private String version;
+
+    private Boolean isAdd;
+
+    public Boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+
+    public Boolean isAdd() {
+        return isAdd;
+    }
+
+    public void setAdd(Boolean add) {
+        isAdd = add;
+    }
+
+    private Boolean success;
 }

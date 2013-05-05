@@ -38,6 +38,8 @@
 
     <bean id="editService" class="burst.reader.web.action.admin.service.EditService" parent="baseActionService" />
 
+    <bean id="addMultService" class="burst.reader.web.action.admin.service.AddMultService" parent="baseActionService" />
+
     <bean id="updateService" class="burst.reader.web.action.admin.service.UpdateService" parent="baseActionService" />
 
     <!-- Transaction -->

@@ -14,7 +14,9 @@ import java.util.Date;
 public class BookDTO implements Serializable {
     
 	private static final long serialVersionUID = 7760145660891108552L;
-	
+	public static final String VISIBLE = "visible";
+    public static final String UNVISIBLE = "unvisible";
+
     private Integer id;
     public Integer getId()
     {

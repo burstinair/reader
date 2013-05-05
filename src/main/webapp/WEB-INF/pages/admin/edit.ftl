@@ -3,9 +3,22 @@
     <title>${("编辑" + book.name)!"添加新书"}</title>
 </head>
 <body>
+    <#include "addEditNavi.ftl">
     <div>
-        <a href="/">[返回首页]</a>
-        <a href="/admin">[返回管理]</a>
+        <#if add??>
+            <#if add>
+                添加
+            <#else>
+                更新
+            </#if>
+        </#if>
+        <#if success??>
+            <#if success>
+                成功。
+            <#else>
+                失败。
+            </#if>
+        </#if>
     </div>
     <@s.form method="post" action="/admin/editSubmit" enctype="multipart/form-data">
         <@s.hidden name="id" value="%{book.id}" />

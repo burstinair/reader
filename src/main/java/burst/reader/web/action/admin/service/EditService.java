@@ -1,5 +1,6 @@
 package burst.reader.web.action.admin.service;
 
+import burst.StringUtils;
 import burst.reader.BookException;
 import burst.reader.dto.BookDTO;
 import burst.reader.dto.BookUpdateRecordDTO;
@@ -53,16 +54,25 @@ public class EditService extends BaseService {
         HttpServletRequest request = ServletActionContext.getRequest();
 
         boolean isAdd = editActionModel.getId() == null || editActionModel.getUnboxedId() == 0;
+        editActionModel.setAdd(isAdd);
         boolean isSubmit = true;
         boolean withoutContent = false;
         BookDTO book = null;
         editActionModel.setBook(null);
+        editActionModel.setSuccess(true);
         try {
             book = new BookDTO();
             book.setId(editActionModel.getId());
+            String name = editActionModel.getName();
+            if(StringUtils.isNullOrEmpty(name)) {
+                name = editActionModel.getUploadFileName();
+                if(name.substring(name.length() - 4, name.length()).toLowerCase().equals(".txt")) {
+                    name = name.substring(0, name.length() - 4);
+                }
+            }
             book.setName(editActionModel.getName());
             book.setAuthor(editActionModel.getAuthor());
-            book.setVisible("visible");
+            book.setVisible(BookDTO.VISIBLE);
             if(editActionModel.getUpload() == null) {
                 withoutContent = true;
                 if(isAdd) {
@@ -74,6 +84,7 @@ public class EditService extends BaseService {
             editActionModel.setBook(book);
         } catch (Exception ex) {
             isSubmit = false;
+            editActionModel.setSuccess(false);
         }
         if (isSubmit) {
             book.setAddDate(new Date());

@@ -2,6 +2,7 @@ package burst.reader.web.action.service;
 
 import burst.reader.service.BookMarkService;
 import burst.reader.service.BookService;
+import burst.reader.web.action.model.BaseModel;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,6 +12,7 @@ import burst.reader.service.BookService;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class BaseService {
+
     protected BookService bookService;
 
     public void setBookMarkService(BookMarkService bookMarkService) {

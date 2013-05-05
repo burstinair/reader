@@ -33,12 +33,20 @@ public class WebUtil {
         cpDetector.add(JChardetFacade.getInstance());
     }
 
-    public static String readAllText(File file) throws IOException
-    {
-        final int BUFFER_SIZE = 10240;
-        final int DETECT_LENGTH = 1000;
+    static final int BUFFER_SIZE = 10240;
+    static final int DETECT_LENGTH = 10000;
 
-        InputStream s = new BufferedInputStream(new FileInputStream(file));
+    public static Charset detect(File file) throws IOException {
+        return detect(new BufferedInputStream(new FileInputStream(file)));
+    }
+
+    public static Charset detect(BufferedInputStream bis) throws IOException {
+        return cpDetector.detectCodepage(bis, DETECT_LENGTH);
+    }
+
+    public static String readAllText(InputStream is) throws IOException {
+
+        InputStream s = new BufferedInputStream(is);
         Charset charset = cpDetector.detectCodepage(s, DETECT_LENGTH);
         InputStreamReader r = new InputStreamReader(s, charset);
         BufferedReader br = new BufferedReader(r);
@@ -50,6 +58,10 @@ public class WebUtil {
         }
         br.close();
         return res.toString();
+    }
+
+    public static String readAllText(File file) throws IOException {
+        return readAllText(new FileInputStream(file));
     }
 
 	public static String getContextURL(HttpServletRequest hsRequest) {
